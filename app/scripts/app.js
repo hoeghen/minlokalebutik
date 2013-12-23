@@ -15,13 +15,19 @@ angular.module('testappApp', [
       })
       .when('/butik', {
         templateUrl: 'views/butik.html',
-        controller: 'ButikCtrl'
+        controller: 'ButikCtrl',
+        authRequired: true,
+        pathTo: '/butik'
       })
       .when('/login', {
         templateUrl: 'views/login.html',
         controller: 'LoginCtrl'
       })
+        .when('/browse', {
+            templateUrl: 'views/browse.html'
+        })
       .otherwise({
-        redirectTo: '/'
+        redirectTo: '/default'
       });
+
   });

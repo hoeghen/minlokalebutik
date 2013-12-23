@@ -15,25 +15,10 @@
         <link rel="stylesheet" href="styles/bootstrap.css">
         <link rel="stylesheet" href="styles/main.css">
         <!-- endbuild -->
-      <script src='https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.1.5/angular.min.js'></script>
-      <script src='https://cdn.firebase.com/v0/firebase.js'></script>
-      <script src='https://cdn.firebase.com/libs/angularfire/0.3.0/angularfire.min.js'></script>
 
-</head>
+
+  </head>
   <body class="backgroundImage" ng-app="testappApp">
-
-  <div id="messagesDiv" ng-controller="MyController">
-      ddd
-      <div ng-repeat="msg in messages"><em>{{msg.from}}</em>: {{msg.body}}</div>
-  </div>
-  <script>
-      function MyController($scope, angularFire) {
-          var ref = new Firebase("https://kft0i7ozfl4.firebaseio-demo.com/");
-          $scope.messages = [];
-          angularFire(ref, $scope, "messages");
-      }
-  </script>
-
 
     <!--[if lt IE 7]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
@@ -44,6 +29,25 @@
       <script src="bower_components/json3/lib/json3.min.js"></script>
     <![endif]-->
     <!-- Add your site or application content here -->
+    <div class="pull-right">
+        <ul class="nav nav-pills">
+            <li>
+                <a href="#/">Forside</a>
+            </li>
+            <li>
+                <a href="#/butik">Butik</a>
+            </li>
+            <li ng-hide="auth.user">
+                <a href="#/login">Login</a>
+            </li>
+            <li ng-show="auth.user">
+                <div class="btn"  ng-click="auth.$logout()">Logged in as {{auth.user.email}} - Logout</div>
+            </li>
+
+
+        </ul>
+    </div>
+
     <div class="container" ng-view=""></div>
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
@@ -60,9 +64,11 @@
     <script src="bower_components/jquery/jquery.js"></script>
     <script src="bower_components/angular/angular.js"></script>
 
+    <script src='bower_components/firebase/firebase.js'></script>
+    <script src="bower_components/angular-fire/angularfire.js"></script>
+    <script src="https://cdn.firebase.com/v0/firebase-simple-login.js"></script>
 
-
-        <!-- build:js scripts/modules.js -->
+    <!-- build:js scripts/modules.js -->
         <script src="bower_components/angular-resource/angular-resource.js"></script>
         <script src="bower_components/angular-cookies/angular-cookies.js"></script>
         <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
