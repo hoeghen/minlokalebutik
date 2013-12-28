@@ -6,12 +6,24 @@ angular.module('testappApp')
         if($rootScope.auth == null){
             $rootScope.auth = $firebaseAuth(ref,{path:'/login'});
         }
-        var user = $firebase(ref).$child('users').$child($rootScope.auth.user.id);
-        $scope.butik = user.$child('butik');
+
+        console.log("controller called")
+
+        if($rootScope.auth.user != null){
+            var refButik= $firebase(ref).$child('users').$child($rootScope.auth.user.id).$child("butik");
+            $scope.butik = refButik;
+
+        }
+
 
 
         $scope.saveShop = function(){
+            console.log("butik = "+$scope.butik);
 
+
+
+
+            $scope.butik.$save();
         };
 
 
