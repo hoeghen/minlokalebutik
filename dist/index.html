@@ -11,9 +11,12 @@
     <meta name="viewport" content="width=device-width">
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 
-        <link rel="stylesheet" href="styles/9d1b6e2f.main.css"/>
-</head>
-  <body ng-app="testappApp">
+        <link rel="stylesheet" href="styles/8596adf0.main.css"/>
+
+
+  </head>
+  <body class="backgroundImage" ng-app="testappApp">
+
     <!--[if lt IE 7]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
@@ -22,10 +25,34 @@
       <script src="bower_components/es5-shim/es5-shim.js"></script>
       <script src="bower_components/json3/lib/json3.min.js"></script>
     <![endif]-->
-	HELLO
-	<p>Nothing here {{'yet' + '!'}}</p>
-
     <!-- Add your site or application content here -->
+    <div class="container">
+        <div class="pull-right">
+            <ul class="nav nav-pills">
+                <li>
+                    <a href="#/">Forside</a>
+                </li>
+                <li>
+                    <a href="#/butik">Butik</a>
+                </li>
+                <li ng-hide="auth.user">
+                    <a href="#/login">Login</a>
+                </li>
+                <li ng-show="auth.user">
+                    <div class="btn" ng-click="auth.$logout()">Logged in as {{auth.user.email}} - Logout</div>
+                </li>
+
+
+            </ul>
+        </div>
+        <div class="col-lg-5">
+            <!-- Subscribe to all flash messages. -->
+            <div flash-alert="" active-class="in" class="alert fade">
+                <strong class="alert-heading">Message!</strong>
+                <span class="alert-message">{{flash.message}}</span>
+            </div>
+        </div>
+    </div>
     <div class="container" ng-view=""></div>
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
@@ -42,10 +69,14 @@
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
     <script src="bower_components/angular/angular.js"></script>
 
-        <script src="scripts/d41d8cd9.plugins.js"></script>
+    <script src="bower_components/firebase/firebase.js"></script>
+    <script src="bower_components/angular-fire/angularfire.js"></script>
+    <script src="https://cdn.firebase.com/v0/firebase-simple-login.js"></script>
 
-        <script src="scripts/c07337e8.modules.js"></script>
 
-        <script src="scripts/31d62ad1.scripts.js"></script>
+
+    <script src="scripts/e0ee6cf4.modules.js"></script>
+
+        <script src="scripts/82bf5045.scripts.js"></script>
 </body>
 </html>

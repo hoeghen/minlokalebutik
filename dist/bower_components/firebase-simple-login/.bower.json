@@ -1,0 +1,14 @@
+{
+  "name": "firebase-simple-login",
+  "homepage": "https://github.com/firebase/firebase-simple-login",
+  "_release": "eb74d8c1f3",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "eb74d8c1f38d5d799f893e00427b3bffcc9858cc"
+  },
+  "_source": "git://github.com/firebase/firebase-simple-login.git",
+  "_target": "*",
+  "_originalSource": "firebase-simple-login",
+  "_direct": true
+}
