@@ -345,7 +345,11 @@
       <created>1388597231262</created>
       <updated>1388597231262</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="butik med notification">
+      <created>1388597243261</created>
+      <updated>1388597243261</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="ToolWindowManager">
