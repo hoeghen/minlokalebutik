@@ -4,8 +4,8 @@ angular.module('testappApp', [
   'ngCookies',
   'ngResource',
   'ngSanitize',
-  'ngRoute','firebase'
-
+  'ngRoute','firebase',
+  'flash'
 ])
   .config(function ($routeProvider) {
     $routeProvider

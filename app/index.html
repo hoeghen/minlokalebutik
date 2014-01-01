@@ -29,25 +29,33 @@
       <script src="bower_components/json3/lib/json3.min.js"></script>
     <![endif]-->
     <!-- Add your site or application content here -->
-    <div class="pull-right">
-        <ul class="nav nav-pills">
-            <li>
-                <a href="#/">Forside</a>
-            </li>
-            <li>
-                <a href="#/butik">Butik</a>
-            </li>
-            <li ng-hide="auth.user">
-                <a href="#/login">Login</a>
-            </li>
-            <li ng-show="auth.user">
-                <div class="btn"  ng-click="auth.$logout()">Logged in as {{auth.user.email}} - Logout</div>
-            </li>
+    <div class="container">
+        <div class="pull-right">
+            <ul class="nav nav-pills">
+                <li>
+                    <a href="#/">Forside</a>
+                </li>
+                <li>
+                    <a href="#/butik">Butik</a>
+                </li>
+                <li ng-hide="auth.user">
+                    <a href="#/login">Login</a>
+                </li>
+                <li ng-show="auth.user">
+                    <div class="btn"  ng-click="auth.$logout()">Logged in as {{auth.user.email}} - Logout</div>
+                </li>
 
 
-        </ul>
+            </ul>
+        </div>
+        <div class="col-lg-5">
+            <!-- Subscribe to all flash messages. -->
+            <div flash-alert active-class="in" class="alert fade">
+                <strong class="alert-heading">Message!</strong>
+                <span class="alert-message">{{flash.message}}</span>
+            </div>
+        </div>
     </div>
-
     <div class="container" ng-view=""></div>
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
@@ -68,11 +76,16 @@
     <script src="bower_components/angular-fire/angularfire.js"></script>
     <script src="https://cdn.firebase.com/v0/firebase-simple-login.js"></script>
 
+
+
     <!-- build:js scripts/modules.js -->
         <script src="bower_components/angular-resource/angular-resource.js"></script>
         <script src="bower_components/angular-cookies/angular-cookies.js"></script>
         <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
         <script src="bower_components/angular-route/angular-route.js"></script>
+        <script src="bower_components/angular-flash-messages/angular-flash.js"></script>
+
+
         <!-- endbuild -->
 
         <!-- build:js({.tmp,app}) scripts/scripts.js -->
