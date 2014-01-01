@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="42464d75-982e-4bbf-910d-9053b2bbc272" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web.js" afterPath="$PROJECT_DIR$/web.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="testapp.iws" />
@@ -47,7 +47,7 @@
       <file leaf-file-name="package.json" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/package.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="14" column="37" selection-start="447" selection-end="447" vertical-scroll-proportion="0.3946932" vertical-offset="0" max-vertical-offset="952">
+            <state line="19" column="37" selection-start="575" selection-end="575" vertical-scroll-proportion="0.4792703" vertical-offset="34" max-vertical-offset="1003">
               <folding />
             </state>
           </provider>
@@ -152,6 +152,7 @@
         <option value="$PROJECT_DIR$/app/views/butik.html" />
         <option value="$PROJECT_DIR$/app/scripts/controllers/butik.js" />
         <option value="$PROJECT_DIR$/web.js" />
+        <option value="$PROJECT_DIR$/package.json" />
       </list>
     </option>
   </component>
@@ -368,7 +369,11 @@
       <created>1388597258985</created>
       <updated>1388597258985</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="butik med notification">
+      <created>1388599470628</created>
+      <updated>1388599470628</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -524,7 +529,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/package.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="37" selection-start="447" selection-end="447" vertical-scroll-proportion="0.3946932" vertical-offset="0" max-vertical-offset="952">
+        <state line="19" column="37" selection-start="575" selection-end="575" vertical-scroll-proportion="0.4792703" vertical-offset="34" max-vertical-offset="1003">
           <folding />
         </state>
       </provider>
