@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="42464d75-982e-4bbf-910d-9053b2bbc272" name="Default" comment="new button title&#10;">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/styles/main.css" afterPath="$PROJECT_DIR$/app/styles/main.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/main.html" afterPath="$PROJECT_DIR$/app/views/main.html" />
+    <list default="true" id="42464d75-982e-4bbf-910d-9053b2bbc272" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="testapp.iws" />
@@ -416,7 +414,11 @@
       <created>1390143969578</created>
       <updated>1390143969578</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="new image url&#10;">
+      <created>1390144642247</created>
+      <updated>1390144642247</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -465,7 +467,8 @@
     <MESSAGE value="saving butik works" />
     <MESSAGE value="butik med notification" />
     <MESSAGE value="new button title&#10;" />
-    <option name="LAST_COMMIT_MESSAGE" value="new button title&#10;" />
+    <MESSAGE value="new image url&#10;" />
+    <option name="LAST_COMMIT_MESSAGE" value="new image url&#10;" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
