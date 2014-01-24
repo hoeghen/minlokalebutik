@@ -1,12 +1,12 @@
 'use strict';
 
 angular.module('testappApp', [
-  'ngCookies',
-  'ngResource',
-  'ngSanitize',
-  'ngRoute','firebase',
-  'flash'
-])
+    'ngCookies',
+    'ngResource',
+    'ngSanitize',
+    'ngRoute', 'firebase',
+    'flash'
+  ])
   .config(function ($routeProvider) {
     $routeProvider
       .when('/', {
@@ -23,9 +23,9 @@ angular.module('testappApp', [
         templateUrl: 'views/login.html',
         controller: 'LoginCtrl'
       })
-        .when('/browse', {
-            templateUrl: 'views/browse.html'
-        })
+      .when('/browse', {
+        templateUrl: 'views/browse.html'
+      })
       .otherwise({
         redirectTo: '/default'
       });
