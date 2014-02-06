@@ -59,7 +59,7 @@ module.exports = function (grunt) {
       options: {
         port: 9000,
         // Change this to '0.0.0.0' to access the server from outside.
-        hostname: '0.0.0.0',
+        hostname: '127.0.0.1',
         livereload: 35729
       },
       livereload: {
@@ -264,8 +264,35 @@ module.exports = function (grunt) {
         cwd: '<%= yeoman.app %>/styles',
         dest: '.tmp/styles/',
         src: '{,*/}*.css'
+      },
+      distAll: {
+        files: [{
+          expand: true,
+          dot: true,
+          cwd: '<%= yeoman.app %>',
+          dest: '<%= yeoman.dist %>',
+          src: [
+            '*.{ico,png,txt,html}',
+            '.htaccess',
+            'bower_components/**/*',
+            'images/*',
+            'fonts/*',
+            'styles/*',
+            'scripts/*',
+            'views/*'
+          ]
+        }, {
+          expand: true,
+          cwd: '.tmp/images',
+          dest: '<%= yeoman.dist %>/images',
+          src: [
+            'generated/*'
+          ]
+        }]
       }
     },
+
+
 
     // Run some tasks in parallel to speed up the build process
     concurrent: {
@@ -321,7 +348,7 @@ module.exports = function (grunt) {
 
   grunt.registerTask('serve', function (target) {
     if (target === 'dist') {
-      return grunt.task.run(['build', 'connect:dist:keepalive']);
+      return grunt.task.run(['buildSimple', 'connect:dist:keepalive']);
     }
 
     grunt.task.run([
@@ -359,6 +386,11 @@ module.exports = function (grunt) {
     'uglify',
     'rev',
     'usemin'
+  ]);
+
+  grunt.registerTask('buildSimple', [
+    'clean:dist',
+    'copy:distAll'
   ]);
 
   grunt.registerTask('default', [

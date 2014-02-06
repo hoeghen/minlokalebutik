@@ -2,10 +2,22 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="42464d75-982e-4bbf-910d-9053b2bbc272" name="Default" comment="">
+      <change type="DELETED" beforePath="D:\Bitwork\projects\testapp\dist\images\5cd82874.yeoman.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\Bitwork\projects\testapp\dist\images\c85f1113.back1.jpg" afterPath="" />
+      <change type="DELETED" beforePath="D:\Bitwork\projects\testapp\dist\scripts\4ea89049.scripts.js" afterPath="" />
+      <change type="DELETED" beforePath="D:\Bitwork\projects\testapp\dist\scripts\af028490.modules.js" afterPath="" />
+      <change type="DELETED" beforePath="D:\Bitwork\projects\testapp\dist\styles\4e7653ab.main.css" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/404.html" afterPath="$PROJECT_DIR$/dist/404.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Gruntfile.js" afterPath="$PROJECT_DIR$/Gruntfile.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/views/browse.html" afterPath="$PROJECT_DIR$/dist/views/browse.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/views/butik.html" afterPath="$PROJECT_DIR$/dist/views/butik.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/scripts/controllers/butik.js" afterPath="$PROJECT_DIR$/app/scripts/controllers/butik.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/index.html" afterPath="$PROJECT_DIR$/app/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/index.html" afterPath="$PROJECT_DIR$/dist/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/login.html" afterPath="$PROJECT_DIR$/app/views/login.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/indexWorking.html" afterPath="$PROJECT_DIR$/dist/indexWorking.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/views/login.html" afterPath="$PROJECT_DIR$/dist/views/login.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/scripts/controllers/login.js" afterPath="$PROJECT_DIR$/app/scripts/controllers/login.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/views/main.html" afterPath="$PROJECT_DIR$/dist/views/main.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="testapp.iws" />
@@ -29,6 +41,33 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
+      <file leaf-file-name="butik.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/scripts/controllers/butik.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="21" column="5" selection-start="507" selection-end="583" vertical-scroll-proportion="0.0" vertical-offset="232" max-vertical-offset="1292">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="login.js" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/scripts/controllers/login.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="54" column="0" selection-start="1453" selection-end="1453" vertical-scroll-proportion="0.8221226" vertical-offset="368" max-vertical-offset="1088">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="angular.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/bower_components/angular/angular.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="3651" column="0" selection-start="112636" selection-end="112636" vertical-scroll-proportion="0.0" vertical-offset="61888" max-vertical-offset="345372">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="butik.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/butik.html">
           <provider selected="true" editor-type-id="text-editor">
@@ -38,19 +77,51 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="login.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/login.html">
+      <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="18" column="48" selection-start="841" selection-end="841" vertical-scroll-proportion="-9.807693" vertical-offset="51" max-vertical-offset="782">
+            <state line="16" column="0" selection-start="556" selection-end="556" vertical-scroll-proportion="1.3076923" vertical-offset="306" max-vertical-offset="1870">
+              <folding>
+                <marker date="1391687901548" expanded="true" signature="845:1002" placeholder="..." />
+                <marker date="1391687901548" expanded="true" signature="938:970" placeholder="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Gruntfile.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Gruntfile.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="50" column="35" selection-start="1404" selection-end="1404" vertical-scroll-proportion="-6.448276" vertical-offset="663" max-vertical-offset="6919">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="login.html" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/dist/views/login.html">
+      <file leaf-file-name="karma.conf.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/karma.conf.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="29" column="46" selection-start="1701" selection-end="1701" vertical-scroll-proportion="0.615942" vertical-offset="153" max-vertical-offset="748">
+            <state line="23" column="6" selection-start="868" selection-end="868" vertical-scroll-proportion="0.0" vertical-offset="459" max-vertical-offset="1054">
+              <folding>
+                <element signature="n#!!doc" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="web.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="204">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name=".editorconfig" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/.editorconfig">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="459">
               <folding />
             </state>
           </provider>
@@ -59,72 +130,10 @@
       <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/dist/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="55" column="0" selection-start="1845" selection-end="1845" vertical-scroll-proportion="-20.26923" vertical-offset="408" max-vertical-offset="1581">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="app.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/scripts/app.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="29" column="29" selection-start="680" selection-end="688" vertical-scroll-proportion="0.0" vertical-offset="5" max-vertical-offset="663">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="main.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/scripts/controllers/main.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="272">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="login.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/scripts/controllers/login.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="31" column="0" selection-start="1059" selection-end="1059" vertical-scroll-proportion="0.0" vertical-offset="260" max-vertical-offset="1003">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/index.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="20" column="21" selection-start="755" selection-end="755" vertical-scroll-proportion="-9.153846" vertical-offset="102" max-vertical-offset="1870">
+            <state line="42" column="6" selection-start="1430" selection-end="1430" vertical-scroll-proportion="-3.9230769" vertical-offset="612" max-vertical-offset="1870">
               <folding>
-                <marker date="1390577798278" expanded="true" signature="864:1021" placeholder="..." />
-                <marker date="1390577798278" expanded="true" signature="957:989" placeholder="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="main.css" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/styles/main.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="25" column="1" selection-start="525" selection-end="525" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="527">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Gruntfile.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Gruntfile.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="260" column="8" selection-start="6303" selection-end="6303" vertical-scroll-proportion="-14.24138" vertical-offset="4007" max-vertical-offset="6375">
-              <folding>
-                <marker date="1390580600604" expanded="true" signature="293:8501" placeholder="{...}" />
-                <marker date="1390580600604" expanded="true" signature="539:7564" placeholder="{...}" />
-                <marker date="1390580600604" expanded="true" signature="5796:6452" placeholder="{...}" />
-                <marker date="1390580600604" expanded="true" signature="5810:6302" placeholder="{...}" />
-                <marker date="1390580600604" expanded="true" signature="5827:6294" placeholder="[...]" />
-                <marker date="1390580600604" expanded="true" signature="5828:6126" placeholder="{&quot;expand&quot;: true...}" />
-                <marker date="1390580600604" expanded="true" signature="5964:6116" placeholder="[...]" />
+                <marker date="1391687620288" expanded="true" signature="864:1021" placeholder="..." />
+                <marker date="1391687620288" expanded="true" signature="957:989" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -158,25 +167,23 @@
         <option value="$PROJECT_DIR$/web.js" />
         <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/app/scripts/app.js" />
-        <option value="$PROJECT_DIR$/app/scripts/controllers/butik.js" />
         <option value="$PROJECT_DIR$/app/bower_components/angular-flash-messages/angular-flash.js" />
         <option value="$PROJECT_DIR$/app/views/main.html" />
-        <option value="$PROJECT_DIR$/app/scripts/controllers/login.js" />
         <option value="$PROJECT_DIR$/app/views/butik.html" />
         <option value="$PROJECT_DIR$/app/styles/main.css" />
         <option value="$PROJECT_DIR$/app/views/login.html" />
-        <option value="$PROJECT_DIR$/app/index.html" />
         <option value="$PROJECT_DIR$/dist/index.html" />
-        <option value="$PROJECT_DIR$/Gruntfile.js" />
         <option value="$PROJECT_DIR$/dist/views/login.html" />
+        <option value="$PROJECT_DIR$/app/index.html" />
+        <option value="$PROJECT_DIR$/Gruntfile.js" />
+        <option value="$PROJECT_DIR$/app/scripts/controllers/butik.js" />
+        <option value="$PROJECT_DIR$/app/scripts/controllers/login.js" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-9" />
-    <option name="y" value="-9" />
-    <option name="width" value="1938" />
-    <option name="height" value="1170" />
+    <option name="width" value="1920" />
+    <option name="height" value="1152" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -223,38 +230,24 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="testapp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="testapp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth0" value="111" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth1" value="127" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth0" value="77" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth1" value="88" />
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder1" value="1" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth0" value="117" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth0" value="118" />
     <property name="recentsLimit" value="5" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder0" value="0" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../../nodejs/node.exe" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth2" value="127" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth3" value="549" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth3" value="551" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth2" value="125" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth1" value="125" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth2" value="88" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth3" value="550" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth3" value="654" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth2" value="126" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth1" value="126" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder2" value="2" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder3" value="3" />
@@ -275,7 +268,7 @@
     </key>
   </component>
   <component name="RunManager" selected="JavaScript Debug.index.html">
-    <configuration default="false" name="index.html" type="JavascriptDebugType" factoryName="JavaScript Debug" singleton="true" temporary="true" uri="http://localhost:63342/testapp/app/index.html">
+    <configuration default="false" name="index.html" type="JavascriptDebugType" factoryName="JavaScript Debug" singleton="true" temporary="true" uri="http://localhost:63343/testapp/app/index.html">
       <RunnerSettings RunnerId="JavascriptDebugRunner" />
       <ConfigurationWrapper RunnerId="JavascriptDebugRunner" />
       <method />
@@ -332,8 +325,8 @@
     </configuration>
     <list size="3">
       <item index="0" class="java.lang.String" itemvalue="JavaScript Debug.Angular debug" />
-      <item index="1" class="java.lang.String" itemvalue="Node.js.grunt serve" />
-      <item index="2" class="java.lang.String" itemvalue="JavaScript Debug.index.html" />
+      <item index="1" class="java.lang.String" itemvalue="JavaScript Debug.index.html" />
+      <item index="2" class="java.lang.String" itemvalue="Node.js.grunt serve" />
     </list>
     <recent_temporary>
       <list size="1">
@@ -405,24 +398,28 @@
       <created>1388767749577</created>
       <updated>1388767749577</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="working">
+      <created>1390671615298</created>
+      <updated>1390671615298</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-9" y="-9" width="1938" height="1170" extended-state="0" />
+    <frame x="0" y="0" width="1920" height="1152" extended-state="0" />
     <editor active="false" />
     <layout>
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32942328" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.40762463" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.29022405" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" x="9" y="367" width="1902" height="417" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.17864583" sideWeight="0.59237534" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.42326492" sideWeight="0.74322915" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.16923895" sideWeight="0.709776" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.42260692" sideWeight="0.7429022" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.40762463" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.42288557" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32942328" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32942328" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32935324" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -448,28 +445,25 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/app/scripts/controllers/butik.js</url>
+          <line>8</line>
+          <option name="timeStamp" value="68" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/app/scripts/controllers/butik.js</url>
+          <line>7</line>
+          <option name="timeStamp" value="71" />
+        </line-breakpoint>
+      </breakpoints>
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
-      <option name="time" value="63" />
+      <option name="time" value="72" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/node_modules/grunt-contrib-jshint/test/fixtures/lint.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="658" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/grunt-contrib-jshint/test/fixtures/dontlint.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="658" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.jshintrc">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="12" selection-start="159" selection-end="159" vertical-scroll-proportion="0.2420886" vertical-offset="0" max-vertical-offset="632" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/bower_components/angular-flash-messages/angular-flash.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="12" column="30" selection-start="347" selection-end="347" vertical-scroll-proportion="0.0" vertical-offset="204" max-vertical-offset="1275">
@@ -487,13 +481,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/scripts/controllers/butik.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="32" selection-start="274" selection-end="274" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1241">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/scripts/controllers/main.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="658">
@@ -508,9 +495,66 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/scripts/controllers/login.js">
+    <entry file="file://$PROJECT_DIR$/app/styles/main.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="31" column="0" selection-start="1059" selection-end="1059" vertical-scroll-proportion="0.0" vertical-offset="260" max-vertical-offset="1003">
+        <state line="25" column="1" selection-start="525" selection-end="525" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="527">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/login.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="18" column="48" selection-start="841" selection-end="841" vertical-scroll-proportion="-9.807693" vertical-offset="51" max-vertical-offset="782">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dist/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="42" column="6" selection-start="1430" selection-end="1430" vertical-scroll-proportion="-3.9230769" vertical-offset="612" max-vertical-offset="1870">
+          <folding>
+            <marker date="1391687620288" expanded="true" signature="864:1021" placeholder="..." />
+            <marker date="1391687620288" expanded="true" signature="957:989" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="16" column="0" selection-start="556" selection-end="556" vertical-scroll-proportion="1.3076923" vertical-offset="306" max-vertical-offset="1870">
+          <folding>
+            <marker date="1391687901548" expanded="true" signature="845:1002" placeholder="..." />
+            <marker date="1391687901548" expanded="true" signature="938:970" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/karma.conf.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="23" column="6" selection-start="868" selection-end="868" vertical-scroll-proportion="0.0" vertical-offset="459" max-vertical-offset="1054">
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="552">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.editorconfig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="552">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Gruntfile.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="50" column="35" selection-start="1404" selection-end="1404" vertical-scroll-proportion="-6.448276" vertical-offset="663" max-vertical-offset="6919">
           <folding />
         </state>
       </provider>
@@ -522,55 +566,23 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/styles/main.css">
+    <entry file="file://$PROJECT_DIR$/app/bower_components/angular/angular.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="1" selection-start="525" selection-end="525" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="527">
+        <state line="3651" column="0" selection-start="112636" selection-end="112636" vertical-scroll-proportion="0.0" vertical-offset="61888" max-vertical-offset="345372">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/index.html">
+    <entry file="file://$PROJECT_DIR$/app/scripts/controllers/butik.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="21" selection-start="755" selection-end="755" vertical-scroll-proportion="-9.153846" vertical-offset="102" max-vertical-offset="1870">
-          <folding>
-            <marker date="1390577798278" expanded="true" signature="864:1021" placeholder="..." />
-            <marker date="1390577798278" expanded="true" signature="957:989" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dist/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="55" column="0" selection-start="1845" selection-end="1845" vertical-scroll-proportion="-20.26923" vertical-offset="408" max-vertical-offset="1581">
+        <state line="21" column="5" selection-start="507" selection-end="583" vertical-scroll-proportion="0.0" vertical-offset="232" max-vertical-offset="1292">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Gruntfile.js">
+    <entry file="file://$PROJECT_DIR$/app/scripts/controllers/login.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="260" column="8" selection-start="6303" selection-end="6303" vertical-scroll-proportion="-14.24138" vertical-offset="4007" max-vertical-offset="6375">
-          <folding>
-            <marker date="1390580600604" expanded="true" signature="293:8501" placeholder="{...}" />
-            <marker date="1390580600604" expanded="true" signature="539:7564" placeholder="{...}" />
-            <marker date="1390580600604" expanded="true" signature="5796:6452" placeholder="{...}" />
-            <marker date="1390580600604" expanded="true" signature="5810:6302" placeholder="{...}" />
-            <marker date="1390580600604" expanded="true" signature="5827:6294" placeholder="[...]" />
-            <marker date="1390580600604" expanded="true" signature="5828:6126" placeholder="{&quot;expand&quot;: true...}" />
-            <marker date="1390580600604" expanded="true" signature="5964:6116" placeholder="[...]" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/login.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="48" selection-start="841" selection-end="841" vertical-scroll-proportion="-9.807693" vertical-offset="51" max-vertical-offset="782">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dist/views/login.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="29" column="46" selection-start="1701" selection-end="1701" vertical-scroll-proportion="0.615942" vertical-offset="153" max-vertical-offset="748">
+        <state line="54" column="0" selection-start="1453" selection-end="1453" vertical-scroll-proportion="0.8221226" vertical-offset="368" max-vertical-offset="1088">
           <folding />
         </state>
       </provider>

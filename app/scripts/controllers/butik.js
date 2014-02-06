@@ -4,20 +4,20 @@
 angular.module('testappApp')
   .controller('ButikCtrl', function ($scope, $rootScope, $firebaseAuth, $firebase, $http, flash) {
     var ref = new Firebase('https://jobspot.firebaseio.com');
-    if ($rootScope.auth === null) {
+
+    if (!$rootScope.auth) {
       $rootScope.auth = $firebaseAuth(ref, {path: '/login'});
     }
 
     console.log('controller called');
 
-    if ($rootScope.auth.user !== null) {
+    if ($rootScope.auth && $rootScope.auth.user) {
       $scope.butik = $firebase(ref).$child('users').$child($rootScope.auth.user.id).$child("butik");
 
     }
 
     function logResult(text) {
       flash(text);
-
       console.log(text);
     }
 
@@ -60,6 +60,9 @@ angular.module('testappApp')
 
     };
 
+    function flash(text){
+      alert(text);
+    }
 
   });
 
