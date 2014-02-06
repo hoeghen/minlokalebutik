@@ -8,13 +8,13 @@
   <body ng-app="chat">
 
 
-  <div class="well"  ng-controller="Chat">
+  <div class="well" ng-controller="Chat">
       <form class="form-inline">
           Your name: <input type="text" ng-model="username">
       </form>
-      <div ng-cloak ng-repeat="message in messages">
+      <div ng-cloak="" ng-repeat="message in messages">
           <em>{{message.from}}: </em>{{message.content}}
-      </div><br/>
+      </div><br>
       <form class="form-inline" ng-submit="addMessage()">
           <input type="text" ng-model="message" placeholder="Message...">
           <button class="btn" type="submit">
@@ -44,4 +44,3 @@
 
 
 </body>
-</html>

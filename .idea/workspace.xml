@@ -2,22 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="42464d75-982e-4bbf-910d-9053b2bbc272" name="Default" comment="">
-      <change type="DELETED" beforePath="D:\Bitwork\projects\testapp\dist\images\5cd82874.yeoman.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\Bitwork\projects\testapp\dist\images\c85f1113.back1.jpg" afterPath="" />
-      <change type="DELETED" beforePath="D:\Bitwork\projects\testapp\dist\scripts\4ea89049.scripts.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\Bitwork\projects\testapp\dist\scripts\af028490.modules.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\Bitwork\projects\testapp\dist\styles\4e7653ab.main.css" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/404.html" afterPath="$PROJECT_DIR$/dist/404.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Gruntfile.js" afterPath="$PROJECT_DIR$/Gruntfile.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/views/browse.html" afterPath="$PROJECT_DIR$/dist/views/browse.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/views/butik.html" afterPath="$PROJECT_DIR$/dist/views/butik.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/scripts/controllers/butik.js" afterPath="$PROJECT_DIR$/app/scripts/controllers/butik.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/index.html" afterPath="$PROJECT_DIR$/app/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/index.html" afterPath="$PROJECT_DIR$/dist/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/indexWorking.html" afterPath="$PROJECT_DIR$/dist/indexWorking.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/views/login.html" afterPath="$PROJECT_DIR$/dist/views/login.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/scripts/controllers/login.js" afterPath="$PROJECT_DIR$/app/scripts/controllers/login.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/views/main.html" afterPath="$PROJECT_DIR$/dist/views/main.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="testapp.iws" />
@@ -50,10 +36,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="login.js" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="login.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/scripts/controllers/login.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="54" column="0" selection-start="1453" selection-end="1453" vertical-scroll-proportion="0.8221226" vertical-offset="368" max-vertical-offset="1088">
+            <state line="54" column="0" selection-start="1453" selection-end="1453" vertical-scroll-proportion="0.0" vertical-offset="368" max-vertical-offset="1088">
               <folding />
             </state>
           </provider>
@@ -89,10 +75,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Gruntfile.js" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="Gruntfile.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Gruntfile.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="50" column="35" selection-start="1404" selection-end="1404" vertical-scroll-proportion="-6.448276" vertical-offset="663" max-vertical-offset="6919">
+            <state line="281" column="19" selection-start="6837" selection-end="6837" vertical-scroll-proportion="0.7204783" vertical-offset="4295" max-vertical-offset="6919">
               <folding />
             </state>
           </provider>
@@ -130,10 +116,10 @@
       <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/dist/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="42" column="6" selection-start="1430" selection-end="1430" vertical-scroll-proportion="-3.9230769" vertical-offset="612" max-vertical-offset="1870">
+            <state line="58" column="0" selection-start="1945" selection-end="1945" vertical-scroll-proportion="9.269231" vertical-offset="1227" max-vertical-offset="1870">
               <folding>
-                <marker date="1391687620288" expanded="true" signature="864:1021" placeholder="..." />
-                <marker date="1391687620288" expanded="true" signature="957:989" placeholder="..." />
+                <marker date="1391693004076" expanded="true" signature="845:1002" placeholder="..." />
+                <marker date="1391693004076" expanded="true" signature="938:970" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -172,12 +158,12 @@
         <option value="$PROJECT_DIR$/app/views/butik.html" />
         <option value="$PROJECT_DIR$/app/styles/main.css" />
         <option value="$PROJECT_DIR$/app/views/login.html" />
-        <option value="$PROJECT_DIR$/dist/index.html" />
         <option value="$PROJECT_DIR$/dist/views/login.html" />
         <option value="$PROJECT_DIR$/app/index.html" />
-        <option value="$PROJECT_DIR$/Gruntfile.js" />
         <option value="$PROJECT_DIR$/app/scripts/controllers/butik.js" />
         <option value="$PROJECT_DIR$/app/scripts/controllers/login.js" />
+        <option value="$PROJECT_DIR$/dist/index.html" />
+        <option value="$PROJECT_DIR$/Gruntfile.js" />
       </list>
     </option>
   </component>
@@ -402,7 +388,11 @@
       <created>1390671615298</created>
       <updated>1390671615298</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="fixed bad null check&#10;removed old flash messages">
+      <created>1391692352501</created>
+      <updated>1391692352501</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -411,10 +401,10 @@
     <layout>
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32942328" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.29022405" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" x="9" y="367" width="1902" height="417" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.29022405" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" x="9" y="367" width="1902" height="417" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.16923895" sideWeight="0.709776" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.16923895" sideWeight="0.709776" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.42260692" sideWeight="0.7429022" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.42288557" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -441,7 +431,8 @@
     <MESSAGE value="saving butik works" />
     <MESSAGE value="butik med notification" />
     <MESSAGE value="working" />
-    <option name="LAST_COMMIT_MESSAGE" value="working" />
+    <MESSAGE value="fixed bad null check&#10;removed old flash messages" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed bad null check&#10;removed old flash messages" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -509,16 +500,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dist/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="42" column="6" selection-start="1430" selection-end="1430" vertical-scroll-proportion="-3.9230769" vertical-offset="612" max-vertical-offset="1870">
-          <folding>
-            <marker date="1391687620288" expanded="true" signature="864:1021" placeholder="..." />
-            <marker date="1391687620288" expanded="true" signature="957:989" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="16" column="0" selection-start="556" selection-end="556" vertical-scroll-proportion="1.3076923" vertical-offset="306" max-vertical-offset="1870">
@@ -552,13 +533,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Gruntfile.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="50" column="35" selection-start="1404" selection-end="1404" vertical-scroll-proportion="-6.448276" vertical-offset="663" max-vertical-offset="6919">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/butik.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="32" column="61" selection-start="1930" selection-end="1930" vertical-scroll-proportion="-20.923077" vertical-offset="0" max-vertical-offset="918">
@@ -582,7 +556,24 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/scripts/controllers/login.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="54" column="0" selection-start="1453" selection-end="1453" vertical-scroll-proportion="0.8221226" vertical-offset="368" max-vertical-offset="1088">
+        <state line="54" column="0" selection-start="1453" selection-end="1453" vertical-scroll-proportion="0.0" vertical-offset="368" max-vertical-offset="1088">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dist/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="58" column="0" selection-start="1945" selection-end="1945" vertical-scroll-proportion="9.269231" vertical-offset="1227" max-vertical-offset="1870">
+          <folding>
+            <marker date="1391693004076" expanded="true" signature="845:1002" placeholder="..." />
+            <marker date="1391693004076" expanded="true" signature="938:970" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Gruntfile.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="281" column="19" selection-start="6837" selection-end="6837" vertical-scroll-proportion="0.7204783" vertical-offset="4295" max-vertical-offset="6919">
           <folding />
         </state>
       </provider>

@@ -278,8 +278,8 @@ module.exports = function (grunt) {
             'images/*',
             'fonts/*',
             'styles/*',
-            'scripts/*',
-            'views/*'
+            'scripts/**/*',
+            'views/**/*'
           ]
         }, {
           expand: true,
