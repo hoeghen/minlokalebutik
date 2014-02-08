@@ -2,7 +2,7 @@
 
 
 angular.module('testappApp')
-  .controller('ButikCtrl', function ($scope, $rootScope, $firebaseAuth, $firebase, $http, flash) {
+  .controller('ButikCtrl', function ($scope, $rootScope, $firebaseAuth, $firebase, $http) {
     var ref = new Firebase('https://jobspot.firebaseio.com');
 
     if (!$rootScope.auth) {
@@ -61,8 +61,13 @@ angular.module('testappApp')
     };
 
     function flash(text){
-      alert(text);
+      $scope.alerts.push({msg: text});
     }
+
+    $scope.closeAlert = function(index) {
+      $scope.alerts.splice(index, 1);
+    };
+
 
   });
 

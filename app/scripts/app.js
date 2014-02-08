@@ -5,7 +5,7 @@ angular.module('testappApp', [
     'ngResource',
     'ngSanitize',
     'ngRoute', 'firebase',
-    'flash'
+    'ui.bootstrap'
   ])
   .config(function ($routeProvider) {
     $routeProvider

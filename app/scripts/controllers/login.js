@@ -2,10 +2,8 @@
 
 angular.module('testappApp')
   .controller('LoginCtrl', function ($rootScope, $scope, $firebaseAuth, $location) {
-    if ($rootScope.auth == null) {
-      var ref = new Firebase('https://jobspot.firebaseio.com');
-      $rootScope.auth = $firebaseAuth(ref, {path: '/login'});
-    }
+
+
 
     $rootScope.$on("$firebaseAuth:logout", function () {
       log("User is logged out");
@@ -34,6 +32,8 @@ angular.module('testappApp')
         function (error, user) {
           if (!error) {
             log("Du er oprettet");
+          }else{
+            log("Du kan ikke oprettes, prøv med en anden email/password kombination");
           }
         });
     };
