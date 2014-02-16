@@ -2,6 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="42464d75-982e-4bbf-910d-9053b2bbc272" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/scripts/controllers/commonCtrl.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Gruntfile.js" afterPath="$PROJECT_DIR$/Gruntfile.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bower.json" afterPath="$PROJECT_DIR$/bower.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/scripts/controllers/butik.js" afterPath="$PROJECT_DIR$/app/scripts/controllers/butik.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/index.html" afterPath="$PROJECT_DIR$/app/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="testapp.iws" />
@@ -25,59 +30,66 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="butik.js" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="butik.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/scripts/controllers/butik.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="54" column="11" selection-start="1945" selection-end="1945" vertical-scroll-proportion="0.70916903" vertical-offset="423" max-vertical-offset="1377">
+            <state line="4" column="0" selection-start="45" selection-end="135" vertical-scroll-proportion="0.0" vertical-offset="68" max-vertical-offset="1241">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="index.html" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="51" column="32" selection-start="1783" selection-end="1783" vertical-scroll-proportion="-15.692307" vertical-offset="459" max-vertical-offset="1955">
+            <state line="18" column="4" selection-start="612" selection-end="612" vertical-scroll-proportion="0.46303502" vertical-offset="187" max-vertical-offset="1972">
               <folding>
-                <marker date="1391698243671" expanded="true" signature="845:1002" placeholder="..." />
-                <marker date="1391698243671" expanded="true" signature="938:970" placeholder="..." />
+                <marker date="1392539948843" expanded="true" signature="849:1006" placeholder="..." />
+                <marker date="1392539948843" expanded="true" signature="942:974" placeholder="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="main.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/scripts/controllers/main.js">
+      <file leaf-file-name="ui-bootstrap.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/bower_components/angular-bootstrap/ui-bootstrap.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="272">
+            <state line="321" column="16" selection-start="11277" selection-end="11277" vertical-scroll-proportion="0.0" vertical-offset="5290" max-vertical-offset="58344">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="main.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/main.html">
+      <file leaf-file-name="ui-bootstrap-tpls.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/bower_components/angular-bootstrap/ui-bootstrap-tpls.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="8" column="0" selection-start="262" selection-end="262" vertical-scroll-proportion="-5.230769" vertical-offset="0" max-vertical-offset="238">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="561" max-vertical-offset="62611">
+              <folding>
+                <marker date="1391694519089" expanded="false" signature="116318:116329" placeholder="..." />
+                <marker date="1391694519089" expanded="false" signature="117020:117040" placeholder="..." />
+                <marker date="1391694519089" expanded="false" signature="123760:123771" placeholder="..." />
+                <marker date="1391694519089" expanded="false" signature="124104:124115" placeholder="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="bower.json" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/bower.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="8" column="33" selection-start="197" selection-end="197" vertical-scroll-proportion="0.0" vertical-offset="51" max-vertical-offset="493">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="login.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/scripts/controllers/login.js">
+      <file leaf-file-name="commonCtrl.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/scripts/controllers/commonCtrl.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="5" column="0" selection-start="130" selection-end="130" vertical-scroll-proportion="0.0" vertical-offset="169" max-vertical-offset="1088">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="login.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/login.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="18" column="48" selection-start="841" selection-end="841" vertical-scroll-proportion="-9.807693" vertical-offset="51" max-vertical-offset="782">
-              <folding />
+            <state line="12" column="5" selection-start="265" selection-end="265" vertical-scroll-proportion="0.0" vertical-offset="204" max-vertical-offset="357">
+              <folding>
+                <marker date="1391961413416" expanded="true" signature="135:263" placeholder="{...}" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -105,8 +117,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/app/bower_components/angular-fire/angularfire.js" />
-        <option value="$PROJECT_DIR$/bower.json" />
         <option value="$PROJECT_DIR$/web.js" />
         <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/app/bower_components/angular-flash-messages/angular-flash.js" />
@@ -116,10 +126,12 @@
         <option value="$PROJECT_DIR$/app/views/login.html" />
         <option value="$PROJECT_DIR$/dist/views/login.html" />
         <option value="$PROJECT_DIR$/dist/index.html" />
-        <option value="$PROJECT_DIR$/Gruntfile.js" />
         <option value="$PROJECT_DIR$/app/scripts/app.js" />
         <option value="$PROJECT_DIR$/app/scripts/controllers/login.js" />
+        <option value="$PROJECT_DIR$/Gruntfile.js" />
         <option value="$PROJECT_DIR$/app/scripts/controllers/butik.js" />
+        <option value="$PROJECT_DIR$/app/scripts/controllers/commonCtrl.js" />
+        <option value="$PROJECT_DIR$/bower.json" />
         <option value="$PROJECT_DIR$/app/index.html" />
       </list>
     </option>
@@ -201,47 +213,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="testapp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="testapp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="scripts" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="testapp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="testapp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="scripts" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="controllers" />
+              <option name="myItemId" value="styles" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -340,8 +312,8 @@
     </configuration>
     <list size="3">
       <item index="0" class="java.lang.String" itemvalue="JavaScript Debug.Angular debug" />
-      <item index="1" class="java.lang.String" itemvalue="JavaScript Debug.index.html" />
-      <item index="2" class="java.lang.String" itemvalue="Node.js.grunt serve" />
+      <item index="1" class="java.lang.String" itemvalue="Node.js.grunt serve" />
+      <item index="2" class="java.lang.String" itemvalue="JavaScript Debug.index.html" />
     </list>
     <recent_temporary>
       <list size="1">
@@ -425,19 +397,22 @@
       <created>1391844815667</created>
       <updated>1391844815667</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="just workspace">
+      <created>1391844895995</created>
+      <updated>1391844895995</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1920" height="1152" extended-state="0" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32942328" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.26069248" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" x="9" y="367" width="1902" height="417" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.69146824" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" x="9" y="367" width="1902" height="417" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24960086" sideWeight="0.709776" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.16923895" sideWeight="0.7393075" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.16905901" sideWeight="0.3095723" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4317719" sideWeight="0.7429022" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.42288557" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -447,10 +422,16 @@
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32942328" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32942328" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
+  </component>
+  <component name="Vcs.Log.UiProperties">
+    <option name="RECENTLY_FILTERED_USERS">
+      <collection />
+    </option>
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
@@ -466,127 +447,236 @@
     <MESSAGE value="butik med notification" />
     <MESSAGE value="working" />
     <MESSAGE value="fixed bad null check&#10;removed old flash messages" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixed bad null check&#10;removed old flash messages" />
+    <MESSAGE value="just workspace" />
+    <option name="LAST_COMMIT_MESSAGE" value="just workspace" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
-      <option name="time" value="73" />
+      <option name="time" value="79" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/styles/main.css">
+    <entry file="file://$PROJECT_DIR$/app/scripts/controllers/butik.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="1" selection-start="525" selection-end="525" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="527">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/karma.conf.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="6" selection-start="868" selection-end="868" vertical-scroll-proportion="0.0" vertical-offset="459" max-vertical-offset="1054">
-          <folding>
-            <element signature="n#!!doc" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="552">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.editorconfig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="552">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/butik.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="32" column="61" selection-start="1930" selection-end="1930" vertical-scroll-proportion="-20.923077" vertical-offset="0" max-vertical-offset="918">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/bower_components/angular/angular.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="3651" column="0" selection-start="112636" selection-end="112636" vertical-scroll-proportion="0.0" vertical-offset="61888" max-vertical-offset="345372">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Gruntfile.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="281" column="19" selection-start="6837" selection-end="6837" vertical-scroll-proportion="0.0" vertical-offset="4295" max-vertical-offset="6919">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dist/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="55" column="0" selection-start="1826" selection-end="1826" vertical-scroll-proportion="-35.96154" vertical-offset="0" max-vertical-offset="1581">
-          <folding>
-            <marker date="1391693114740" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1391693114740" expanded="true" signature="-1:-1" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/scripts/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="4" selection-start="154" selection-end="154" vertical-scroll-proportion="0.0" vertical-offset="5" max-vertical-offset="663">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/main.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="0" selection-start="262" selection-end="262" vertical-scroll-proportion="-5.230769" vertical-offset="0" max-vertical-offset="238">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/scripts/controllers/main.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="715">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/scripts/controllers/login.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="0" selection-start="130" selection-end="130" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1088">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/login.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="48" selection-start="841" selection-end="841" vertical-scroll-proportion="-9.807693" vertical-offset="51" max-vertical-offset="782">
+        <state line="4" column="0" selection-start="45" selection-end="135" vertical-scroll-proportion="0.0" vertical-offset="68" max-vertical-offset="1241">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="51" column="32" selection-start="1783" selection-end="1783" vertical-scroll-proportion="-15.692307" vertical-offset="459" max-vertical-offset="1955">
+        <state line="18" column="4" selection-start="612" selection-end="612" vertical-scroll-proportion="0.0" vertical-offset="187" max-vertical-offset="1972">
           <folding>
-            <marker date="1391698243671" expanded="true" signature="845:1002" placeholder="..." />
-            <marker date="1391698243671" expanded="true" signature="938:970" placeholder="..." />
+            <marker date="1392539948843" expanded="true" signature="849:1006" placeholder="..." />
+            <marker date="1392539948843" expanded="true" signature="942:974" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/bower_components/angular-bootstrap/ui-bootstrap.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="321" column="16" selection-start="11277" selection-end="11277" vertical-scroll-proportion="0.0" vertical-offset="5290" max-vertical-offset="58344">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/bower_components/angular-bootstrap/ui-bootstrap-tpls.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="561" max-vertical-offset="62611">
+          <folding>
+            <marker date="1391694519089" expanded="false" signature="116318:116329" placeholder="..." />
+            <marker date="1391694519089" expanded="false" signature="117020:117040" placeholder="..." />
+            <marker date="1391694519089" expanded="false" signature="123760:123771" placeholder="..." />
+            <marker date="1391694519089" expanded="false" signature="124104:124115" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bower.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="33" selection-start="197" selection-end="197" vertical-scroll-proportion="0.0" vertical-offset="51" max-vertical-offset="493">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/scripts/controllers/commonCtrl.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="12" column="5" selection-start="265" selection-end="265" vertical-scroll-proportion="0.0" vertical-offset="204" max-vertical-offset="357">
+          <folding>
+            <marker date="1391961413416" expanded="true" signature="135:263" placeholder="{...}" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/scripts/controllers/butik.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="54" column="11" selection-start="1945" selection-end="1945" vertical-scroll-proportion="0.70916903" vertical-offset="423" max-vertical-offset="1377">
+        <state line="4" column="0" selection-start="45" selection-end="135" vertical-scroll-proportion="0.0" vertical-offset="68" max-vertical-offset="1241">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="91" column="37" selection-start="3235" selection-end="3235" vertical-scroll-proportion="0.0" vertical-offset="1364" max-vertical-offset="1972">
+          <folding>
+            <marker date="1392539948843" expanded="true" signature="849:1006" placeholder="..." />
+            <marker date="1392539948843" expanded="true" signature="942:974" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/bower_components/angular-bootstrap/ui-bootstrap.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="321" column="16" selection-start="11277" selection-end="11277" vertical-scroll-proportion="0.0" vertical-offset="5290" max-vertical-offset="58344">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/bower_components/angular-bootstrap/ui-bootstrap-tpls.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="561" max-vertical-offset="62611">
+          <folding>
+            <marker date="1391694519089" expanded="false" signature="116318:116329" placeholder="..." />
+            <marker date="1391694519089" expanded="false" signature="117020:117040" placeholder="..." />
+            <marker date="1391694519089" expanded="false" signature="123760:123771" placeholder="..." />
+            <marker date="1391694519089" expanded="false" signature="124104:124115" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bower.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="33" selection-start="197" selection-end="197" vertical-scroll-proportion="0.0" vertical-offset="136" max-vertical-offset="493">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/scripts/controllers/commonCtrl.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="12" column="5" selection-start="265" selection-end="265" vertical-scroll-proportion="0.0" vertical-offset="204" max-vertical-offset="357">
+          <folding>
+            <marker date="1391961413416" expanded="true" signature="135:263" placeholder="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/bower_components/angular-bootstrap/ui-bootstrap.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="321" column="16" selection-start="11277" selection-end="11277" vertical-scroll-proportion="0.0" vertical-offset="5290" max-vertical-offset="58344">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/bower_components/angular-bootstrap/ui-bootstrap-tpls.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="561" max-vertical-offset="62611">
+          <folding>
+            <marker date="1391694519089" expanded="false" signature="116318:116329" placeholder="..." />
+            <marker date="1391694519089" expanded="false" signature="117020:117040" placeholder="..." />
+            <marker date="1391694519089" expanded="false" signature="123760:123771" placeholder="..." />
+            <marker date="1391694519089" expanded="false" signature="124104:124115" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bower.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="16" column="27" selection-start="465" selection-end="465" vertical-scroll-proportion="0.0" vertical-offset="85" max-vertical-offset="493">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/scripts/controllers/commonCtrl.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="12" column="5" selection-start="265" selection-end="265" vertical-scroll-proportion="0.0" vertical-offset="204" max-vertical-offset="357">
+          <folding>
+            <marker date="1391961413416" expanded="true" signature="135:263" placeholder="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/styles/bootstrap.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="16" column="17" selection-start="248" selection-end="248" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="130594" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/bower_components/bootstrap/dist/css/bootstrap.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="99229" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/scripts/controllers/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="2" column="0" selection-start="15" selection-end="15" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="272" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/bower_components/angular/angular.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9206" column="8" selection-start="312650" selection-end="312650" vertical-scroll-proportion="0.0" vertical-offset="156194" max-vertical-offset="345372" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/scripts/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="13" column="29" selection-start="287" selection-end="295" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="663" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/butik.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="48" selection-start="23" selection-end="48" vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="918" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/scripts/controllers/butik.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="4" column="0" selection-start="45" selection-end="135" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="238">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/scripts/controllers/commonCtrl.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="12" column="5" selection-start="265" selection-end="265" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="357">
+          <folding>
+            <marker date="1391961413416" expanded="true" signature="135:263" placeholder="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/bower_components/angular-bootstrap/ui-bootstrap-tpls.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="561" max-vertical-offset="62611">
+          <folding>
+            <marker date="1391694519089" expanded="false" signature="116318:116329" placeholder="..." />
+            <marker date="1391694519089" expanded="false" signature="117020:117040" placeholder="..." />
+            <marker date="1391694519089" expanded="false" signature="123760:123771" placeholder="..." />
+            <marker date="1391694519089" expanded="false" signature="124104:124115" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/bower_components/angular-bootstrap/ui-bootstrap.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="321" column="16" selection-start="11277" selection-end="11277" vertical-scroll-proportion="0.0" vertical-offset="5290" max-vertical-offset="58344">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bower.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="33" selection-start="197" selection-end="197" vertical-scroll-proportion="0.0" vertical-offset="51" max-vertical-offset="493">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="18" column="4" selection-start="612" selection-end="612" vertical-scroll-proportion="0.46303502" vertical-offset="187" max-vertical-offset="1972">
+          <folding>
+            <marker date="1392539948843" expanded="true" signature="849:1006" placeholder="..." />
+            <marker date="1392539948843" expanded="true" signature="942:974" placeholder="..." />
+          </folding>
         </state>
       </provider>
     </entry>

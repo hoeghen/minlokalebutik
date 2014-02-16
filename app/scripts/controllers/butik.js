@@ -9,6 +9,7 @@ angular.module('testappApp')
       $rootScope.auth = $firebaseAuth(ref, {path: '/login'});
     }
 
+
     console.log('controller called');
 
     if ($rootScope.auth && $rootScope.auth.user) {
@@ -17,7 +18,7 @@ angular.module('testappApp')
     }
 
     function logResult(text) {
-      flash(text);
+      $rootScope.alerts.push({msg: text});
       console.log(text);
     }
 
@@ -37,9 +38,7 @@ angular.module('testappApp')
               logResult("butikkens adresse kan ikke findes på google maps, vær mere specifik");
             } else {
               if (data.results[0].partial_match) {
-                alert("butikkens adresse kan ikke findes på google maps, vær mere specifik");
                 logResult("butikkens adresse kan ikke findes på google maps, vær mere specifik");
-
               } else {
                 var butiklocation = data.results[0].geometry.location;
                 $scope.butik.position = butiklocation;
@@ -60,13 +59,6 @@ angular.module('testappApp')
 
     };
 
-    function flash(text){
-      $scope.alerts.push({msg: text});
-    }
-
-    $scope.closeAlert = function(index) {
-      $scope.alerts.splice(index, 1);
-    };
 
 
   });
