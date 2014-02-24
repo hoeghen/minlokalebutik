@@ -29,26 +29,26 @@ angular.module('testappApp')
                     if (data.status == "OK") {
                         console.log("RESULT =" + data);
                         if (data.results.length > 1) {
-                            AlertService.alert("der er flere adresser der passer, vær mere specifik","error");
+                            AlertService.alert("der er flere adresser der passer, vær mere specifik","danger");
 
                             } else {
                             if (data.results[0].partial_match) {
-                                AlertService.alert("butikkens adresse kan ikke findes på google maps, prøv en adresse tæt på","error");
+                                AlertService.alert("butikkens adresse kan ikke findes på google maps, prøv en adresse tæt på","danger");
 
                             } else {
                                 var butiklocation = data.results[0].geometry.location;
                                 $scope.butik.position = butiklocation;
                                 $scope.butik.$save();
-                                AlertService.alert("butikken er gemt");
+                                AlertService.alert("butikken er gemt","success",true);
                             }
                         }
                     } else {
-                        AlertService.alert("et eksternt system fungerer ikke, prøv igen senere","error");
+                        AlertService.alert("et eksternt system fungerer ikke, prøv igen senere","danger");
                         console.log(data.status + ":" + data.error_message);
                     }
                 }).
                 error(function (data, status, headers, config) {
-                    AlertService.alert("butikkens adresse kan ikke findes på googlemaps","error");
+                    AlertService.alert("butikkens adresse kan ikke findes på googlemaps","danger");
                     console.log(data.status + ":" + data.error_message);
                 });
         };

@@ -32,27 +32,27 @@ angular.module('testappApp', [
  });
 
 angular.module('testappApp')
-  .service("AlertService",function(){
-        this.alertText = {msg:"test"};
-        this.timeoutTime = 1000;
-        var self = this;
+  .service("AlertService",function($timeout){
+        this.alertText = null;
+        this.defaultFlashTime = 1000;
+        var _self = this;
         this.getAlert = function() {
-            return self.alertText;
+            return _self.alertText;
         };
 
         this.alert =function(text,type,timeout) {
             this.alertText = {msg: text,type:type};
-            this.alertText.close = this.closeAlert();
+            this.alertText.close = this.closeAlert;
             if(timeout){
                 $timeout(function () {
-                    this.alertText = null
-                }, timeoutTime);
+                    _self.alertText = null
+                }, 1000);
             }
             console.log(text);
         }
 
-        this.closeAlert = function(){
-            this.alertText = null;
+        _self.closeAlert = function(){
+            _self.alertText = null;
         }
 
     });
