@@ -1,52 +1,56 @@
 'use strict';
 
 angular.module('testappApp')
-  .controller('LoginCtrl', function ($rootScope,$scope,$firebaseAuth,$location) {
-        if($rootScope.auth == null){
-            var ref = new Firebase('https://jobspot.firebaseio.com');
-            $rootScope.auth = $firebaseAuth(ref,{path:'/login'});
-        }
+  .controller('LoginCtrl', function ($rootScope, $scope, $firebaseAuth, $location) {
 
-        $rootScope.$on("$firebaseAuth:logout", function() {
-            console.log("User is logged out");
+
+
+    $rootScope.$on("$firebaseAuth:logout", function () {
+      log("User is logged out");
+    });
+
+
+    $scope.login = function () {
+      $rootScope.auth.$login("password", {email: $scope.user.email, password: $scope.user.password}).then(function (user) {
+        log('Logged in as: ', user.uid);
+      }, function (error) {
+        log('Login failed: ', error);
+      })
+    };
+
+    $scope.testLogin = function () {
+      $rootScope.auth.$login("password", {email: 'carverdk@gmail.com', password: 'wobler'}).then(function (user) {
+        log("Du er logget på som " + user.email);
+      }, function (error) {
+        log('Login failed: ', error);
+      });
+    };
+
+
+    $scope.create = function () {
+      $rootScope.auth.$createUser($scope.user.email, $scope.user.password,
+        function (error, user) {
+          if (!error) {
+            log("Du er oprettet");
+          }else{
+            log("Du kan ikke oprettes, prøv med en anden email/password kombination");
+          }
         });
+    };
+    $scope.logout = function () {
+      $rootScope.auth.$logout();
+      $location.path('/');
+    };
 
 
-        $scope.login= function(){
-            $rootScope.auth.$login("password",{email:$scope.user.email,password:$scope.user.password}).then(function(user) {
-                console.log('Logged in as: ', user.uid);
-            }, function(error) {
-                console.error('Login failed: ', error);
-            })
-        };
+    $scope.redirect = function () {
+      $location.path('/browse');
+    };
 
-        $scope.testLogin= function(){
-            $rootScope.auth.$login("password",{email:'carverdk@gmail.com',password:'wobler'}).then(function(user) {
-                console.log('Logged in as: ', user.uid);
-                $scope.flash = "Du er logget på som "+user.email;
-            }, function(error) {
-                console.error('Login failed: ', error);
-            });
-        };
+    function log(text) {
+        console.log(text);
+    }
 
-
-        $scope.create= function(){
-            $rootScope.auth.$createUser($scope.user.email,$scope.user.password,
-                function(error, user) {
-                    if (!error) {
-                        $scope.flash = "Du er oprettet";
-                    }
-                });
-        };
-        $scope.logout= function(){
-            $rootScope.auth.$logout();
-            alert("auth.user="+$rootScope.auth.user);
-        };
-
-
-        $scope.redirect= function(){
-            $location.path('/browse');
-        };
 
   });
 

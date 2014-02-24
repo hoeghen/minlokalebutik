@@ -1,41 +1,36 @@
-<div class = "container">
-    <div class="alert-info">{{flash}}</div>
+<div class="row">
+    <div class="col-sm-offset-3 col-sm-6">
+        <div class="well">
+            <form class="form-horizontal">
+                <fieldset>
+                    <legend>Login - Registrer</legend>
+                    <div class="form-group">
+                        <label for="inputEmail" class="col-lg-2 control-label">Email</label>
 
-    <h1>Login for at gemme personlige indstillinger</h1>
-
-    <div class="row">
-        <div class="col-lg-6">
-            <div class="well">
-
-
-                <form class="form-horizontal">
-                    <fieldset>
-                        <legend>Login</legend>
-                        <div class="form-group">
-                            <label for="inputEmail" class="col-lg-2 control-label">Email</label>
-                            <div class="col-lg-10">
-                                <input type="text" ng-model="user.email" class="form-control" id="inputEmail" placeholder="Email" data-cip-id="inputEmail" autocomplete="off">
-                            </div>
+                        <div class="col-lg-10">
+                            <input type="text" ng-model="user.email" class="form-control" id="inputEmail"
+                                   placeholder="Email" data-cip-id="inputEmail" autocomplete="off">
                         </div>
-                        <div class="form-group">
-                            <label for="inputPassword" class="col-lg-2 control-label">Password</label>
-                            <div class="col-lg-10">
-                                <input type="password" ng-model="user.password" class="form-control" id="inputPassword" placeholder="Password" data-cip-id="inputPassword">
-                            </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputPassword" class="col-lg-2 control-label">Password</label>
+
+                        <div class="col-lg-10">
+                            <input type="password" ng-model="user.password" class="form-control" id="inputPassword"
+                                   placeholder="Password" data-cip-id="inputPassword">
                         </div>
-                        <div class="form-group">
-                            <div class="col-lg-10 col-lg-offset-2">
-                                <button ng-click="create()" class="btn btn-default">Registrer ny bruger</button>
-                                <button ng-click="login()" class="btn btn-primary">Login</button>
-                                <button ng-click="testLogin()" class="btn">TestLogin</button>
-                                <button ng-click="redirect()" class="btn">Redirect</button>
-                            </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-lg-10 col-lg-offset-2">
+                            <button ng-click="create()" class="btn btn-default">Registrer ny bruger</button>
+                            <button ng-click="login()" class="btn btn-primary">Login</button>
+                            <button ng-click="testLogin()" class="btn">TestLogin</button>
+                            <button ng-click="redirect()" class="btn">Redirect</button>
                         </div>
-                    </fieldset>
-                </form>
-            </div>
+                    </div>
+                </fieldset>
+            </form>
         </div>
     </div>
-
 </div>
 

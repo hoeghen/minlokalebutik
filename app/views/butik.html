@@ -1,47 +1,151 @@
-<div class="container" ng-controller="ButikCtrl">
-    <h1>Butik administration</h1>
-    <div class="row">
-        <div class="col-sm-12">
-            <div class="well">
-                <form class="form-horizontal" >
-                    <fieldset>
-                        <legend>Butik info</legend>
-                        <div class="form-group">
-                            <label for="navn" class="col-sm-2 control-label">Navn</label>
-                            <div class="col-sm-4">
-                                <input ng-model="butik.navn" type="text" class="form-control" id="navn" placeholder="Butikkens navn" autocomplete="off">
-                            </div>
-                            <label for="postnummer" class="col-sm-2 control-label">Postnr</label>
-                            <div class="col-sm-2">
-                                <input ng-model="butik.postnummer" type="text" class="form-control" id="postnummer" placeholder="Postnr" >
-                            </div>
+<div ng-controller="ButikCtrl">
+    <div class="rowhidden-xs ">
+        <div style="height: 100px"></div>
+    </div>
+    <div class="row ">
+        <div class="col-lg-8">
+            <tabset>
+                <tab heading="Butik">
+                    <div class="well">
+                        <form class="form-horizontal">
+                            <fieldset>
+                                <legend>Butik/Adresse</legend>
+                                <div class="form-group">
+                                    <label for="navn" class="col-sm-2 control-label">Navn</label>
 
-                        </div>
-                        <div class="form-group">
-                            <label for="gade" class="col-sm-2 control-label">Vejnavn</label>
-                            <div class="col-sm-4">
-                                <input ng-model="butik.vejnavn" type="text" class="form-control" id="gade" placeholder="Vejnavn">
-                            </div>
+                                    <div class="col-sm-4">
+                                        <input ng-model="butik.navn" type="text" class="form-control" id="navn"
+                                               placeholder="Butikkens navn" autocomplete="off">
+                                    </div>
+                                    <label for="postnummer" class="col-sm-2 control-label">Postnr</label>
 
-                            <label for="nummer" class="col-sm-2 control-label">Husnr</label>
-                            <div class="col-sm-2">
-                                <input ng-model="butik.husnummer" type="text" class="form-control" id="nummer" placeholder="Husnr" autocomplete="off">
+                                    <div class="col-sm-2">
+                                        <input ng-model="butik.postnummer" type="text" class="form-control"
+                                               id="postnummer" placeholder="Postnr">
+                                    </div>
+
+                                </div>
+                                <div class="form-group">
+                                    <label for="gade" class="col-sm-2 control-label">Vejnavn</label>
+
+                                    <div class="col-sm-4">
+                                        <input ng-model="butik.vejnavn" type="text" class="form-control" id="gade"
+                                               placeholder="Vejnavn">
+                                    </div>
+
+                                    <label for="nummer" class="col-sm-2 control-label">Husnr</label>
+
+                                    <div class="col-sm-2">
+                                        <input ng-model="butik.husnummer" type="text" class="form-control" id="nummer"
+                                               placeholder="Husnr" autocomplete="off">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-sm-3 col-sm-offset-2">
+                                        <button ng-click="saveShop()" class="btn btn-default">Gem Butik</button>
+                                    </div>
+                                </div>
+                            </fieldset>
+                            <div >
+                                <alert ng-show="getAlert()" type="getAlert().type" close="getAlert().close()">{{getAlert().msg}}</alert>
                             </div>
-                        </div>
-                        <div class="form-group">
-                            <div class="col-sm-3 col-sm-offset-2">
-                                <button ng-click="saveShop()" class="btn btn-default">Gem Butik</button>
-                            </div>
-                            <div class="col-sm-3">
-                                    <span class="alert alert-success"><flash:messages></flash:messages> </span>
-                            </div>
-                        </div>
-                    </fieldset>
-                </form>
-            </div>
+                        </form>
+                    </div>
+                </tab>
+                <tab heading="Tilbud">
+                    <div class="well">
+                        <form class="form-horizontal">
+                            <fieldset>
+                                <legend>Nyt tilbud</legend>
+                                <div class="form-group">
+                                    <label for="navn" class="col-sm-2 control-label">Navn</label>
+
+                                    <div class="col-sm-4">
+                                        <input ng-model="butik.navn" type="text" class="form-control" id="navn"
+                                               placeholder="Butikkens navn" autocomplete="off">
+                                    </div>
+                                    <label for="postnummer" class="col-sm-2 control-label">Postnr</label>
+
+                                    <div class="col-sm-2">
+                                        <input ng-model="butik.postnummer" type="text" class="form-control"
+                                               id="postnummer" placeholder="Postnr">
+                                    </div>
+
+                                </div>
+                                <div class="form-group">
+                                    <label for="gade" class="col-sm-2 control-label">Vejnavn</label>
+
+                                    <div class="col-sm-4">
+                                        <input ng-model="butik.vejnavn" type="text" class="form-control" id="gade"
+                                               placeholder="Vejnavn">
+                                    </div>
+
+                                    <label for="nummer" class="col-sm-2 control-label">Husnr</label>
+
+                                    <div class="col-sm-2">
+                                        <input ng-model="butik.husnummer" type="text" class="form-control" id="nummer"
+                                               placeholder="Husnr" autocomplete="off">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-sm-3 col-sm-offset-2">
+                                        <button ng-click="saveShop()" class="btn btn-default">Gem Butik</button>
+                                    </div>
+                                </div>
+                            </fieldset>
+                        </form>
+                    </div>
+                </tab>
+                <tab heading="Instagram">
+                    <div class="well">
+                        <form class="form-horizontal">
+                            <fieldset>
+                                <legend>Ret tilbud</legend>
+                                <div class="form-group">
+                                    <label for="navn" class="col-sm-2 control-label">Navn</label>
+
+                                    <div class="col-sm-4">
+                                        <input ng-model="butik.navn" type="text" class="form-control" id="navn"
+                                               placeholder="Butikkens navn" autocomplete="off">
+                                    </div>
+                                    <label for="postnummer" class="col-sm-2 control-label">Postnr</label>
+
+                                    <div class="col-sm-2">
+                                        <input ng-model="butik.postnummer" type="text" class="form-control"
+                                               id="postnummer" placeholder="Postnr">
+                                    </div>
+
+                                </div>
+                                <div class="form-group">
+                                    <label for="gade" class="col-sm-2 control-label">Vejnavn</label>
+
+                                    <div class="col-sm-4">
+                                        <input ng-model="butik.vejnavn" type="text" class="form-control" id="gade"
+                                               placeholder="Vejnavn">
+                                    </div>
+
+                                    <label for="nummer" class="col-sm-2 control-label">Husnr</label>
+
+                                    <div class="col-sm-2">
+                                        <input ng-model="butik.husnummer" type="text" class="form-control" id="nummer"
+                                               placeholder="Husnr" autocomplete="off">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-sm-3 col-sm-offset-2">
+                                        <button ng-click="saveShop()" class="btn btn-default">Gem Butik</button>
+                                    </div>
+                                </div>
+                            </fieldset>
+                        </form>
+                    </div>
+                </tab>
+            </tabset>
         </div>
+
     </div>
 
+    <div class="row"></div>
 
 
 </div>
