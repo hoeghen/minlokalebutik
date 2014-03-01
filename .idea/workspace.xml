@@ -2,6 +2,67 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="42464d75-982e-4bbf-910d-9053b2bbc272" name="Default" comment="">
+      <change type="DELETED" beforePath="C:\Data\bitwork\projects\minlokalebutik\dist\bower_components\firebase-simple-login\css\960.css" afterPath="" />
+      <change type="DELETED" beforePath="C:\Data\bitwork\projects\minlokalebutik\dist\bower_components\firebase-simple-login\css\reset.css" afterPath="" />
+      <change type="DELETED" beforePath="C:\Data\bitwork\projects\minlokalebutik\dist\bower_components\firebase-simple-login\css\style.css" afterPath="" />
+      <change type="DELETED" beforePath="C:\Data\bitwork\projects\minlokalebutik\dist\bower_components\firebase-simple-login\css\text.css" afterPath="" />
+      <change type="DELETED" beforePath="C:\Data\bitwork\projects\minlokalebutik\dist\bower_components\firebase-simple-login\fonts\proximanova-bold-webfont.eot" afterPath="" />
+      <change type="DELETED" beforePath="C:\Data\bitwork\projects\minlokalebutik\dist\bower_components\firebase-simple-login\fonts\proximanova-bold-webfont.svg" afterPath="" />
+      <change type="DELETED" beforePath="C:\Data\bitwork\projects\minlokalebutik\dist\bower_components\firebase-simple-login\fonts\proximanova-bold-webfont.ttf" afterPath="" />
+      <change type="DELETED" beforePath="C:\Data\bitwork\projects\minlokalebutik\dist\bower_components\firebase-simple-login\fonts\proximanova-bold-webfont.woff" afterPath="" />
+      <change type="DELETED" beforePath="C:\Data\bitwork\projects\minlokalebutik\dist\bower_components\firebase-simple-login\fonts\proximanova-boldit-webfont.eot" afterPath="" />
+      <change type="DELETED" beforePath="C:\Data\bitwork\projects\minlokalebutik\dist\bower_components\firebase-simple-login\fonts\proximanova-boldit-webfont.svg" afterPath="" />
+      <change type="DELETED" beforePath="C:\Data\bitwork\projects\minlokalebutik\dist\bower_components\firebase-simple-login\fonts\proximanova-boldit-webfont.ttf" afterPath="" />
+      <change type="DELETED" beforePath="C:\Data\bitwork\projects\minlokalebutik\dist\bower_components\firebase-simple-login\fonts\proximanova-boldit-webfont.woff" afterPath="" />
+      <change type="DELETED" beforePath="C:\Data\bitwork\projects\minlokalebutik\dist\bower_components\firebase-simple-login\fonts\proximanova-light-webfont.eot" afterPath="" />
+      <change type="DELETED" beforePath="C:\Data\bitwork\projects\minlokalebutik\dist\bower_components\firebase-simple-login\fonts\proximanova-light-webfont.svg" afterPath="" />
+      <change type="DELETED" beforePath="C:\Data\bitwork\projects\minlokalebutik\dist\bower_components\firebase-simple-login\fonts\proximanova-light-webfont.ttf" afterPath="" />
+      <change type="DELETED" beforePath="C:\Data\bitwork\projects\minlokalebutik\dist\bower_components\firebase-simple-login\fonts\proximanova-light-webfont.woff" afterPath="" />
+      <change type="DELETED" beforePath="C:\Data\bitwork\projects\minlokalebutik\dist\bower_components\firebase-simple-login\fonts\proximanova-lightitalic-webfont.eot" afterPath="" />
+      <change type="DELETED" beforePath="C:\Data\bitwork\projects\minlokalebutik\dist\bower_components\firebase-simple-login\fonts\proximanova-lightitalic-webfont.svg" afterPath="" />
+      <change type="DELETED" beforePath="C:\Data\bitwork\projects\minlokalebutik\dist\bower_components\firebase-simple-login\fonts\proximanova-lightitalic-webfont.ttf" afterPath="" />
+      <change type="DELETED" beforePath="C:\Data\bitwork\projects\minlokalebutik\dist\bower_components\firebase-simple-login\fonts\proximanova-lightitalic-webfont.woff" afterPath="" />
+      <change type="DELETED" beforePath="C:\Data\bitwork\projects\minlokalebutik\dist\bower_components\firebase-simple-login\fonts\proximanova-regular-webfont.eot" afterPath="" />
+      <change type="DELETED" beforePath="C:\Data\bitwork\projects\minlokalebutik\dist\bower_components\firebase-simple-login\fonts\proximanova-regular-webfont.svg" afterPath="" />
+      <change type="DELETED" beforePath="C:\Data\bitwork\projects\minlokalebutik\dist\bower_components\firebase-simple-login\fonts\proximanova-regular-webfont.ttf" afterPath="" />
+      <change type="DELETED" beforePath="C:\Data\bitwork\projects\minlokalebutik\dist\bower_components\firebase-simple-login\fonts\proximanova-regular-webfont.woff" afterPath="" />
+      <change type="DELETED" beforePath="C:\Data\bitwork\projects\minlokalebutik\dist\bower_components\firebase-simple-login\fonts\proximanova-regularitalic-webfont.eot" afterPath="" />
+      <change type="DELETED" beforePath="C:\Data\bitwork\projects\minlokalebutik\dist\bower_components\firebase-simple-login\fonts\proximanova-regularitalic-webfont.svg" afterPath="" />
+      <change type="DELETED" beforePath="C:\Data\bitwork\projects\minlokalebutik\dist\bower_components\firebase-simple-login\fonts\proximanova-regularitalic-webfont.ttf" afterPath="" />
+      <change type="DELETED" beforePath="C:\Data\bitwork\projects\minlokalebutik\dist\bower_components\firebase-simple-login\fonts\proximanova-regularitalic-webfont.woff" afterPath="" />
+      <change type="DELETED" beforePath="C:\Data\bitwork\projects\minlokalebutik\dist\bower_components\firebase-simple-login\img\bg.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Data\bitwork\projects\minlokalebutik\dist\bower_components\firebase-simple-login\img\firebase_os_logo.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Data\bitwork\projects\minlokalebutik\dist\bower_components\firebase-simple-login\img\gist_icon.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Data\bitwork\projects\minlokalebutik\dist\bower_components\firebase-simple-login\img\header_strip.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Data\bitwork\projects\minlokalebutik\dist\bower_components\firebase-simple-login\img\hr.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Data\bitwork\projects\minlokalebutik\dist\bower_components\firebase-simple-login\img\icons.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Data\bitwork\projects\minlokalebutik\dist\bower_components\firebase-simple-login\img\logo.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Data\bitwork\projects\minlokalebutik\dist\bower_components\firebase-simple-login\index.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\Data\bitwork\projects\minlokalebutik\dist\bower_components\firebase-simple-login\js\prettify.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\Data\bitwork\projects\minlokalebutik\dist\bower_components\firebase\lib\README.md" afterPath="" />
+      <change type="DELETED" beforePath="C:\Data\bitwork\projects\minlokalebutik\dist\bower_components\firebase\lib\firebase-auth-client-debug.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\Data\bitwork\projects\minlokalebutik\dist\bower_components\firebase\lib\firebase-auth-client.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\Data\bitwork\projects\minlokalebutik\dist\bower_components\firebase\lib\firebase-debug.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\Data\bitwork\projects\minlokalebutik\dist\bower_components\firebase\lib\firebase-node.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\Data\bitwork\projects\minlokalebutik\dist\bower_components\firebase\lib\firebase-simple-login-debug.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\Data\bitwork\projects\minlokalebutik\dist\bower_components\firebase\lib\firebase-simple-login.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\Data\bitwork\projects\minlokalebutik\dist\bower_components\firebase\lib\firebase-token-generator-debug.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\Data\bitwork\projects\minlokalebutik\dist\bower_components\firebase\lib\firebase-token-generator-node.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\Data\bitwork\projects\minlokalebutik\dist\bower_components\firebase\lib\firebase-token-generator.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\Data\bitwork\projects\minlokalebutik\dist\bower_components\firebase\lib\firebase.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\Data\bitwork\projects\minlokalebutik\dist\scripts\5ad3211b.modules.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\Data\bitwork\projects\minlokalebutik\dist\scripts\6c3dcd5a.scripts.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\Data\bitwork\projects\minlokalebutik\dist\scripts\af028490.modules.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\Data\bitwork\projects\minlokalebutik\dist\styles\4e7653ab.main.css" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/bower_components/angularfire/.bower.json" afterPath="$PROJECT_DIR$/dist/bower_components/angularfire/.bower.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/bower_components/firebase/.bower.json" afterPath="$PROJECT_DIR$/dist/bower_components/firebase/.bower.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/bower_components/firebase-simple-login/.bower.json" afterPath="$PROJECT_DIR$/dist/bower_components/firebase-simple-login/.bower.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/bower_components/firebase-simple-login/README.md" afterPath="$PROJECT_DIR$/dist/bower_components/firebase-simple-login/README.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/bower_components/angular-flash-messages/angular-flash.js" afterPath="$PROJECT_DIR$/dist/bower_components/angular-flash-messages/angular-flash.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/bower_components/firebase/bower.json" afterPath="$PROJECT_DIR$/dist/bower_components/firebase/bower.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/views/butik.html" afterPath="$PROJECT_DIR$/dist/views/butik.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/index.html" afterPath="$PROJECT_DIR$/dist/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/views/login.html" afterPath="$PROJECT_DIR$/dist/views/login.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="testapp.iws" />
@@ -37,7 +98,7 @@
       <file leaf-file-name="app.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/scripts/app.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="38" column="1" selection-start="883" selection-end="883" vertical-scroll-proportion="0.2158809" vertical-offset="559" max-vertical-offset="1139">
+            <state line="43" column="51" selection-start="1068" selection-end="1068" vertical-scroll-proportion="0.46401986" vertical-offset="544" max-vertical-offset="1139">
               <folding />
             </state>
           </provider>
@@ -88,15 +149,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="butik.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dist/views/butik.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="34" column="0" selection-start="2007" selection-end="2007" vertical-scroll-proportion="0.0" vertical-offset="395" max-vertical-offset="884">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/index.html">
           <provider selected="true" editor-type-id="text-editor">
@@ -121,7 +173,6 @@
     </FindUsagesManager>
   </component>
   <component name="Git.Settings">
-    <option name="UPDATE_TYPE" value="MERGE" />
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
@@ -584,7 +635,11 @@
       <created>1393230352435</created>
       <updated>1393230352435</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="flash is working&#10;">
+      <created>1393245694868</created>
+      <updated>1393245694868</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -861,13 +916,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dist/views/butik.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="34" column="0" selection-start="2007" selection-end="2007" vertical-scroll-proportion="0.0" vertical-offset="395" max-vertical-offset="884">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/styles/main.css">
       <provider selected="true" editor-type-id="text-editor">
         <state line="9" column="33" selection-start="287" selection-end="287" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="527">
@@ -891,7 +939,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/scripts/app.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="38" column="1" selection-start="883" selection-end="883" vertical-scroll-proportion="0.2158809" vertical-offset="559" max-vertical-offset="1139">
+        <state line="43" column="51" selection-start="1068" selection-end="1068" vertical-scroll-proportion="0.46401986" vertical-offset="544" max-vertical-offset="1139">
           <folding />
         </state>
       </provider>
