@@ -2,8 +2,10 @@
 
 
 angular.module('testappApp')
-    .controller('ButikCtrl', function ($scope, $rootScope, $firebaseAuth, $firebase, $http, $timeout,AlertService) {
+    .controller('ButikCtrl', function ($scope, $rootScope, $firebaseAuth, $firebase, $http, $timeout,$filter,AlertService) {
         var ref = new Firebase('https://jobspot.firebaseio.com');
+
+        $scope.tilbud = {kort:"min bil",slut:$filter("date")(Date.now(), 'yyyy-MM-dd')};
 
         $scope.getAlert = AlertService.getAlert;
 
@@ -38,6 +40,7 @@ angular.module('testappApp')
                             } else {
                                 var butiklocation = data.results[0].geometry.location;
                                 $scope.butik.position = butiklocation;
+                                $scope.butik.tilbud = [];
                                 $scope.butik.$save();
                                 AlertService.alert("butikken er gemt","success",true);
                             }
@@ -52,6 +55,30 @@ angular.module('testappApp')
                     console.log(data.status + ":" + data.error_message);
                 });
         };
+
+
+        $scope.addTilbud = function() {
+          var tilbud = $scope.tilbud;
+           $scope.butik.tilbud.push(tilbud);
+           $scope.butik.$save();
+        }
+
+    $scope.$watch('tilbud.forpris', function() {
+      if($scope.tilbud.pris > 0 && $scope.tilbud.forpris>0){
+        $scope.tilbud.rabat = (($scope.tilbud.forpris - $scope.tilbud.pris)/$scope.tilbud.forpris * 100);
+      }
+    });
+    $scope.$watch('tilbud.pris', function() {
+      if($scope.tilbud.pris > 0 && $scope.tilbud.forpris>0){
+          $scope.tilbud.rabat = (($scope.tilbud.forpris - $scope.tilbud.pris)/$scope.tilbud.forpris * 100);
+      }
+    });
+    $scope.$watch('tilbud.rabat', function() {
+      if($scope.tilbud.rabat > 0 && $scope.tilbud.forpris>0){
+        $scope.tilbud.pris = ($scope.tilbud.forpris - $scope.tilbud.forpris*$scope.tilbud.rabat/100).toFixed(2);
+      }
+    });
+
     });
 
 

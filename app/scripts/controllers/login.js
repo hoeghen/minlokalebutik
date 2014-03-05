@@ -2,8 +2,10 @@
 
 angular.module('testappApp')
   .controller('LoginCtrl', function ($rootScope, $scope, $firebaseAuth, $location) {
-
-
+    var ref = new Firebase('https://jobspot.firebaseio.com');
+    if (!$rootScope.auth) {
+      $rootScope.auth = $firebaseAuth(ref, {path: '/login'});
+    }
 
     $rootScope.$on("$firebaseAuth:logout", function () {
       log("User is logged out");

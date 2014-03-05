@@ -1,0 +1,70 @@
+<div class="well">
+    <form class="form-horizontal">
+        <!-- Form Name -->
+        <legend>Tilbud</legend>
+
+        <!-- Select Basic -->
+        <div class="form-group">
+            <label class="control-label col-sm-2" for="type">Varetype</label>
+
+            <div class="col-sm-2">
+                <select id="type" ng-model="tilbud.type" name="type" class="form-control">
+                    <option>Hus</option>
+                    <option>Have</option>
+                    <option>Tøj</option>
+                    <option>Mad</option>
+                    <option>Baby</option>
+                    <option>Bil</option>
+                    <option>Rejse</option>
+                    <option>Elektronik</option>
+                </select>
+            </div>
+            <label class="control-label col-sm-2" for="kort">Kort beskrivelse</label>
+
+            <div class="col-sm-6">
+                <input id="kort" class="form-control" ng-model="tilbud.kort" name="kort" type="text" placeholder="beskriv kort din vare"
+                       required="">
+            </div>
+        </div>
+
+
+        <!-- Text input-->
+        <div class="form-group">
+            <label class="control-label col-sm-2">Førpris</label>
+            <div class="col-sm-2">
+                <input id="forpris" name="forpris" type="number" ng-model="tilbud.forpris" placeholder="førpris" class="form-control col-sm-2" min="0" step="0.01">
+            </div>
+            <label class="control-label col-sm-2"> - Kundens pris</label>
+            <div class="col-sm-2">
+                <input id="pris" name="pris" type="number" ng-model="tilbud.pris" placeholder="pris" class="form-control col-sm-2" min="0" step="0.01">
+            </div>
+            <label class="control-label col-sm-2"> = Rabat</label>
+            <div class="col-sm-2">
+                <input id="rabat" name="rabat" type="number" ng-model="tilbud.rabat" placeholder="rabat" class="form-control col-sm-2"  min="0" step="0.01">
+            </div>
+        </div>
+
+        <!-- Textarea -->
+        <div class="form-group">
+            <label class="control-label col-sm-2" for="lang">Lang beskrivelse</label>
+            <div class="col-sm-10">
+            <textarea id="lang" name="lang" class="form-control" ng-model="tilbud.lang" rows="5" required=""></textarea>
+            </div>
+        </div>
+
+        <!-- Text input-->
+        <div class="form-group">
+            <label class="control-label col-sm-2" for="slut">Udløbsdato</label>
+            <div class="col-sm-4">
+            <input id="slut" name="slut" type="date" placeholder="udløbsdato"  ng-model="tilbud.slut" required="" class="form-control">
+            </div>
+            <div class="col-sm-3">
+                <button id="gem" ng-click="addTilbud()" name="gem" class="form-control btn btn-primary">gem</button>
+            </div>
+
+
+        </div>
+
+    </form>
+
+</div>

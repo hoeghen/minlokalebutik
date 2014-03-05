@@ -2,126 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="42464d75-982e-4bbf-910d-9053b2bbc272" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/bower_components/bootstrap/dist/fonts/glyphicons-halflings-regular.eot" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/bower_components/bootstrap/fonts/glyphicons-halflings-regular.eot" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/bower_components/bootstrap/dist/fonts/glyphicons-halflings-regular.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/bower_components/bootstrap/fonts/glyphicons-halflings-regular.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/bower_components/bootstrap/dist/fonts/glyphicons-halflings-regular.woff" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/bower_components/bootstrap/fonts/glyphicons-halflings-regular.woff" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/bower_components/angular-bootstrap/.bower.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/bower_components/bootstrap/.bower.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/bower_components/sizzle/.bower.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/scripts/0fd72d9a.scripts.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/styles/2ebfe82b.main.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/scripts/45a868e6.modules.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/bower_components/bootstrap/Gruntfile.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/bower_components/bootstrap/LICENSE" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/bower_components/firebase/LICENSE" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/bower_components/firebase-simple-login/LICENSE" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/bower_components/bootstrap/README.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/bower_components/bootstrap/test-infra/README.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/bower_components/bootstrap/js/affix.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/bower_components/bootstrap/js/alert.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/bower_components/bootstrap/less/alerts.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/bower_components/bootstrap/less/badges.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/bower_components/bootstrap/dist/css/bootstrap-theme.css.map" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/bower_components/bootstrap/dist/css/bootstrap-theme.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/bower_components/bootstrap/dist/css/bootstrap-theme.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/bower_components/bootstrap/dist/css/bootstrap.css.map" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/bower_components/bootstrap/dist/css/bootstrap.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/bower_components/bootstrap/dist/js/bootstrap.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/bower_components/bootstrap/less/bootstrap.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/bower_components/bootstrap/dist/css/bootstrap.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/bower_components/bootstrap/dist/js/bootstrap.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/bower_components/angular-bootstrap/bower.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/bower_components/bootstrap/bower.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/bower_components/firebase-simple-login/bower.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/bower_components/bootstrap/less/breadcrumbs.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/bower_components/bootstrap/grunt/bs-glyphicons-data-generator.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/bower_components/bootstrap/grunt/bs-lessdoc-parser.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/bower_components/bootstrap/grunt/bs-raw-files-generator.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/bower_components/bootstrap/less/button-groups.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/bower_components/bootstrap/js/button.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/bower_components/bootstrap/less/buttons.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/bower_components/bootstrap/js/carousel.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/bower_components/bootstrap/less/carousel.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/bower_components/bootstrap/less/close.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/bower_components/bootstrap/less/code.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/bower_components/bootstrap/js/collapse.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/bower_components/sizzle/tasks/commit.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/bower_components/sizzle/tasks/compile.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/bower_components/bootstrap/less/component-animations.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/bower_components/sizzle/tasks/dist.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/bower_components/bootstrap/js/dropdown.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/bower_components/bootstrap/less/dropdowns.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/bower_components/sizzle/test/data/empty.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/bower_components/sizzle/test/unit/extending.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/bower_components/firebase/firebase-debug.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/bower_components/firebase-simple-login/firebase-simple-login-debug.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/bower_components/firebase-simple-login/firebase-simple-login.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/bower_components/firebase/firebase.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/bower_components/bootstrap/less/forms.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/bower_components/bootstrap/dist/fonts/glyphicons-halflings-regular.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/bower_components/bootstrap/fonts/glyphicons-halflings-regular.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/bower_components/bootstrap/less/glyphicons.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/bower_components/bootstrap/less/grid.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/bower_components/sizzle/test/index.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/bower_components/bootstrap/less/input-groups.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/bower_components/sizzle/test/jquery.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/bower_components/bootstrap/less/jumbotron.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/bower_components/bootstrap/less/labels.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/bower_components/bootstrap/less/list-group.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/bower_components/bootstrap/less/media.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/bower_components/sizzle/test/data/mixed_sort.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/bower_components/bootstrap/less/mixins.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/bower_components/bootstrap/js/modal.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/bower_components/bootstrap/less/modals.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/bower_components/bootstrap/less/navbar.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/bower_components/bootstrap/less/navs.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/bower_components/bootstrap/less/normalize.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/bower_components/bootstrap/test-infra/npm-shrinkwrap.canonical.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/bower_components/bootstrap/package.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/bower_components/bootstrap/less/pager.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/bower_components/bootstrap/less/pagination.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/bower_components/bootstrap/less/panels.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/bower_components/bootstrap/js/popover.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/bower_components/bootstrap/less/popovers.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/bower_components/bootstrap/less/print.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/bower_components/bootstrap/less/progress-bars.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/bower_components/sizzle/test/libs/qunit/qunit.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/bower_components/sizzle/test/libs/qunit/qunit.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/bower_components/sizzle/tasks/release.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/bower_components/bootstrap/test-infra/requirements.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/bower_components/bootstrap/less/responsive-utilities.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/bower_components/bootstrap/test-infra/s3_cache.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/bower_components/bootstrap/test-infra/sauce_browsers.yml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/bower_components/bootstrap/less/scaffolding.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/bower_components/bootstrap/js/scrollspy.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/bower_components/sizzle/test/unit/selector.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/bower_components/bootstrap/grunt/shrinkwrap.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/bower_components/sizzle/dist/sizzle.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/bower_components/sizzle/dist/sizzle.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/bower_components/sizzle/dist/sizzle.min.map" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/bower_components/bootstrap/js/tab.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/bower_components/bootstrap/less/tables.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/bower_components/sizzle/tasks/tag.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/bower_components/sizzle/test/data/testinit.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/bower_components/bootstrap/less/theme.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/bower_components/bootstrap/less/thumbnails.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/bower_components/bootstrap/js/tooltip.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/bower_components/bootstrap/less/tooltip.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/bower_components/bootstrap/js/transition.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/bower_components/bootstrap/less/type.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/bower_components/angular-bootstrap/ui-bootstrap-tpls.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/bower_components/angular-bootstrap/ui-bootstrap.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/bower_components/angular-bootstrap/ui-bootstrap.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/bower_components/bootstrap/test-infra/uncached-npm-install.sh" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/bower_components/sizzle/test/unit/utilities.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/bower_components/bootstrap/less/utilities.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/bower_components/bootstrap/less/variables.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/bower_components/sizzle/tasks/version.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/bower_components/bootstrap/less/wells.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/adresse.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/alle-tilbud.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/tilbud.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/butik.html" afterPath="$PROJECT_DIR$/app/views/butik.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/scripts/controllers/butik.js" afterPath="$PROJECT_DIR$/app/scripts/controllers/butik.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/scripts/controllers/login.js" afterPath="$PROJECT_DIR$/app/scripts/controllers/login.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="testapp.iws" />
@@ -145,19 +31,28 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="butik.js" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="butik.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/scripts/controllers/butik.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="41" column="50" selection-start="1826" selection-end="1831" vertical-scroll-proportion="0.0" vertical-offset="408" max-vertical-offset="1088">
+            <state line="73" column="7" selection-start="3227" selection-end="3227" vertical-scroll-proportion="0.43956044" vertical-offset="1001" max-vertical-offset="1547">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="app.js" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/scripts/app.js">
+      <file leaf-file-name="tilbud.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/tilbud.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="43" column="51" selection-start="1068" selection-end="1068" vertical-scroll-proportion="0.46401986" vertical-offset="544" max-vertical-offset="1139">
+            <state line="44" column="14" selection-start="2013" selection-end="2013" vertical-scroll-proportion="-11.115385" vertical-offset="459" max-vertical-offset="1292">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="alle-tilbud.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/alle-tilbud.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="5" column="0" selection-start="143" selection-end="143" vertical-scroll-proportion="-3.2692308" vertical-offset="0" max-vertical-offset="187">
               <folding />
             </state>
           </provider>
@@ -166,16 +61,7 @@
       <file leaf-file-name="login.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/scripts/controllers/login.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="17" column="8" selection-start="504" selection-end="504" vertical-scroll-proportion="0.0" vertical-offset="187" max-vertical-offset="1071">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="butik.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/butik.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="49" column="56" selection-start="2680" selection-end="2688" vertical-scroll-proportion="0.0" vertical-offset="357" max-vertical-offset="2686">
+            <state line="4" column="61" selection-start="190" selection-end="190" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1105">
               <folding />
             </state>
           </provider>
@@ -184,42 +70,17 @@
       <file leaf-file-name="angular.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/bower_components/angular/angular.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="10944" column="0" selection-start="368780" selection-end="368780" vertical-scroll-proportion="0.0" vertical-offset="185916" max-vertical-offset="350438">
+            <state line="11552" column="0" selection-start="390507" selection-end="390507" vertical-scroll-proportion="0.0" vertical-offset="196207" max-vertical-offset="345372">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="main.css" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/styles/main.css">
+      <file leaf-file-name="butik.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/butik.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="9" column="33" selection-start="287" selection-end="287" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="527">
+            <state line="5" column="30" selection-start="170" selection-end="170" vertical-scroll-proportion="-3.2692308" vertical-offset="0" max-vertical-offset="595">
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="bootstrap.min.css" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/styles/bootstrap.min.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="204">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/index.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="86" column="0" selection-start="2876" selection-end="2876" vertical-scroll-proportion="0.0" vertical-offset="1478" max-vertical-offset="1989">
-              <folding>
-                <marker date="1393156251881" expanded="true" signature="250:3888" placeholder="..." />
-                <marker date="1393156251881" expanded="true" signature="776:3880" placeholder="..." />
-                <marker date="1393156251881" expanded="true" signature="798:3872" placeholder="..." />
-                <marker date="1393156251881" expanded="true" signature="849:1006" placeholder="..." />
-                <marker date="1393156251881" expanded="true" signature="942:974" placeholder="..." />
-                <marker date="1393156251881" expanded="true" signature="2170:2747" placeholder="..." />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -261,18 +122,18 @@
         <option value="$PROJECT_DIR$/app/views/login.html" />
         <option value="$PROJECT_DIR$/app/scripts/controllers/commonCtrl.js" />
         <option value="$PROJECT_DIR$/app/index.html" />
-        <option value="$PROJECT_DIR$/app/views/butik.html" />
-        <option value="$PROJECT_DIR$/app/scripts/controllers/login.js" />
-        <option value="$PROJECT_DIR$/app/scripts/controllers/butik.js" />
         <option value="$PROJECT_DIR$/app/scripts/app.js" />
+        <option value="$PROJECT_DIR$/app/scripts/controllers/login.js" />
+        <option value="$PROJECT_DIR$/app/views/butik.html" />
+        <option value="$PROJECT_DIR$/app/views/alle-tilbud.html" />
+        <option value="$PROJECT_DIR$/app/views/tilbud.html" />
+        <option value="$PROJECT_DIR$/app/scripts/controllers/butik.js" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="1" />
-    <option name="y" value="1" />
-    <option name="width" value="1597" />
-    <option name="height" value="898" />
+    <option name="width" value="1920" />
+    <option name="height" value="1152" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -300,6 +161,7 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -314,7 +176,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="minlokalebutik" />
+              <option name="myItemId" value="testapp" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -324,53 +186,16 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="minlokalebutik" />
+              <option name="myItemId" value="testapp" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="dist" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="minlokalebutik" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="minlokalebutik" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="dist" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="styles" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="minlokalebutik" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="minlokalebutik" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="dist" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="scripts" />
+              <option name="myItemId" value="app" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -409,153 +234,7 @@
       <recent name="D:\Bitwork\projects\testapp\app\views" />
     </key>
   </component>
-  <component name="RestoreUpdateTree">
-    <UpdateInfo date="Moments ago" ActionInfo="_Update">
-      <UpdatedFiles>
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Updated from server" />
-          <option name="myStatusName" value="Changed on server" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" value="CHANGED_ON_SERVER" />
-          <FILE-GROUP>
-            <option name="myUpdateName" value="Updated" />
-            <option name="myStatusName" value="Changed" />
-            <option name="mySupportsDeletion" value="false" />
-            <option name="myCanBeAbsent" value="false" />
-            <option name="myId" value="UPDATED" />
-            <PATH vcs="Git" revision="">$PROJECT_DIR$/.idea/workspace.xml</PATH>
-            <PATH vcs="Git" revision="">$PROJECT_DIR$/Gruntfile.js</PATH>
-            <PATH vcs="Git" revision="">$PROJECT_DIR$/app/index.html</PATH>
-            <PATH vcs="Git" revision="">$PROJECT_DIR$/app/scripts/app.js</PATH>
-            <PATH vcs="Git" revision="">$PROJECT_DIR$/app/scripts/controllers/butik.js</PATH>
-            <PATH vcs="Git" revision="">$PROJECT_DIR$/app/scripts/controllers/login.js</PATH>
-            <PATH vcs="Git" revision="">$PROJECT_DIR$/app/styles/main.css</PATH>
-            <PATH vcs="Git" revision="">$PROJECT_DIR$/app/views/butik.html</PATH>
-            <PATH vcs="Git" revision="">$PROJECT_DIR$/app/views/login.html</PATH>
-            <PATH vcs="Git" revision="">$PROJECT_DIR$/app/views/main.html</PATH>
-            <PATH vcs="Git" revision="">$PROJECT_DIR$/bower.json</PATH>
-            <PATH vcs="Git" revision="">$PROJECT_DIR$/dist/bower_components/angular-flash-messages/angular-flash.js</PATH>
-            <PATH vcs="Git" revision="">$PROJECT_DIR$/dist/index.html</PATH>
-            <PATH vcs="Git" revision="">$PROJECT_DIR$/dist/views/butik.html</PATH>
-            <PATH vcs="Git" revision="">$PROJECT_DIR$/dist/views/login.html</PATH>
-            <PATH vcs="Git" revision="">$PROJECT_DIR$/dist/views/main.html</PATH>
-          </FILE-GROUP>
-          <FILE-GROUP>
-            <option name="myUpdateName" value="Created" />
-            <option name="myStatusName" value="Created" />
-            <option name="mySupportsDeletion" value="false" />
-            <option name="myCanBeAbsent" value="false" />
-            <option name="myId" value="CREATED" />
-            <PATH vcs="Git" revision="">$PROJECT_DIR$/.idea/codeStyleSettings.xml</PATH>
-            <PATH vcs="Git" revision="">$PROJECT_DIR$/app/scripts/controllers/commonCtrl.js</PATH>
-            <PATH vcs="Git" revision="">$PROJECT_DIR$/dist/images/5cd82874.yeoman.png</PATH>
-            <PATH vcs="Git" revision="">$PROJECT_DIR$/dist/images/c85f1113.back1.jpg</PATH>
-            <PATH vcs="Git" revision="">$PROJECT_DIR$/dist/scripts/6c3dcd5a.scripts.js</PATH>
-            <PATH vcs="Git" revision="">$PROJECT_DIR$/dist/scripts/af028490.modules.js</PATH>
-            <PATH vcs="Git" revision="">$PROJECT_DIR$/dist/styles/4e7653ab.main.css</PATH>
-          </FILE-GROUP>
-          <FILE-GROUP>
-            <option name="myUpdateName" value="Deleted" />
-            <option name="myStatusName" value="Deleted" />
-            <option name="mySupportsDeletion" value="false" />
-            <option name="myCanBeAbsent" value="true" />
-            <option name="myId" value="REMOVED_FROM_REPOSITORY" />
-            <PATH vcs="Git" revision="">$PROJECT_DIR$/dist/images/09e76d31.yeoman.png</PATH>
-            <PATH vcs="Git" revision="">$PROJECT_DIR$/dist/scripts/82bf5045.scripts.js</PATH>
-            <PATH vcs="Git" revision="">$PROJECT_DIR$/dist/scripts/e0ee6cf4.modules.js</PATH>
-          </FILE-GROUP>
-          <FILE-GROUP>
-            <option name="myUpdateName" value="Restored" />
-            <option name="myStatusName" value="Will be restored" />
-            <option name="mySupportsDeletion" value="false" />
-            <option name="myCanBeAbsent" value="false" />
-            <option name="myId" value="RESTORED" />
-          </FILE-GROUP>
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Modified" />
-          <option name="myStatusName" value="Modified" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" value="MODIFIED" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Skipped" />
-          <option name="myStatusName" value="Skipped" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" value="SKIPPED" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Merged with conflicts" />
-          <option name="myStatusName" value="Will be merged with conflicts" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" value="MERGED_WITH_CONFLICTS" />
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/dist/styles/8596adf0.main.css</PATH>
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Merged with tree conflicts" />
-          <option name="myStatusName" value="Merged with tree conflicts" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" value="MERGED_WITH_TREE_CONFLICT" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Merged with property conflicts" />
-          <option name="myStatusName" value="Will be merged with property conflicts" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" value="MERGED_WITH_PROPERTY_CONFLICT" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Merged" />
-          <option name="myStatusName" value="Will be merged" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" value="MERGED" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Not in repository" />
-          <option name="myStatusName" value="Not in repository" />
-          <option name="mySupportsDeletion" value="true" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" value="UNKNOWN" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Locally added" />
-          <option name="myStatusName" value="Locally added" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" value="LOCALLY_ADDED" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Locally removed" />
-          <option name="myStatusName" value="Locally removed" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" value="LOCALLY_REMOVED" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Switched" />
-          <option name="myStatusName" value="Switched" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" value="SWITCHED" />
-        </FILE-GROUP>
-      </UpdatedFiles>
-    </UpdateInfo>
-  </component>
   <component name="RunManager" selected="JavaScript Debug.minlokalebutik">
-    <configuration default="true" type="DartUnitRunConfigurationType" factoryName="DartUnit">
-      <option name="VMOptions" />
-      <option name="arguments" />
-      <option name="filePath" />
-      <option name="scope" value="ALL" />
-      <option name="testName" />
-      <method />
-    </configuration>
     <configuration default="true" type="DartCommandLineRunConfigurationType" factoryName="Dart Command Line Application">
       <option name="VMOptions" />
       <option name="arguments" />
@@ -566,15 +245,23 @@
       <option name="showConsoleOnStdOut" value="false" />
       <method />
     </configuration>
+    <configuration default="true" type="DartUnitRunConfigurationType" factoryName="DartUnit">
+      <option name="VMOptions" />
+      <option name="arguments" />
+      <option name="filePath" />
+      <option name="scope" value="ALL" />
+      <option name="testName" />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavaScriptTestRunnerKarma" factoryName="Karma" singleton="true" config-file="">
+      <envs />
+      <method />
+    </configuration>
     <configuration default="true" type="JSTestDriver:ConfigurationType" factoryName="JsTestDriver">
       <setting name="configLocationType" value="CONFIG_FILE" />
       <setting name="settingsFile" value="" />
       <setting name="serverType" value="INTERNAL" />
       <setting name="preferredDebugBrowser" value="CHROME" />
-      <method />
-    </configuration>
-    <configuration default="true" type="JavaScriptTestRunnerKarma" factoryName="Karma" singleton="true" config-file="">
-      <envs />
       <method />
     </configuration>
     <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug" singleton="true" uri="http://localhost:63342/testapp/app/index.html">
@@ -584,7 +271,7 @@
       <browser start="false" url="" with-js-debugger="false" />
       <method />
     </configuration>
-    <configuration default="false" name="minlokalebutik" type="JavascriptDebugType" factoryName="JavaScript Debug" singleton="true" uri="http://localhost:63342/minlokalebutik/app/index.html">
+    <configuration default="false" name="minlokalebutik" type="JavascriptDebugType" factoryName="JavaScript Debug" singleton="true" uri="http://localhost:63343/minlokalebutik/app/index.html">
       <RunnerSettings RunnerId="JavascriptDebugRunner" />
       <ConfigurationWrapper RunnerId="JavascriptDebugRunner" />
       <method />
@@ -706,24 +393,24 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1" y="1" width="1597" height="898" extended-state="0" />
-    <editor active="false" />
+    <frame x="0" y="0" width="1920" height="1152" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32898173" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.43994778" sideWeight="0.49935898" order="11" side_tool="false" content_ui="tabs" x="9" y="367" width="1902" height="417" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.43948412" sideWeight="0.49920255" order="11" side_tool="false" content_ui="tabs" x="9" y="367" width="1902" height="417" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32898173" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24919923" sideWeight="0.709776" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.17115384" sideWeight="0.6340326" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4308094" sideWeight="0.5974359" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.17115384" sideWeight="0.36596736" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.43994778" sideWeight="0.50064105" order="8" side_tool="true" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.17065391" sideWeight="0.6324042" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.43055555" sideWeight="0.59702283" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.17065391" sideWeight="0.36585367" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.43055555" sideWeight="0.40297714" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32942328" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32767624" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32898173" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -759,10 +446,66 @@
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
-      <option name="time" value="91" />
+      <option name="time" value="99" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/app/scripts/controllers/butik.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="41" column="50" selection-start="1826" selection-end="1831" vertical-scroll-proportion="0.0" vertical-offset="697" max-vertical-offset="1309">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/scripts/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="43" column="51" selection-start="1068" selection-end="1068" vertical-scroll-proportion="0.0" vertical-offset="544" max-vertical-offset="1139">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/scripts/controllers/login.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="17" column="8" selection-start="504" selection-end="504" vertical-scroll-proportion="0.0" vertical-offset="187" max-vertical-offset="1071">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/butik.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="26" column="0" selection-start="681" selection-end="681" vertical-scroll-proportion="0.0" vertical-offset="442" max-vertical-offset="544">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/bower_components/angular/angular.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="10944" column="0" selection-start="366889" selection-end="366889" vertical-scroll-proportion="0.0" vertical-offset="186048" max-vertical-offset="345372">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/styles/main.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="33" selection-start="287" selection-end="287" vertical-scroll-proportion="0.0" vertical-offset="153" max-vertical-offset="527">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/styles/bootstrap.min.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="204">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="86" column="0" selection-start="2876" selection-end="2876" vertical-scroll-proportion="0.0" vertical-offset="1462" max-vertical-offset="1989">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/scripts/controllers/butik.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="16" column="0" selection-start="499" selection-end="499" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1292">
@@ -780,14 +523,7 @@
     <entry file="file://$PROJECT_DIR$/app/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="64" column="22" selection-start="2220" selection-end="2220" vertical-scroll-proportion="0.0" vertical-offset="867" max-vertical-offset="2057">
-          <folding>
-            <marker date="1393156251881" expanded="true" signature="250:3888" placeholder="..." />
-            <marker date="1393156251881" expanded="true" signature="776:3880" placeholder="..." />
-            <marker date="1393156251881" expanded="true" signature="798:3872" placeholder="..." />
-            <marker date="1393156251881" expanded="true" signature="849:1006" placeholder="..." />
-            <marker date="1393156251881" expanded="true" signature="942:974" placeholder="..." />
-            <marker date="1393156251881" expanded="true" signature="2170:2747" placeholder="..." />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -801,14 +537,7 @@
     <entry file="file://$PROJECT_DIR$/app/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="18" column="4" selection-start="612" selection-end="612" vertical-scroll-proportion="0.0" vertical-offset="187" max-vertical-offset="1972">
-          <folding>
-            <marker date="1393156251881" expanded="true" signature="250:3888" placeholder="..." />
-            <marker date="1393156251881" expanded="true" signature="776:3880" placeholder="..." />
-            <marker date="1393156251881" expanded="true" signature="798:3872" placeholder="..." />
-            <marker date="1393156251881" expanded="true" signature="849:1006" placeholder="..." />
-            <marker date="1393156251881" expanded="true" signature="942:974" placeholder="..." />
-            <marker date="1393156251881" expanded="true" signature="2170:2747" placeholder="..." />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -829,14 +558,7 @@
     <entry file="file://$PROJECT_DIR$/app/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="18" column="4" selection-start="612" selection-end="612" vertical-scroll-proportion="0.0" vertical-offset="187" max-vertical-offset="1972">
-          <folding>
-            <marker date="1393156251881" expanded="true" signature="250:3888" placeholder="..." />
-            <marker date="1393156251881" expanded="true" signature="776:3880" placeholder="..." />
-            <marker date="1393156251881" expanded="true" signature="798:3872" placeholder="..." />
-            <marker date="1393156251881" expanded="true" signature="849:1006" placeholder="..." />
-            <marker date="1393156251881" expanded="true" signature="942:974" placeholder="..." />
-            <marker date="1393156251881" expanded="true" signature="2170:2747" placeholder="..." />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -857,14 +579,7 @@
     <entry file="file://$PROJECT_DIR$/app/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="91" column="37" selection-start="3235" selection-end="3235" vertical-scroll-proportion="0.0" vertical-offset="1364" max-vertical-offset="1972">
-          <folding>
-            <marker date="1393156251881" expanded="true" signature="250:3888" placeholder="..." />
-            <marker date="1393156251881" expanded="true" signature="776:3880" placeholder="..." />
-            <marker date="1393156251881" expanded="true" signature="798:3872" placeholder="..." />
-            <marker date="1393156251881" expanded="true" signature="849:1006" placeholder="..." />
-            <marker date="1393156251881" expanded="true" signature="942:974" placeholder="..." />
-            <marker date="1393156251881" expanded="true" signature="2170:2747" placeholder="..." />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -909,13 +624,6 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Gruntfile.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="397" column="3" selection-start="9168" selection-end="9168" vertical-scroll-proportion="0.505291" vertical-offset="6558" max-vertical-offset="6936">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/bower_components/jquery/jquery.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="5373" column="64" selection-start="149867" selection-end="149867" vertical-scroll-proportion="4.0" vertical-offset="89577" max-vertical-offset="166311">
@@ -925,49 +633,22 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/login.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="714">
-          <folding />
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="714" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/scripts/controllers/main.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="0" selection-start="15" selection-end="15" vertical-scroll-proportion="0.084367245" vertical-offset="0" max-vertical-offset="403">
-          <folding />
-        </state>
+        <state line="2" column="0" selection-start="15" selection-end="15" vertical-scroll-proportion="0.084367245" vertical-offset="0" max-vertical-offset="403" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/robots.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="403">
-          <folding />
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="403" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="86" column="0" selection-start="2876" selection-end="2876" vertical-scroll-proportion="0.0" vertical-offset="1478" max-vertical-offset="1989">
-          <folding>
-            <marker date="1393156251881" expanded="true" signature="250:3888" placeholder="..." />
-            <marker date="1393156251881" expanded="true" signature="776:3880" placeholder="..." />
-            <marker date="1393156251881" expanded="true" signature="798:3872" placeholder="..." />
-            <marker date="1393156251881" expanded="true" signature="849:1006" placeholder="..." />
-            <marker date="1393156251881" expanded="true" signature="942:974" placeholder="..." />
-            <marker date="1393156251881" expanded="true" signature="2170:2747" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/butik.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="49" column="56" selection-start="2680" selection-end="2688" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2686">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/scripts/controllers/login.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="8" selection-start="504" selection-end="504" vertical-scroll-proportion="0.0" vertical-offset="187" max-vertical-offset="1071">
           <folding />
         </state>
       </provider>
@@ -981,28 +662,63 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/styles/main.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="33" selection-start="287" selection-end="287" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="527">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/bower_components/angular/angular.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="10944" column="0" selection-start="368780" selection-end="368780" vertical-scroll-proportion="0.0" vertical-offset="185916" max-vertical-offset="350438">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/scripts/controllers/butik.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="41" column="50" selection-start="1826" selection-end="1831" vertical-scroll-proportion="0.0" vertical-offset="408" max-vertical-offset="1088">
+        <state line="9" column="33" selection-start="287" selection-end="287" vertical-scroll-proportion="0.2843866" vertical-offset="0" max-vertical-offset="538">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/scripts/app.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="43" column="51" selection-start="1068" selection-end="1068" vertical-scroll-proportion="0.46401986" vertical-offset="544" max-vertical-offset="1139">
+        <state line="29" column="30" selection-start="696" selection-end="696" vertical-scroll-proportion="0.19888476" vertical-offset="386" max-vertical-offset="1139">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/scripts/controllers/login.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="4" column="61" selection-start="190" selection-end="190" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1105">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/alle-tilbud.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="5" column="0" selection-start="143" selection-end="143" vertical-scroll-proportion="-3.2692308" vertical-offset="0" max-vertical-offset="187">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/butik.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="5" column="30" selection-start="170" selection-end="170" vertical-scroll-proportion="-3.2692308" vertical-offset="0" max-vertical-offset="595">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Gruntfile.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="76" column="21" selection-start="1979" selection-end="1979" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="6936">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/tilbud.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="44" column="14" selection-start="2013" selection-end="2013" vertical-scroll-proportion="-11.115385" vertical-offset="459" max-vertical-offset="1292">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/bower_components/angular/angular.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11552" column="0" selection-start="390507" selection-end="390507" vertical-scroll-proportion="0.0" vertical-offset="196207" max-vertical-offset="345372">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/scripts/controllers/butik.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="73" column="7" selection-start="3227" selection-end="3227" vertical-scroll-proportion="0.43956044" vertical-offset="1001" max-vertical-offset="1547">
           <folding />
         </state>
       </provider>
