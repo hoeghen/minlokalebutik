@@ -2,10 +2,10 @@
 
 
 angular.module('testappApp')
-    .controller('ButikCtrl', function ($scope, $rootScope, $firebaseAuth, $firebase, $http, $timeout,$filter,AlertService) {
+    .controller('ButikCtrl', function ($scope, $rootScope, $firebaseAuth, $firebase, $http, $timeout, $filter, AlertService) {
         var ref = new Firebase('https://jobspot.firebaseio.com');
 
-        $scope.tilbud = {kort:"min bil",slut:$filter("date")(Date.now(), 'yyyy-MM-dd')};
+        $scope.tilbud = {kort: "min bil", slut: $filter("date")(Date.now(), 'yyyy-MM-dd')};
 
         $scope.getAlert = AlertService.getAlert;
 
@@ -13,7 +13,7 @@ angular.module('testappApp')
             $rootScope.auth = $firebaseAuth(ref, {path: '/login'});
         }
 
-       if ($rootScope.auth && $rootScope.auth.user) {
+        if ($rootScope.auth && $rootScope.auth.user) {
             $scope.butik = $firebase(ref).$child('users').$child($rootScope.auth.user.id).$child("butik");
 
         }
@@ -31,53 +31,62 @@ angular.module('testappApp')
                     if (data.status == "OK") {
                         console.log("RESULT =" + data);
                         if (data.results.length > 1) {
-                            AlertService.alert("der er flere adresser der passer, vær mere specifik","danger");
+                            AlertService.alert("der er flere adresser der passer, vær mere specifik", "danger");
 
-                            } else {
+                        } else {
                             if (data.results[0].partial_match) {
-                                AlertService.alert("butikkens adresse kan ikke findes på google maps, prøv en adresse tæt på","danger");
+                                AlertService.alert("butikkens adresse kan ikke findes på google maps, prøv en adresse tæt på", "danger");
 
                             } else {
                                 var butiklocation = data.results[0].geometry.location;
                                 $scope.butik.position = butiklocation;
                                 $scope.butik.tilbud = [];
                                 $scope.butik.$save();
-                                AlertService.alert("butikken er gemt","success",true);
+                                AlertService.alert("butikken er gemt", "success", true);
                             }
                         }
                     } else {
-                        AlertService.alert("et eksternt system fungerer ikke, prøv igen senere","danger");
+                        AlertService.alert("et eksternt system fungerer ikke, prøv igen senere", "danger");
                         console.log(data.status + ":" + data.error_message);
                     }
                 }).
                 error(function (data, status, headers, config) {
-                    AlertService.alert("butikkens adresse kan ikke findes på googlemaps","danger");
+                    AlertService.alert("butikkens adresse kan ikke findes på googlemaps", "danger");
                     console.log(data.status + ":" + data.error_message);
                 });
         };
 
 
-        $scope.addTilbud = function() {
-          var tilbud = $scope.tilbud;
-           $scope.butik.tilbud.push(tilbud);
-           $scope.butik.$save();
+        $scope.addTilbud = function () {
+            var tilbud = $scope.tilbud;
+            $scope.butik.tilbud.push(tilbud);
+            $scope.butik.$save();
         }
 
-    $scope.$watch('tilbud.forpris', function() {
-      if($scope.tilbud.pris > 0 && $scope.tilbud.forpris>0){
-        $scope.tilbud.rabat = (($scope.tilbud.forpris - $scope.tilbud.pris)/$scope.tilbud.forpris * 100);
-      }
-    });
-    $scope.$watch('tilbud.pris', function() {
-      if($scope.tilbud.pris > 0 && $scope.tilbud.forpris>0){
-          $scope.tilbud.rabat = (($scope.tilbud.forpris - $scope.tilbud.pris)/$scope.tilbud.forpris * 100);
-      }
-    });
-    $scope.$watch('tilbud.rabat', function() {
-      if($scope.tilbud.rabat > 0 && $scope.tilbud.forpris>0){
-        $scope.tilbud.pris = ($scope.tilbud.forpris - $scope.tilbud.forpris*$scope.tilbud.rabat/100).toFixed(2);
-      }
-    });
+        $scope.$watch('tilbud.forpris', function () {
+            if ($scope.tilbud.pris > 0 && $scope.tilbud.forpris > 0) {
+                $scope.tilbud.rabat = (($scope.tilbud.forpris - $scope.tilbud.pris) / $scope.tilbud.forpris * 100);
+            }
+        });
+        $scope.$watch('tilbud.pris', function () {
+            if ($scope.tilbud.forpris > 0 && $scope.tilbud.forpris > 0) {
+                if ($scope.active == 'pris') {
+                    $scope.tilbud.rabat = (($scope.tilbud.forpris - $scope.tilbud.pris) / $scope.tilbud.forpris * 100);
+                }
+            }
+         });
+        $scope.$watch('tilbud.rabat', function () {
+            if ($scope.tilbud.rabat > 0 && $scope.tilbud.forpris > 0) {
+                if ($scope.active == "rabat") {
+                    $scope.tilbud.pris = ($scope.tilbud.forpris - $scope.tilbud.forpris * $scope.tilbud.rabat / 100);
+
+                }
+            }
+        });
+
+        $scope.focus = function (element) {
+            $scope.active = element;
+        }
 
     });
 
