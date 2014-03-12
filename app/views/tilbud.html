@@ -8,7 +8,8 @@
             <label class="control-label col-sm-2" for="type">Varetype</label>
 
             <div class="col-sm-2">
-                <select id="type" ng-model="tilbud.type" name="type" class="form-control">
+                <select id="type" ng-model="tilbud.type" name="type" class="form-control" required="">
+                    <option></option>
                     <option>Hus</option>
                     <option>Have</option>
                     <option>Tøj</option>
@@ -36,11 +37,11 @@
             </div>
             <label class="control-label col-sm-2"> -  Kundens pris</label>
             <div class="col-sm-2">
-                <input id="pris" name="pris" type="number" ng-focus='focus("pris")' ng-model="tilbud.pris" placeholder="pris" class="form-control col-sm-2" min="0" step="0.25">
+                <input id="pris" name="pris" type="number" ng-focus='focus("pris")' ng-model="tilbud.pris" placeholder="pris" class="form-control col-sm-2" min="0" step="0.25" required="">
             </div>
             <label class="control-label col-sm-2"> = Rabat %</label>
             <div class="col-sm-2">
-                <input id="rabat" name="rabat" type="number" ng-focus = 'focus("rabat")' ng-model="tilbud.rabat" placeholder="rabat" class="form-control col-sm-2" min="0" step="1">
+                <input id="rabat" name="rabat" type="number" ng-focus = 'focus("rabat")' ng-model="tilbud.rabat" placeholder="rabat" class="form-control col-sm-2" min="0" step="1" required="">
             </div>
         </div>
 
