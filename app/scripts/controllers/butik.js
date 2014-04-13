@@ -21,6 +21,9 @@ angular.module('testappApp')
       $scope.butik = $firebase(ref).$child('users').$child($rootScope.auth.user.id).$child("butik");
 
     }
+
+    $scope.tabs = [{active:true},{active:false},{active:false},{active:false}];
+
     $scope.saveShop = function () {
       console.log("butik = " + $scope.butik);
 
@@ -65,6 +68,7 @@ angular.module('testappApp')
       var tilbud = $scope.tilbud;
       $scope.butik.tilbud.push(tilbud);
       $scope.butik.$save();
+        AlertService.alert("Dit tilbud er gemt", "success", true);
     }
 
     $scope.$watch('tilbud.forpris', function () {
@@ -92,6 +96,9 @@ angular.module('testappApp')
       $scope.active = element;
     }
 
+    $scope.edit = function(){
+           tabs[1].active = true;
+        }
   });
 
 

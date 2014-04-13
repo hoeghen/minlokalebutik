@@ -7,6 +7,11 @@ angular.module('testappApp', [
     'ngRoute', 'firebase',
     'ui.bootstrap'
   ])
+    .run(function($rootScope){
+        $rootScope.alert = function(text){alert(text);};
+    })
+
+
   .config(function ($routeProvider) {
     $routeProvider
       .when('/', {
@@ -29,6 +34,7 @@ angular.module('testappApp', [
       .otherwise({
         redirectTo: '/default'
       })
+
  });
 
 angular.module('testappApp')
