@@ -2,31 +2,30 @@
 
 
 angular.module('testappApp')
-    .controller('ButikCtrl', function ($scope, $rootScope, $firebaseAuth, $firebase, $http, $timeout, $filter, AlertService) {
-        var ref = new Firebase('https://jobspot.firebaseio.com');
+    .controller('ButikCtrl', function ($scope, $rootScope, $firebaseSimpleLogin, $firebase, $http, $timeout, $filter, AlertService) {
+        var ref = new Firebase($rootScope.firebaseref);
 
         Number.prototype.roundTo = function (n) {
             return Math.round(this / n) * n;
         }
+        clearTilbud();
 
-        $scope.tilbud = {slut: $filter("date")(Date.now(), 'yyyy-MM-dd')};
+
+        function clearTilbud(){
+          $scope.tilbud = {slut: new Date()};
+        }
 
         $scope.getAlert = AlertService.getAlert;
 
-        if (!$rootScope.auth) {
-            $rootScope.auth = $firebaseAuth(ref, {path: '/login'});
-        }
-
         if ($rootScope.auth && $rootScope.auth.user) {
-            $scope.butik = $firebase(ref).$child('users').$child($rootScope.auth.user.id).$child("butik");
-
+          var butikRef = $firebase(ref.child('users').child($rootScope.auth.user.id).child("butik"));
+          $scope.butik = butikRef.$asObject();
         }
 
         $scope.tabs = [
             {active: true},
             {active: false},
             {active: false},
-            {active: false}
         ];
 
         $scope.saveShop = function () {
@@ -70,10 +69,26 @@ angular.module('testappApp')
 
 
         $scope.addTilbud = function () {
+            if(!$scope.butik.tilbud){
+              $scope.butik.tilbud = [];
+            }
             var tilbud = $scope.tilbud;
-            $scope.butik.tilbud.push(tilbud);
-            $scope.butik.$save();
-            AlertService.alert("Dit tilbud er gemt", "success", true);
+            tilbud = angular.fromJson(angular.toJson(tilbud));
+            if(tilbud.index==null){
+              $scope.butik.tilbud.push(tilbud);
+            }else{
+              $scope.butik.tilbud[tilbud.index] = tilbud;
+              delete tilbud.index;
+            }
+            $scope.butik.$save().then(
+              function(data){
+                AlertService.alert("Dit tilbud er gemt", "success", true);
+                clearTilbud();
+              },
+              function(err){
+                AlertService.alert("Dit tilbud kunne ikke gemmes, prøv igen", "error", true);
+              }
+            );
         }
 
         $scope.$watch('tilbud.forpris', function () {
@@ -104,6 +119,8 @@ angular.module('testappApp')
         $scope.edit = function (index) {
             $scope.tabs[1].active = true;
             $scope.tilbud = $scope.butik.tilbud[index];
+            $scope.tilbud.slut = new Date($scope.tilbud.slut);
+            $scope.tilbud.index = index;
         }
         $scope.remove = function (index) {
             $scope.butik.tilbud.splice(index,1);

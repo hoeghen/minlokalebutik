@@ -1,36 +1,27 @@
 'use strict';
 
 angular.module('testappApp')
-  .controller('LoginCtrl', function ($rootScope, $scope, $firebaseAuth, $location) {
-    var ref = new Firebase('https://jobspot.firebaseio.com');
-    if (!$rootScope.auth) {
-      $rootScope.auth = $firebaseAuth(ref, {path: '/login'});
-    }
-
-    $rootScope.$on("$firebaseAuth:logout", function () {
-      log("User is logged out");
-    });
+  .controller('LoginCtrl', function ($rootScope, $scope, $firebaseSimpleLogin, $location) {
+    var ref = new Firebase($rootScope.firebaseref);
+    $scope.loginObj = $firebaseSimpleLogin(ref);
 
 
     $scope.login = function () {
-      $rootScope.auth.$login("password", {email: $scope.user.email, password: $scope.user.password}).then(function (user) {
-        log('Logged in as: ', user.uid);
-      }, function (error) {
+      $scope.loginObj.$login("password", {email: $scope.user.email, password: $scope.user.password}).then(
+        function (user) {
+          log('Logged in as: ' +  user.uid);
+          $rootScope.auth = $scope.loginObj;
+          if($rootScope.lastUrl){
+            $location.path($rootScope.lastUrl);
+          }
+        },
+        function (error) {
         log('Login failed: ', error);
-      })
+        })
     };
-
-    $scope.testLogin = function () {
-      $rootScope.auth.$login("password", {email: 'carverdk@gmail.com', password: 'wobler'}).then(function (user) {
-        log("Du er logget på som " + user.email);
-      }, function (error) {
-        log('Login failed: ', error);
-      });
-    };
-
 
     $scope.create = function () {
-      $rootScope.auth.$createUser($scope.user.email, $scope.user.password,
+      $scope.loginObj.$createUser($scope.user.email, $scope.user.password,
         function (error, user) {
           if (!error) {
             log("Du er oprettet");
@@ -40,7 +31,7 @@ angular.module('testappApp')
         });
     };
     $scope.logout = function () {
-      $rootScope.auth.$logout();
+      $scope.loginObj.$logout();
       $location.path('/');
     };
 

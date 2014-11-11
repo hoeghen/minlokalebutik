@@ -1,5 +1,5 @@
 <div class="well">
-    <form class="form-horizontal">
+    <form class="form-horizontal" ng-submit="addTilbud()">
         <!-- Form Name -->
         <legend>Tilbud</legend>
 
@@ -60,7 +60,7 @@
             <input id="slut" name="slut" type="date" placeholder="udløbsdato"  ng-model="tilbud.slut" required="" class="form-control">
             </div>
             <div class="col-sm-3">
-                <button id="gem" ng-click="addTilbud()" name="gem" class="form-control btn btn-primary">gem</button>
+                <button id="gem" type="submit" name="gem" class="form-control btn btn-primary">gem</button>
             </div>
 
 

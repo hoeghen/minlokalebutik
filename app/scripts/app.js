@@ -7,10 +7,9 @@ angular.module('testappApp', [
     'ngRoute', 'firebase',
     'ui.bootstrap'
   ])
-    .run(function($rootScope){
+  .run(function($rootScope){
         $rootScope.alert = function(text){alert(text);};
-    })
-
+  })
 
   .config(function ($routeProvider) {
     $routeProvider
@@ -35,7 +34,7 @@ angular.module('testappApp', [
         redirectTo: '/default'
       })
 
- });
+ })
 
 angular.module('testappApp')
   .service("AlertService",function($timeout){
@@ -63,5 +62,23 @@ angular.module('testappApp')
 
     });
 
+angular.module('testappApp').
+  run(function($rootScope) {
+    $rootScope.firebaseref = 'https://jobspot.firebaseio.com';
+});
+
+angular.module('testappApp').
+  run(['$rootScope', '$location','$firebaseSimpleLogin',
+    function($rootScope, $location,$firebaseSimpleLogin) {
+      $rootScope.$on("$routeChangeStart", function(e, next, prev, err) {
+        if(next.authRequired && (!$rootScope.auth || !$rootScope.auth.user)){
+          $location.path('/login');
+          $rootScope.lastUrl = next.$$route.originalPath;
+          e.preventDefault();
+        }
+      });
+
+
+    }]);
 
 
