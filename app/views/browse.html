@@ -1,5 +1,18 @@
 <div class="container" ng-controller="BrowseCtrl">
-    <h1>Browse gode tilbud {{myname}}</h1>
 
+    <div ng-repeat="tilbud in tilbudList">
+          <div class="panel" style="width: 10em">
+            <div class="row">
+              <div class="col-xs-12">
+                <h3>{{tilbud.kort}}</h3>
+              </div>
+              <div class="col-xs-3">
+                {{tilbud.lang}}
+              </div>
+              <div class="col-xs-1">
+                afstand:{{tilbud.distance}}
+              </div>
+              </div>
+          </div>
+    </div>
 </div>
-

@@ -5,5 +5,5 @@
 
 angular.module('testappApp')
   .controller('BrowseCtrl', function ($scope,dataService) {
-    $scope.users = dataService.getUsers();
+    $scope.tilbudList = dataService.getTilbud();
   });

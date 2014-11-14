@@ -4,20 +4,33 @@
 
 
 angular.module('testappApp').factory('dataService',['$firebase','$rootScope','$firebaseSimpleLogin',function($firebase,$rootScope,$firebaseSimpleLogin){
-  var ref = new Firebase('https://jobspot.firebaseio.com');
-  if (!$rootScope.auth) {
-    $rootScope.auth = $firebaseSimpleLogin(ref, {path: '/login'});
-  }
-
-  var sync = $firebase(ref);
+  var ref = new Firebase($rootScope.firebaseref);
 
   return {
       getButikForAuthUser : function(){
         return $firebase(ref).$child('users').$child($rootScope.auth.user.id).$child("butik");
       },
 
-      getUsers : function(){
-        return sync.$child('users');
+      getTilbud : function(){
+        var alleTibud = [];
+
+        var usersList = $firebase(ref.child('users')).$asArray();
+
+        usersList.$loaded().then(function() {
+          usersList.forEach(function(user){
+              var tilbudList = user.butik.tilbud;
+              if(tilbudList){
+                tilbudList.forEach(function(tilbud){
+                  tilbud.distance = 10;
+                  alleTibud.push(tilbud);
+                });
+              }
+            }
+          )
+        });
+
+        return alleTibud;
+
       }
 
   };
