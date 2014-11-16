@@ -1,6 +1,14 @@
 <!doctype html>
 <!--Conditionals for IE9 Support-->
-<!--[if IE 9]><html lang="en" class="ie ie9"><![endif]-->
+<!--[if lt IE 7]>
+<html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>
+<html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>
+<html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js"> <!--<![endif]-->
+
 <html>
   <head>
     <meta charset="utf-8">
@@ -35,7 +43,19 @@
   </head>
 
   <!--Body-->
-  <body>
+  <body ng-app="testappApp">
+
+  <!--Old Browser handling-->
+  <!--[if lt IE 7]>
+  <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade
+    your browser</a> to improve your experience.</p>
+  <![endif]-->
+
+  <!--[if lt IE 9]>
+  <script src="bower_components/es5-shim/es5-shim.js"></script>
+  <script src="bower_components/json3/lib/json3.min.js"></script>
+  <![endif]-->
+
 
   	<!--Page Preloading-->
     <div id="preloader"><div id="spinner"></div></div>
@@ -44,8 +64,8 @@
     <nav class="side-navi animated">
     	<ul>
       	<li class="current"><a class="tooltipped scroll-up" href="#" data-toggle="tooltip" data-placement="left" title="Hjem"></a></li>
-        <li><a class="tooltipped scroll" href="#features" data-toggle="tooltip" data-placement="left" title="Liste"></a></li>
-        <li><a class="tooltipped scroll" href="#charts" data-toggle="tooltip" data-placement="left" title="Kort"></a></li>
+        <li><a class="tooltipped scroll" href="#list" data-toggle="tooltip" data-placement="left" title="Liste"></a></li>
+        <li><a class="tooltipped scroll" href="#map" data-toggle="tooltip" data-placement="left" title="Kort"></a></li>
       </ul>
     </nav>
 
@@ -57,13 +77,14 @@
       	<div id="top-navi" class="row animated">
           <div class="col-lg-12">
             <nav class="top-navi pull-right">
-              <a href="#" data-toggle="modal" data-target="#loginModal"><i class="icon-user"></i>Login</a>
+              <a ng-hide="auth.user" href="#" data-toggle="modal" data-target="#loginModal"><i class="icon-user"></i>Login</a>
+              <a ng-show="auth.user" ng-click="auth.$logout()" href="/" >Logout</a>
             </nav>
           </div>
         </div>
 
         <!--Login Modal-->
-        <div class="light-skin modal fade" id="loginModal" tabindex="-1" role="form" aria-hidden="true">
+        <div ng-controller="LoginCtrl" ng-style="loginStyle" class="light-skin modal fade" id="loginModal" tabindex="-1" role="form" aria-hidden="true" >
           <div class="modal-dialog">
             <div class="modal-content">
               <div class="modal-header">
@@ -74,14 +95,15 @@
                 <form class="login-form" role="form">
                   <div class="form-group">
                     <label for="username">Username</label>
-                    <input type="text" class="form-control" id="username" placeholder="Enter Username" required>
+                    <input ng-model="user.email"  type="text" class="form-control" id="username" placeholder="Email" required>
                   </div>
                   <div class="form-group">
                     <label for="password">Password</label>
-                    <input type="password" class="form-control" id="password" placeholder="Enter Password" required>
+                    <input ng-model="user.password" type="password" class="form-control" id="password" placeholder="Enter Password"  required>
                   </div>
-                  <button type="submit" class="btn btn-primary">Login</button>
+                  <button ng-click="login()" type="submit" class="btn btn-primary">Login</button>
                 </form>
+                <alert ng-show="getAlert()" type="getAlert().type" close="getAlert().close()">{{getAlert().msg}}</alert>
               </div>
             </div><!-- /.modal-content -->
           </div><!-- /.modal-dialog -->
@@ -97,6 +119,9 @@
                 <p></p>
                 <a class="btn btn-primary scroll" href="#list">Find tilbud nu</a>
               </div>
+              <div class="col-lg-7 col-md-7 col-sm-7 animated fadeInRight">
+                <img class="pull-right" src="img/hero-slider/imac.png" width="689" height="659" alt="Components and Styles">
+              </div>
             </div>
           </div>
         </div><!--Close Hero Slider-->
@@ -108,7 +133,7 @@
     <section class="page-block" id="list">
     	<div class="container">
         <div class="row page-header">
-          <h2>Gallery</h2>
+          <h2>Kort</h2>
           <span>Subtext for header</span>
         </div>
         <div class="row">
@@ -122,7 +147,7 @@
     <section class="page-block" id="map">
     	<div class="container">
         <div class="row page-header">
-          <h2>Tilbud tæt på</h2>
+          <h2>Liste</h2>
           <span><input type="range" name="points" min="0" max="10"></span>
         </div>
         <div class="row">
@@ -214,7 +239,7 @@
     <!--Scroll To Top Button-->
     <div id="scroll-top" class="scroll-up"><i class="icon-arrow-up"></i></div>
 
-    <!--Javascript (jQuery) Libraries and Plugins-->
+    <!--Javascript (jQuery) Libraries and Plugins from Ultima theme-->
 		<script src="js/libs/jquery-1.10.2.min.js"></script>
 		<script src="js/libs/jquery.easing.1.3.js"></script>
 		<script src="js/plugins/bootstrap.min.js"></script>
@@ -229,6 +254,33 @@
 		<script src="js/plugins/waypoints.min.js"></script>
     <script src="js/plugins/smoothscroll.js"></script>
 		<script src="js/landing1.js"></script>
+
+  <script src='bower_components/firebase/firebase.js'></script>
+  <script src="bower_components/firebase-simple-login/firebase-simple-login.js"></script>
+  <script src="bower_components/angular/angular.js"></script>
+  <script src="bower_components/angularfire/angularfire.js"></script>
+
+
+  <!-- build:js scripts/modules.js -->
+  <script src="bower_components/angular-resource/angular-resource.js"></script>
+  <script src="bower_components/angular-cookies/angular-cookies.js"></script>
+  <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+  <script src="bower_components/angular-route/angular-route.js"></script>
+  <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+
+
+  <!-- endbuild -->
+
+  <!-- build:js({.tmp,app}) scripts/scripts.js -->
+  <script src="scripts/app.js"></script>
+  <script src="scripts/controllers/main.js"></script>
+  <script src="scripts/controllers/butik.js"></script>
+  <script src="scripts/controllers/login.js"></script>
+  <script src="scripts/controllers/browse.js"></script>
+  <script src="scripts/services/dataService.js"></script>
+
+  <!-- endbuild -->
+
 
   </body><!--Close Body-->
 </html>

@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('testappApp')
-  .controller('LoginCtrl', function ($rootScope, $scope, $firebaseSimpleLogin, $location) {
+  .controller('LoginCtrl', function ($rootScope, $scope, $firebaseSimpleLogin, $location,AlertService) {
     var ref = new Firebase($rootScope.firebaseref);
     $scope.loginObj = $firebaseSimpleLogin(ref);
 
@@ -14,6 +14,7 @@ angular.module('testappApp')
           if($rootScope.lastUrl){
             $location.path($rootScope.lastUrl);
           }
+          $scope.loginStyle = {display:'none'};
         },
         function (error) {
         log('Login failed: ', error);
@@ -32,7 +33,6 @@ angular.module('testappApp')
     };
     $scope.logout = function () {
       $scope.loginObj.$logout();
-      $location.path('/');
     };
 
 
@@ -41,7 +41,8 @@ angular.module('testappApp')
     };
 
     function log(text) {
-        console.log(text);
+        AlertService.alert(text, true);
+
     }
 
 
