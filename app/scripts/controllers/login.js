@@ -14,7 +14,7 @@ angular.module('testappApp')
           if($rootScope.lastUrl){
             $location.path($rootScope.lastUrl);
           }
-          $scope.loginStyle = {display:'none'};
+          $('#loginModal').modal('hide')
         },
         function (error) {
         log('Login failed: ', error);

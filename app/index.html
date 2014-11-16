@@ -64,8 +64,10 @@
     <nav class="side-navi animated">
     	<ul>
       	<li class="current"><a class="tooltipped scroll-up" href="#" data-toggle="tooltip" data-placement="left" title="Hjem"></a></li>
+        <li><a class="tooltipped scroll" href="#kort" data-toggle="tooltip" data-placement="left" title="Kort"></a></li>
         <li><a class="tooltipped scroll" href="#list" data-toggle="tooltip" data-placement="left" title="Liste"></a></li>
-        <li><a class="tooltipped scroll" href="#map" data-toggle="tooltip" data-placement="left" title="Kort"></a></li>
+        <li ng-show="auth.user"><a class="tooltipped scroll" href="#butik" data-toggle="tooltip" data-placement="left" title="Butik"></a></li>
+
       </ul>
     </nav>
 
@@ -78,13 +80,13 @@
           <div class="col-lg-12">
             <nav class="top-navi pull-right">
               <a ng-hide="auth.user" href="#" data-toggle="modal" data-target="#loginModal"><i class="icon-user"></i>Login</a>
-              <a ng-show="auth.user" ng-click="auth.$logout()" href="/" >Logout</a>
+              <a ng-show="auth.user" ng-click="auth.$logout()" href="#" ><i class="icon-user"></i>Logout</a>
             </nav>
           </div>
         </div>
 
         <!--Login Modal-->
-        <div ng-controller="LoginCtrl" ng-style="loginStyle" class="light-skin modal fade" id="loginModal" tabindex="-1" role="form" aria-hidden="true" >
+        <div ng-controller="LoginCtrl" class="light-skin modal fade" id="loginModal" tabindex="-1" role="form" aria-hidden="true" >
           <div class="modal-dialog">
             <div class="modal-content">
               <div class="modal-header">
@@ -128,9 +130,8 @@
       </div>
     </header><!--Close Header-->
 
-
-    <!--List-->
-    <section class="page-block" id="list">
+    <!--Kort-->
+    <section class="page-block" id="kort">
     	<div class="container">
         <div class="row page-header">
           <h2>Kort</h2>
@@ -143,8 +144,11 @@
     </section>
 
 
-    <!--Map-->
-    <section class="page-block" id="map">
+
+
+
+    <!--List-->
+    <section class="page-block" id="list">
     	<div class="container">
         <div class="row page-header">
           <h2>Liste</h2>
@@ -203,8 +207,21 @@
       </div>
     </section>
 
+  <!--Butik-->
+  <section ng-show="auth.user"  class="page-block" id="butik">
+    <div class="container">
+      <div class="row page-header">
+        <h2>Butik</h2>
+        <span>Indtast en ny butik eller ret i en eksisterende</span>
+      </div>
+      <div class="row">
+        <ng-include src="'views/butik.html'"></ng-include>
+      </div>
+    </div>
+  </section>
 
-    <!--Footer-->
+
+  <!--Footer-->
     <footer class="footer">
     	<div class="container">
       	<div class="row">

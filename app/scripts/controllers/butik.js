@@ -4,11 +4,21 @@
 angular.module('testappApp')
     .controller('ButikCtrl', function ($scope, $rootScope, $firebaseSimpleLogin, $firebase, $http, $timeout, $filter, AlertService) {
         var ref = new Firebase($rootScope.firebaseref);
+        var butikRef = null;
 
         Number.prototype.roundTo = function (n) {
             return Math.round(this / n) * n;
         }
         clearTilbud();
+
+        $rootScope.$watch('auth', function(newValue, oldValue) {
+          if(newValue !== oldValue){
+            if ($rootScope.auth && $rootScope.auth.user) {
+              butikRef = $firebase(ref.child('users').child($rootScope.auth.user.id).child("butik"));
+              $scope.butik = butikRef.$asObject();
+            }
+          }
+        });
 
 
         function clearTilbud(){
@@ -17,10 +27,6 @@ angular.module('testappApp')
 
         $scope.getAlert = AlertService.getAlert;
 
-        if ($rootScope.auth && $rootScope.auth.user) {
-          var butikRef = $firebase(ref.child('users').child($rootScope.auth.user.id).child("butik"));
-          $scope.butik = butikRef.$asObject();
-        }
 
         $scope.tabs = [
             {active: true},
@@ -35,7 +41,6 @@ angular.module('testappApp')
             var url = 'http://maps.googleapis.com/maps/api/geocode/json?address=';
             url = url + $scope.butik.vejnavn + "," + $scope.butik.husnummer + "," + $scope.butik.postnummer + "&sensor=false";
             console.log("URL =" + url);
-
 
             $http({method: 'GET', url: url}).
                 success(function (data, status, headers, config) {
