@@ -41,6 +41,7 @@ angular.module('testappApp')
         this.alertText = null;
         this.defaultFlashTime = 1000;
         var _self = this;
+
         this.getAlert = function() {
             return _self.alertText;
         };

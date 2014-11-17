@@ -1,9 +1,11 @@
 'use strict';
 
 angular.module('testappApp')
-  .controller('LoginCtrl', function ($rootScope, $scope, $firebaseSimpleLogin, $location,AlertService) {
+  .controller('LoginCtrl', function ($rootScope, $scope, $firebaseSimpleLogin, $location,AlertService,$anchorScroll) {
     var ref = new Firebase($rootScope.firebaseref);
     $scope.loginObj = $firebaseSimpleLogin(ref);
+
+    $scope.getAlert = AlertService.getAlert;
 
 
     $scope.login = function () {
@@ -13,7 +15,11 @@ angular.module('testappApp')
           $rootScope.auth = $scope.loginObj;
           if($rootScope.lastUrl){
             $location.path($rootScope.lastUrl);
+          }else{
+            $location.hash('butik');
+            $anchorScroll();
           }
+
           $('#loginModal').modal('hide')
         },
         function (error) {
@@ -41,8 +47,7 @@ angular.module('testappApp')
     };
 
     function log(text) {
-        AlertService.alert(text, true);
-
+        AlertService.alert(text,'danger',true);
     }
 
 

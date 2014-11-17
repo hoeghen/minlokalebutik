@@ -104,8 +104,8 @@
                     <input ng-model="user.password" type="password" class="form-control" id="password" placeholder="Enter Password"  required>
                   </div>
                   <button ng-click="login()" type="submit" class="btn btn-primary">Login</button>
+                  <alert ng-show="getAlert()" type="getAlert().type" close="getAlert().close()">{{getAlert().msg}}</alert>
                 </form>
-                <alert ng-show="getAlert()" type="getAlert().type" close="getAlert().close()">{{getAlert().msg}}</alert>
               </div>
             </div><!-- /.modal-content -->
           </div><!-- /.modal-dialog -->
@@ -130,7 +130,18 @@
       </div>
     </header><!--Close Header-->
 
-    <!--Kort-->
+  <!--Butik-->
+  <section ng-show="auth.user"  class="page-block" id="butik">
+    <div class="container">
+      <div class="row page-header">
+        <h2>Butik</h2>
+        <span>Indtast en ny butik eller ret i en eksisterende</span>
+      </div>
+      <ng-include src="'views/butik.html'"></ng-include>
+    </div>
+  </section>
+
+  <!--Kort-->
     <section class="page-block" id="kort">
     	<div class="container">
         <div class="row page-header">
@@ -152,54 +163,29 @@
     	<div class="container">
         <div class="row page-header">
           <h2>Liste</h2>
-          <span><input type="range" name="points" min="0" max="10"></span>
         </div>
-        <div class="row">
-        	<div class="col-lg-4 col-md-4 col-sm-4">
-          	<div class="pricing-plan">
-            	<div class="header">
-              	<h3>Bosch Græsslå maskine</h3>
-                <span class="price">2899,00 kr</span>
-            </div>
-              <div class="body">
-              	<uL>
-                	<li>200 m</li>
-                  <li>Christians Butik</li>
-                  <li>30%</li>
-                </uL>
-                <div class="buy-btn"><a class="btn btn-primary" href="#">Detaljer</a></div>
-              </div>
-            </div>
-          </div>
-        	<div class="col-lg-4 col-md-4 col-sm-4">
-          	<div class="pricing-plan highlited">
-            	<div class="header">
-              	<h3>Pricing Plan 02</h3>
-                <span class="price">19.99 $</span>
-              </div>
-              <div class="body">
-              	<uL>
-                	<li>Lots of Components</li>
-                  <li>Cool Icons</li>
-                  <li>Unlimited colors</li>
-                </uL>
-                <div class="buy-btn"><a class="btn btn-primary" href="#">Buy</a></div>
-              </div>
-            </div>
-          </div>
-        	<div class="col-lg-4 col-md-4 col-sm-4">
-          	<div class="pricing-plan">
-            	<div class="header">
-              	<h3>Pricing Plan 03</h3>
-                <span class="price">149.99 $</span>
-              </div>
-              <div class="body">
-              	<uL>
-                	<li>Lots of Components</li>
-                  <li>Cool Icons</li>
-                  <li>Unlimited colors</li>
-                </uL>
-                <div class="buy-btn"><a class="btn btn-primary" href="#">Buy</a></div>
+
+        <p>
+          <input ng-model="search.text" placeholder="filter"/>
+        </p>
+
+
+        <div class="row" ng-controller="BrowseCtrl">
+          <div ng-repeat="tilbud in tilbudList | filter:search.text">
+            <div class="col-lg-4 col-md-4 col-sm-4">
+              <div class="pricing-plan">
+                <div class="header">
+                  <h3>{{tilbud.kort}}</h3>
+                  <span class="price">{{tilbud.pris}} kr</span>
+                </div>
+                <div class="body">
+                  <uL>
+                    <li>200 m</li>
+                    <li>Christians Butik</li>
+                    <li>{{tilbud.kort}}</li>
+                  </uL>
+                  <div class="buy-btn"><a class="btn btn-primary" href="#">Detaljer</a></div>
+                </div>
               </div>
             </div>
           </div>
@@ -207,18 +193,6 @@
       </div>
     </section>
 
-  <!--Butik-->
-  <section ng-show="auth.user"  class="page-block" id="butik">
-    <div class="container">
-      <div class="row page-header">
-        <h2>Butik</h2>
-        <span>Indtast en ny butik eller ret i en eksisterende</span>
-      </div>
-      <div class="row">
-        <ng-include src="'views/butik.html'"></ng-include>
-      </div>
-    </div>
-  </section>
 
 
   <!--Footer-->
