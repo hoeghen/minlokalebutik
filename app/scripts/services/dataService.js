@@ -3,56 +3,81 @@
  */
 
 
-angular.module('testappApp').factory('dataService',['$firebase','$rootScope','$firebaseSimpleLogin',function($firebase,$rootScope,$firebaseSimpleLogin){
+angular.module('testappApp').factory('dataService', ['$firebase', '$rootScope',  function ($firebase, $rootScope) {
   var ref = new Firebase($rootScope.firebaseref);
+  var alleTilbud = [];
+  var currentPosition;
+
+  if (typeof(Number.prototype.toRad) === "undefined") {
+    Number.prototype.toRad = function() {
+      return this * Math.PI / 180;
+    }
+  }
+
+  var getAlleTilbud = function(){
+    alleTilbud = $firebase(ref.child('alletilbud')).$asArray();
+    alleTilbud.$loaded().then(function () {
+      alleTilbud.forEach(function (tilbud) {
+              tilbud.distance = "ukendt";
+        }
+      )
+      getLocation(updateAllDistances);
+    });
+    return alleTilbud;
+  }
+
+  var calculateDistance = function(p1, p2) { // Points are Geolocation.coords objects
+    var R = 6371; // earth's mean radius in km
+    var dLat  = (p2.lat - p1.coords.latitude).toRad();
+    var dLong = (p2.lng - p1.coords.longitude).toRad();
+
+    var a = Math.sin(dLat/2) * Math.sin(dLat/2) +
+      Math.cos(p1.coords.latitude.toRad()) * Math.cos(p2.lat.toRad()) * Math.sin(dLong/2) * Math.sin(dLong/2);
+    var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
+    var d = R * c;
+    return d.toFixed(3)*1000;
+  }
+
+
+  var getLocation = function(updateFunction) {
+    if (navigator.geolocation) {
+      navigator.geolocation.watchPosition(function (position) {
+        currentPosition = position;
+        updateFunction();
+      }, handlePositionError);
+    }
+  }
+
+
+  var updateDistance = function (tilbud) {
+    tilbud.distance = calculateDistance(currentPosition, tilbud.butik.position) + "m" ;
+  }
+
+  var updateAllDistances = function () {
+    $rootScope.$apply(function(){
+      alleTilbud.forEach(updateDistance);
+    })
+
+  }
+
+  var handlePositionError = function (error) {
+    console.log("Position Error:" + error);
+  }
+
+  if (navigator.geolocation) {
+  }
+
+
+
 
   return {
-      getButikForAuthUser : function(){
-        return $firebase(ref).$child('users').$child($rootScope.auth.user.id).$child("butik");
-      },
-
-
-      getTilbud : function(){
-        var alleTibud = [];
-        var _self = this;
-
-        var usersList = $firebase(ref.child('users')).$asArray();
-        var myLocation = getLocation();
-
-
-        usersList.$loaded().then(function() {8
-          usersList.forEach(function(user){
-              var tilbudList = user.butik.tilbud;
-              if(tilbudList){
-                tilbudList.forEach(function(tilbud){
-                  if(myLocation){
-                    tilbud.distance = distance(myLocation,user.butik.position);
-                  }
-                  tilbud.butik = user.butik;
-                  alleTibud.push(tilbud);
-                });
-              }
-            }
-          )
-        });
-
-        getLocation = function myLocation() {
-          if (navigator.geolocation) {
-            navigator.geolocation.getCurrentPosition(function (position) {
-              return position;
-            });
-          }
-        }
-
-        distance = function(lat1,lat2) {
-          var φ1 = lat1.toRadians(), φ2 = lat2.toRadians(), Δλ = (lon2-lon1).toRadians(), R = 6371; // gives d in km
-          var d = Math.acos( Math.sin(φ1)*Math.sin(φ2) + Math.cos(φ1)*Math.cos(φ2) * Math.cos(Δλ) ) * R;
-          var d = R * c;
-        return d *1000;
-      }
-    return alleTibud;
-
-      }
-
+    getButikForAuthUser: function () {
+      return $firebase(ref).$child('users').$child($rootScope.auth.uid).$child("butik");
+    },
+    getTilbud: getAlleTilbud,
+    calculateDistance : calculateDistance,
+    getLocation : getLocation
   };
-  }])
+
+
+}])

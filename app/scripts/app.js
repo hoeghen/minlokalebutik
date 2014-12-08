@@ -52,7 +52,7 @@ angular.module('testappApp')
             if(timeout){
                 $timeout(function () {
                     _self.alertText = null
-                }, 1000);
+                }, 3000);
             }
             console.log(text);
         }
@@ -69,10 +69,10 @@ angular.module('testappApp').
 });
 
 angular.module('testappApp').
-  run(['$rootScope', '$location','$firebaseSimpleLogin',
-    function($rootScope, $location,$firebaseSimpleLogin) {
+  run(['$rootScope', '$location',
+    function($rootScope, $location) {
       $rootScope.$on("$routeChangeStart", function(e, next, prev, err) {
-        if(next.authRequired && (!$rootScope.auth || !$rootScope.auth.user)){
+        if(next.authRequired && (!$rootScope.auth || !$rootScope.auth.uid)){
           $location.path('/login');
           $rootScope.lastUrl = next.$$route.originalPath;
           e.preventDefault();

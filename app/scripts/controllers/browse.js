@@ -4,6 +4,7 @@
 'use strict';
 
 angular.module('testappApp')
-  .controller('BrowseCtrl', function ($scope,dataService) {
-    $scope.tilbudList = dataService.getTilbud();
-  });
+  .controller('BrowseCtrl', function ($scope, dataService) {
+    $scope.alleTilbud = dataService.getTilbud();
+
+ });

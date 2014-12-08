@@ -13,9 +13,9 @@
     <th>Rabat</th>
     <th>Ret/Slet</th>
   </tr>
-    <tr ng-repeat="tilbud in butik.tilbud | filter:search.text">
+    <tr ng-repeat="tilbud in getTilbud() | filter:search.text">
       <td>1</td>
-      <td>{{tilbud.slut}}</td>
+      <td>{{tilbud.slut | date : 'shortDate'}}</td>
       <td>{{tilbud.type}}</td>
       <td>{{tilbud.kort}}</td>
       <td>{{tilbud.pris}}</td>

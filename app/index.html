@@ -66,7 +66,7 @@
       	<li class="current"><a class="tooltipped scroll-up" href="#" data-toggle="tooltip" data-placement="left" title="Hjem"></a></li>
         <li><a class="tooltipped scroll" href="#kort" data-toggle="tooltip" data-placement="left" title="Kort"></a></li>
         <li><a class="tooltipped scroll" href="#list" data-toggle="tooltip" data-placement="left" title="Liste"></a></li>
-        <li ng-show="auth.user"><a class="tooltipped scroll" href="#butik" data-toggle="tooltip" data-placement="left" title="Butik"></a></li>
+        <li ng-show="auth"><a class="tooltipped scroll" href="#butik" data-toggle="tooltip" data-placement="left" title="Butik"></a></li>
 
       </ul>
     </nav>
@@ -79,8 +79,8 @@
       	<div id="top-navi" class="row animated">
           <div class="col-lg-12">
             <nav class="top-navi pull-right">
-              <a ng-hide="auth.user" href="#" data-toggle="modal" data-target="#loginModal"><i class="icon-user"></i>Login</a>
-              <a ng-show="auth.user" ng-click="auth.$logout()" href="#" ><i class="icon-user"></i>Logout</a>
+              <a ng-hide="auth" href="#" data-toggle="modal" data-target="#loginModal"><i class="icon-user"></i>Login</a>
+              <a ng-show="auth" ng-click="auth.$logout()" href="#" ><i class="icon-user"></i>Logout</a>
             </nav>
           </div>
         </div>
@@ -131,7 +131,7 @@
     </header><!--Close Header-->
 
   <!--Butik-->
-  <section ng-show="auth.user"  class="page-block" id="butik">
+  <section ng-show="auth"  class="page-block" id="butik">
     <div class="container">
       <div class="row page-header">
         <h2>Butik</h2>
@@ -171,7 +171,7 @@
 
 
         <div class="row" ng-controller="BrowseCtrl">
-          <div ng-repeat="tilbud in tilbudList | filter:search.text">
+          <div ng-repeat="tilbud in alleTilbud | filter:search.text">
             <div class="col-lg-4 col-md-4 col-sm-4">
               <div class="pricing-plan">
                 <div class="header">
@@ -180,8 +180,8 @@
                 </div>
                 <div class="body">
                   <uL>
-                    <li>200 m</li>
-                    <li>Christians Butik</li>
+                    <li>{{tilbud.distance}}</li>
+                    <li>{{tilbud.butik.navn}}</li>
                     <li>{{tilbud.kort}}</li>
                   </uL>
                   <div class="buy-btn"><a class="btn btn-primary" href="#">Detaljer</a></div>
@@ -249,7 +249,7 @@
   <script src='bower_components/firebase/firebase.js'></script>
   <script src="bower_components/firebase-simple-login/firebase-simple-login.js"></script>
   <script src="bower_components/angular/angular.js"></script>
-  <script src="bower_components/angularfire/angularfire.js"></script>
+  <script src="bower_components/angularfire/dist/angularfire.js"></script>
 
 
   <!-- build:js scripts/modules.js -->

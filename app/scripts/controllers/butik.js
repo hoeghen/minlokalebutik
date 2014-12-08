@@ -2,27 +2,32 @@
 
 
 angular.module('testappApp')
-    .controller('ButikCtrl', function ($scope, $rootScope, $firebaseSimpleLogin, $firebase, $http, $timeout, $filter, AlertService) {
+    .controller('ButikCtrl', function ($scope, $rootScope, $firebase, $http, $timeout, $filter, AlertService) {
         var ref = new Firebase($rootScope.firebaseref);
-        var butikRef = null;
+        var butikRef;
+        var alleTilbud = $firebase(ref.child("alletilbud")).$asArray();
+
+        $scope.alleTilbud = alleTilbud;
 
         Number.prototype.roundTo = function (n) {
             return Math.round(this / n) * n;
         }
-        clearTilbud();
 
         $rootScope.$watch('auth', function(newValue, oldValue) {
           if(newValue !== oldValue){
-            if ($rootScope.auth && $rootScope.auth.user) {
-              butikRef = $firebase(ref.child('users').child($rootScope.auth.user.id).child("butik"));
-              $scope.butik = butikRef.$asObject();
+            if ($rootScope.auth && $rootScope.auth.uid) {
+              butikRef = ref.child('users').child($rootScope.auth.uid).child("butik")
+              $scope.butik = $firebase(butikRef).$asObject();
             }
           }
         });
 
 
-        function clearTilbud(){
-          $scope.tilbud = {slut: new Date()};
+        $scope.clearTilbud = function(){
+          var weekFromNow = new Date();
+          weekFromNow.setDate(weekFromNow.getDate()+7);
+          $scope.tilbud = {slut: weekFromNow}
+
         }
 
         $scope.getAlert = AlertService.getAlert;
@@ -36,8 +41,6 @@ angular.module('testappApp')
 
         $scope.saveShop = function () {
             console.log("butik = " + $scope.butik);
-
-
             var url = 'http://maps.googleapis.com/maps/api/geocode/json?address=';
             url = url + $scope.butik.vejnavn + "," + $scope.butik.husnummer + "," + $scope.butik.postnummer + "&sensor=false";
             console.log("URL =" + url);
@@ -56,7 +59,6 @@ angular.module('testappApp')
                             } else {
                                 var butiklocation = data.results[0].geometry.location;
                                 $scope.butik.position = butiklocation;
-                                $scope.butik.tilbud = [];
                                 $scope.butik.$save();
                                 AlertService.alert("butikken er gemt", "success", true);
                             }
@@ -74,29 +76,41 @@ angular.module('testappApp')
 
 
         $scope.addTilbud = function () {
-            if(!$scope.butik.tilbud){
-              $scope.butik.tilbud = [];
-            }
             var tilbud = $scope.tilbud;
-            tilbud = angular.fromJson(angular.toJson(tilbud));
-            if(tilbud.index==null){
-              $scope.butik.tilbud.push(tilbud);
+            if(tilbud.$id){
+              var item = alleTilbud.$getRecord(tilbud.$id);
+              item.slut = angular.fromJson(angular.toJson(item.slut));
+              alleTilbud.$save(item).then(function(ref){
+                AlertService.alert("Dit tilbud er updateret", "success", true);
+              },function(cause){
+                AlertService.alert("Kunne ikke gemme dit tilbud", "error", true);
+              });
             }else{
-              $scope.butik.tilbud[tilbud.index] = tilbud;
-              delete tilbud.index;
+              tilbud.butik = $scope.butik;
+              alleTilbud.$add(tilbud).then(function(tilbudRef){
+                if(!$scope.butik.tilbud){
+                  $scope.butik.tilbud = [];
+                }
+                $scope.butik.tilbud.push(tilbudRef.key());
+                saveButik();
+              },function(reason){log.console("save tilbud failed:"+reason)});
             }
-            $scope.butik.$save().then(
-              function(data){
-                AlertService.alert("Dit tilbud er gemt", "success", true);
-                clearTilbud();
-              },
-              function(err){
-                AlertService.alert("Dit tilbud kunne ikke gemmes, prøv igen", "error", true);
-              }
-            );
-        }
 
-        $scope.$watch('tilbud.forpris', function () {
+       }
+
+    function saveButik() {
+      $scope.butik.$save().then(
+        function (data) {
+          AlertService.alert("Dit tilbud er gemt", "success", true);
+          $scope.clearTilbud();
+        },
+        function (err) {
+          AlertService.alert("Dit tilbud kunne ikke gemmes, prøv igen", "error", true);
+        }
+      );
+    }
+
+    $scope.$watch('tilbud.forpris', function () {
             if ($scope.tilbud.pris > 0 && $scope.tilbud.forpris > 0) {
                 $scope.tilbud.rabat = Number((($scope.tilbud.forpris - $scope.tilbud.pris) / $scope.tilbud.forpris * 100).toFixed(0));
             }
@@ -123,14 +137,30 @@ angular.module('testappApp')
 
         $scope.edit = function (index) {
             $scope.tabs[1].active = true;
-            $scope.tilbud = $scope.butik.tilbud[index];
+            $scope.tilbud = alleTilbud.$getRecord($scope.butik.tilbud[index])
             $scope.tilbud.slut = new Date($scope.tilbud.slut);
-            $scope.tilbud.index = index;
         }
         $scope.remove = function (index) {
+            var id = $scope.butik.tilbud[index].$id;
+            var item = alleTilbud.$getRecord(id);
+            alleTilbud.$remove(item)
             $scope.butik.tilbud.splice(index,1);
             $scope.butik.$save();
         }
-    });
+
+        $scope.getTilbud = function(){
+      var list = [];
+      if($scope.butik && $scope.butik.tilbud){
+        $scope.butik.tilbud.forEach(function(tilref){
+          var tilbud = alleTilbud.$getRecord(tilref);
+          list.push(tilbud);
+        })
+      }
+      return list;
+    }
+
+    $scope.clearTilbud();
+
+  }); // end of controller def
 
 

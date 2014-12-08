@@ -1,31 +1,32 @@
 'use strict';
 
 angular.module('testappApp')
-  .controller('LoginCtrl', function ($rootScope, $scope, $firebaseSimpleLogin, $location,AlertService,$anchorScroll) {
+  .controller('LoginCtrl', function ($rootScope, $scope, $firebaseAuth, $location,AlertService,$anchorScroll) {
     var ref = new Firebase($rootScope.firebaseref);
-    $scope.loginObj = $firebaseSimpleLogin(ref);
-
     $scope.getAlert = AlertService.getAlert;
 
-
     $scope.login = function () {
-      $scope.loginObj.$login("password", {email: $scope.user.email, password: $scope.user.password}).then(
-        function (user) {
-          log('Logged in as: ' +  user.uid);
-          $rootScope.auth = $scope.loginObj;
-          if($rootScope.lastUrl){
-            $location.path($rootScope.lastUrl);
-          }else{
-            $location.hash('butik');
-            $anchorScroll();
-          }
-
-          $('#loginModal').modal('hide')
-        },
-        function (error) {
-        log('Login failed: ', error);
-        })
+      var token = {email: $scope.user.email, password: $scope.user.password};
+      $scope.loginObj = $firebaseAuth(ref);
+      $scope.loginObj.$authWithPassword(token).then(handleLogin).catch(handleLoginError)
     };
+
+    var handleLogin = function(user) {
+        log('Logged in as: ' + user.uid);
+        $rootScope.auth = $scope.loginObj.$getAuth();
+        if ($rootScope.lastUrl) {
+          $location.path($rootScope.lastUrl);
+        } else {
+          $location.hash('butik');
+          $anchorScroll();
+        }
+        $('#loginModal').modal('hide')
+    }
+
+    var handleLoginError = function(error) {
+      log('Login failed: ', error);
+    }
+
 
     $scope.create = function () {
       $scope.loginObj.$createUser($scope.user.email, $scope.user.password,
@@ -38,7 +39,7 @@ angular.module('testappApp')
         });
     };
     $scope.logout = function () {
-      $scope.loginObj.$logout();
+      $scope.loginObj.$unauth();
     };
 
 
