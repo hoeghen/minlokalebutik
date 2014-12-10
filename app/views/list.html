@@ -1,0 +1,36 @@
+<section class="page-block" id="list">
+  <div class="container">
+    <div class="row page-header">
+      <h2>Liste</h2>
+    </div>
+
+    <p>
+      <input class="form-control" ng-model="search.text" placeholder="filter"/>
+    </p>
+
+
+    <div class="row" ng-controller="BrowseCtrl">
+      <div ng-repeat="tilbud in alleTilbud | filter:search.text">
+        <div class="col-lg-4 col-md-4 col-sm-4">
+          <div class="pricing-plan">
+            <div class="header">
+              <h3>{{tilbud.kort}}</h3>
+              <span class="price">{{tilbud.rabat}}%</span>
+            </div>
+            <div class="body">
+              <uL>
+                <li>{{tilbud.pris}} kr</li>
+                <li>{{tilbud.distance}}</li>
+                <li>{{tilbud.butik.navn}}</li>
+                <li ng-show="showdetails">{{tilbud.type}}</li>
+                <li ng-show="showdetails">{{tilbud.lang}}</li>
+                <li ng-show="showdetails">Udløber {{tilbud.slut | date}}</li>
+              </uL>
+              <div class="buy-btn"><a class="btn btn-primary" ng-click="showdetails = !showdetails">Detaljer</a></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

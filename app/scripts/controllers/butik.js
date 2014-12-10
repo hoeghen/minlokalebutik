@@ -2,7 +2,7 @@
 
 
 angular.module('testappApp')
-    .controller('ButikCtrl', function ($scope, $rootScope, $firebase, $http, $timeout, $filter, AlertService) {
+    .controller('ButikCtrl', function (dataService,$scope, $rootScope, $firebase, $http, $timeout, $filter, AlertService) {
         var ref = new Firebase($rootScope.firebaseref);
         var butikRef;
         var alleTilbud = $firebase(ref.child("alletilbud")).$asArray();
@@ -80,6 +80,8 @@ angular.module('testappApp')
             if(tilbud.$id){
               var item = alleTilbud.$getRecord(tilbud.$id);
               item.slut = angular.fromJson(angular.toJson(item.slut));
+              $scope.clearTilbud();
+              dataService.updateDistance(tilbud);
               alleTilbud.$save(item).then(function(ref){
                 AlertService.alert("Dit tilbud er updateret", "success", true);
               },function(cause){
@@ -87,6 +89,9 @@ angular.module('testappApp')
               });
             }else{
               tilbud.butik = $scope.butik;
+              $scope.clearTilbud();
+              tilbud.slut = angular.fromJson(angular.toJson(tilbud.slut));
+              dataService.updateDistance(tilbud);
               alleTilbud.$add(tilbud).then(function(tilbudRef){
                 if(!$scope.butik.tilbud){
                   $scope.butik.tilbud = [];

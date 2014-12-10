@@ -76,7 +76,8 @@ angular.module('testappApp').factory('dataService', ['$firebase', '$rootScope', 
     },
     getTilbud: getAlleTilbud,
     calculateDistance : calculateDistance,
-    getLocation : getLocation
+    getLocation : getLocation,
+    updateDistance : updateDistance
   };
 
 

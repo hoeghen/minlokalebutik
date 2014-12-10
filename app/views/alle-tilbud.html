@@ -5,7 +5,6 @@
 <table class="table-hover">
   <tbody>
   <tr>
-    <th>Start Dato</th>
     <th>Slut Dato</th>
     <th>Type</th>
     <th>Kort Beskrivelse</th>
@@ -14,15 +13,14 @@
     <th>Ret/Slet</th>
   </tr>
     <tr ng-repeat="tilbud in getTilbud() | filter:search.text">
-      <td>1</td>
-      <td>{{tilbud.slut | date : 'shortDate'}}</td>
+      <td>{{tilbud.slut | date}}</td>
       <td>{{tilbud.type}}</td>
       <td>{{tilbud.kort}}</td>
       <td>{{tilbud.pris}}</td>
-      <td>{{tilbud.rabat}}</td>
+      <td>{{tilbud.rabat}}%</td>
       <td>
-        <button ng-click="remove($index)" title="slet"><i class="fa fa-eraser"></i></span></button>
         <button ng-click="edit($index)" title="ret"><i class="fa fa-pencil"></i></button>
+        <button ng-click="remove($index)" title="slet"><i class="fa fa-eraser"></i></span></button>
       </td>
     </tr>
   </tbody>

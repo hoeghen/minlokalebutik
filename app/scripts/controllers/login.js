@@ -29,14 +29,16 @@ angular.module('testappApp')
 
 
     $scope.create = function () {
-      $scope.loginObj.$createUser($scope.user.email, $scope.user.password,
-        function (error, user) {
-          if (!error) {
+      $scope.loginObj = $firebaseAuth(ref);
+      $scope.loginObj.$createUser($scope.user.email, $scope.user.password).then(
+        function () {
             log("Du er oprettet");
-          }else{
+            AlertService.alert("Velkommen til min lokalebutik",'success',true);
+            $scope.login();
+          },function(){
             log("Du kan ikke oprettes, prøv med en anden email/password kombination");
-          }
-        });
+
+          });
     };
     $scope.logout = function () {
       $scope.loginObj.$unauth();
