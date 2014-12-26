@@ -7,7 +7,7 @@
 *, *:before, *:after {
   -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
  }
- 
+
 /*Clearfix*/
 .group:after {
 	visibility: hidden;
@@ -58,7 +58,7 @@ iframe {
 	max-width: 205px;
 	height: auto;
 	float: left;
-	margin-top: 12px; 
+	margin-top: 12px;
 }
 .stiky-header .logo img,
 .stiky-header .logo-mobile img {
@@ -91,7 +91,7 @@ iframe {
 	border-top: 4px solid transparent;
 	color: #313447;
 	font-size: 1.2em;
-	font-weight: 300;	
+	font-weight: 300;
 	-webkit-transition: all 300ms ease;
 	-moz-transition: all 300ms ease;
 	transition: all 300ms ease;
@@ -179,7 +179,7 @@ iframe {
 	background: #e0e0e0;
 }
 @media screen and (max-width: 991px) {
-	.main-navi { 
+	.main-navi {
 		height: 280px;
 		overflow-y: auto !important;
 	}
@@ -193,7 +193,7 @@ iframe {
 		display: block;
 		position:relative;
 		width: 100%;
-		max-height:0px; 
+		max-height:0px;
 		font-size: 0.98em;
 		overflow: hidden;
 		padding: 0px 20px;
@@ -209,7 +209,7 @@ iframe {
 	.main-navi ul li.has-dropdown .dropdown.expanded {
 		max-height: 800px;
 	}
-	.main-navi ul li.has-dropdown a { 
+	.main-navi ul li.has-dropdown a {
 		position: relative;
 		padding-right: 60px;
 	}
@@ -339,6 +339,9 @@ ul li:before {
 	color: #9a9ba4;
 	font-size: 0.67em;
 }
+div.typeahead ul li:before {
+}
+
 ul li ul {
 	font-size: 1em;
 	padding-left: 32px;
@@ -748,7 +751,7 @@ button {
   -webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.25);
   box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.25);
 }
-.btn-default, 
+.btn-default,
 .btn-primary,
 .btn-success,
 .btn-danger {
@@ -1829,7 +1832,7 @@ img {
 	margin: 0 0 20px 30px;
 	color: #ffffff;
 	font-size: 1.2em;
-	font-weight: 300;	
+	font-weight: 300;
 	-webkit-transition: all 250ms ease;
 	-moz-transition: all 250ms ease;
 	transition: all 250ms ease;
@@ -2675,7 +2678,7 @@ div.line {
 		z-index: 100;
 	}
 	.main-navi.open {
-		display: block; 
+		display: block;
 	}
 	.main-navi ul li {
 		display: block;
@@ -2691,7 +2694,7 @@ div.line {
 		border-left: 4px solid transparent;
 		color: #313447;
 		font-size: 1.2em;
-		font-weight: 300;	
+		font-weight: 300;
 		-webkit-transition: all 300ms ease;
 		-moz-transition: all 300ms ease;
 		transition: all 300ms ease;
@@ -2726,7 +2729,7 @@ div.line {
 }
 
 @media screen and (max-width: 768px) {
-	.logo-image { 
+	.logo-image {
 		display: block;
 		margin-left: auto;
 		margin-right: auto;
@@ -2764,7 +2767,7 @@ div.line {
 	.faq img { margin-bottom: 25px; }
 	.team .social-networks a { margin: 0 20px 40px 20px; }
 	.coming-soon header { padding-top: 40px; }
-	.middle-block {	
+	.middle-block {
 		padding-top: 15px;
 		padding-bottom: 40px;
 	}

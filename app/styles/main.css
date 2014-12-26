@@ -1,33 +1,5 @@
-html,body { height:100% }
-
-.allbody{
-    height:100%;
-    background: url('../images/back1.jpg') no-repeat center center fixed;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-    background-attachment: fixed;
-    min-height: 300px;
-}
-
-.centered{
-    margin: 0 auto;
-    text-align: center;
-}
-
-.center_vert {
-    width: 50%;
-    height: 50%;
-    overflow: auto;
-    margin: auto;
-    position: absolute;
-    top: 0; left: 0; bottom: 0; right: 0;
-}
-
-.titletext{
-  font-family: 'Open Sans Condensed', sans-serif;
-  font-size: 64pt;
+.typeahead ul{
+  color: red;
 }
 
 

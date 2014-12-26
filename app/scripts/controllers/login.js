@@ -39,7 +39,6 @@ angular.module('testappApp')
       $rootScope.loginObj = $firebaseAuth(ref);
       $rootScope.loginObj.$createUser($scope.user.email, $scope.user.password).then(
         function () {
-            log("Du er oprettet");
             AlertService.alert("Velkommen til min lokalebutik",'success',true);
             $scope.login();
           }).catch(function(error){

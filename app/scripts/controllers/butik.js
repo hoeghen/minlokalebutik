@@ -42,7 +42,7 @@ angular.module('testappApp')
         $scope.saveShop = function () {
             console.log("butik = " + $scope.butik);
             var url = 'http://maps.googleapis.com/maps/api/geocode/json?address=';
-            url = url + $scope.butik.vejnavn + "," + $scope.butik.husnummer + "," + $scope.butik.postnummer + "&sensor=false";
+            url = url + $scope.butik.adresse + "&sensor=false";
             console.log("URL =" + url);
 
             $http({method: 'GET', url: url}).
