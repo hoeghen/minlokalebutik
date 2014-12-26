@@ -1,57 +1,57 @@
 'use strict';
 
 angular.module('testappApp')
-  .controller('LoginCtrl', function ($rootScope, $scope, $firebaseAuth, $location,AlertService,$anchorScroll) {
+  .controller('LoginCtrl', function ($timeout,$rootScope, $scope, $firebaseAuth, $location,AlertService,$anchorScroll) {
     var ref = new Firebase($rootScope.firebaseref);
     $scope.getAlert = AlertService.getAlert;
 
     $scope.login = function () {
       var token = {email: $scope.user.email, password: $scope.user.password};
-      $scope.loginObj = $firebaseAuth(ref);
-      $scope.loginObj.$authWithPassword(token).then(handleLogin).catch(handleLoginError)
+      $rootScope.loginObj = $firebaseAuth(ref);
+      $rootScope.loginObj.$authWithPassword(token).then(handleLogin).catch(handleLoginError)
     };
 
+    $scope.logout = function(){
+      $rootScope.loginObj.$unauth();
+      $rootScope.auth = null;
+    }
+
+
     var handleLogin = function(user) {
-        log('Logged in as: ' + user.uid);
         $rootScope.auth = $scope.loginObj.$getAuth();
-        if ($rootScope.lastUrl) {
+        $('#loginModal').modal('hide')
+
+
+      if ($rootScope.lastUrl) {
           $location.path($rootScope.lastUrl);
         } else {
-          $location.hash('butik');
-          $anchorScroll();
+            $location.path("home");
+            $location.hash('butik');
+            $anchorScroll();
         }
-        $('#loginModal').modal('hide')
     }
 
     var handleLoginError = function(error) {
       log('Login failed: ', error);
     }
 
-
     $scope.create = function () {
-      $scope.loginObj = $firebaseAuth(ref);
-      $scope.loginObj.$createUser($scope.user.email, $scope.user.password).then(
+      $rootScope.loginObj = $firebaseAuth(ref);
+      $rootScope.loginObj.$createUser($scope.user.email, $scope.user.password).then(
         function () {
             log("Du er oprettet");
             AlertService.alert("Velkommen til min lokalebutik",'success',true);
             $scope.login();
-          },function(){
+          }).catch(function(error){
+            console.log(error);
             log("Du kan ikke oprettes, prøv med en anden email/password kombination");
-
-          });
-    };
-    $scope.logout = function () {
-      $scope.loginObj.$unauth();
+           });
     };
 
-
-    $scope.redirect = function () {
-      $location.path('/browse');
-    };
-
-    function log(text) {
+   function log(text) {
         AlertService.alert(text,'danger',true);
     }
+
 
 
   });
