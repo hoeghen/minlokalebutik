@@ -332,10 +332,17 @@ ul.list-unstyled {
 }
 ul { list-style: none; }
 ol { padding-left: 45px; }
+
+.nobullet ul li:before{
+	font-family: "FontAwesome";
+	margin-right: 5px;
+	color: #9a9ba4;
+	font-size: 0.67em;
+}
+
 ul li:before {
 	font-family: "FontAwesome";
 	margin-right: 5px;
-	content:"\f111";
 	color: #9a9ba4;
 	font-size: 0.67em;
 }
