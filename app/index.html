@@ -7,7 +7,7 @@
 <!--[if IE 8]>
 <html class="no-js lt-ie9"> <![endif]-->
 <!--[if gt IE 8]><!-->
-<html class="no-js"> <!--<![endif]-->
+<html class="no-js" xmlns="http://www.w3.org/1999/html"> <!--<![endif]-->
 
 <html>
   <head>
@@ -146,26 +146,16 @@
 
 
 
-  <!--Kort-->
-    <section class="page-block" id="kort">
+    <!--Kort-->
+    <section class="page-block" id="kort" ng-controller="mapController">
     	<div class="container">
-        <div class="row page-header">
-          <h2>Kort</h2>
-          <span>Subtext for header</span>
-        </div>
         <div class="row">
-          MAP
+          <map></map>
         </div>
       </div>
     </section>
 
-
   <div ng-include="'views/list.html'"></div>
-
-    <!--List-->
-
-
-
 
   <!--Footer-->
     <footer class="footer">
@@ -202,6 +192,8 @@
     <!--Scroll To Top Button-->
     <div id="scroll-top" class="scroll-up"><i class="icon-arrow-up"></i></div>
 
+    <script src="http://maps.google.com/maps/api/js"></script>
+
     <!--Javascript (jQuery) Libraries and Plugins from Ultima theme-->
 		<script src="js/libs/jquery-1.10.2.min.js"></script>
 		<script src="js/libs/jquery.easing.1.3.js"></script>
@@ -230,6 +222,8 @@
   <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
   <script src="bower_components/angular-route/angular-route.js"></script>
   <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+  <script src="bower_components/ngmap/build/scripts/ng-map.min.js"></script>
+
 
   <!-- endbuild -->
 
@@ -240,6 +234,7 @@
   <script src="scripts/controllers/login.js"></script>
   <script src="scripts/controllers/browse.js"></script>
   <script src="scripts/controllers/addresseController.js"></script>
+  <script src="scripts/controllers/mapController.js"></script>
   <script src="scripts/services/dataService.js"></script>
 
   <!-- endbuild -->
