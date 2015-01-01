@@ -67,7 +67,9 @@ angular.module('testappApp').factory('dataService', ['$firebase', '$rootScope', 
   if (navigator.geolocation) {
   }
 
-
+  var getTilbudTypes = function(){
+    return [ "Hus","Have","Tøj","Mad","Baby","Bil","Rejse","Elektronik" ];
+  }
 
 
   return {
@@ -77,7 +79,8 @@ angular.module('testappApp').factory('dataService', ['$firebase', '$rootScope', 
     getTilbud: getAlleTilbud,
     calculateDistance : calculateDistance,
     getLocation : getLocation,
-    updateDistance : updateDistance
+    updateDistance : updateDistance,
+    getTilbudTypes:getTilbudTypes
   };
 
 

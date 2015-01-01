@@ -165,6 +165,7 @@ angular.module('testappApp')
     }
 
     $scope.clearTilbud();
+    $scope.types = dataService.getTilbudTypes();
 
   }); // end of controller def
 

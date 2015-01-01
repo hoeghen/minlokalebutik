@@ -1,13 +1,7 @@
-<section class="page-block" id="list">
-  <div class="container">
+  <section class="page-block" id="list">
     <!--<div class="row page-header">-->
       <!--<h2>Liste</h2>-->
     <!--</div>-->
-
-    <p>
-      <input class="form-control" ng-model="search.text" placeholder="filter"/>
-    </p>
-
 
     <div class="row" ng-controller="BrowseCtrl">
       <div ng-repeat="tilbud in alleTilbud | filter:search.text">
@@ -32,5 +26,5 @@
         </div>
       </div>
     </div>
-  </div>
 </section>
+
