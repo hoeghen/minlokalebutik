@@ -21,7 +21,7 @@
   <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
   <link rel="icon" href="favicon.ico" type="image/x-icon">
   <!--Google Fonts-->
-  <link href='http://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700' rel='stylesheet' type='text/css'>
   <!--Bootstrap 3.1.1-->
   <!--<link href="css/bootstrap.min.css" rel="stylesheet" media="screen">-->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
@@ -115,10 +115,13 @@
       <map></map>
     </div>
   </section>
-
-  <section class="page-block">
+    <div class=""><!--section-->
+      <div class="page-header">
+        <h1>Søg tilbud</h1>
+      </div>
+      {{search}}
     <div id="filter" class="row">
-      <div class="form">
+      <div class="form col-sm-6">
         <div class="form-group">
           <input class="form-control" ng-model="search.text" placeholder="text søgning"/>
         </div>
@@ -129,14 +132,40 @@
           </select>
         </div>
         <div class="form-group">
-          <label class="radio-inline"><input type="radio" name="optradio" ng-model="searc.distance">500 m</label>
-          <label class="radio-inline"><input type="radio" name="optradio" ng-model="searc.distance">1 Km</label>
-          <label class="radio-inline"><input type="radio" name="optradio" ng-model="searc.distance">5 Km</label>
-          <label class="radio-inline"><input type="radio" name="optradio" ng-model="searc.distance">50 km</label>
+          <label>max afstand </label>
+          <label class="radio-inline"><input type="radio"  name="distance" ng-model="search.distance" value=50>50 m</label>
+          <label class="radio-inline"><input type="radio"  name="distance" ng-model="search.distance" value=500>500 m</label>
+          <label class="radio-inline"><input type="radio"  name="distance" ng-model="search.distance" value=1000>1 Km</label>
+          <label class="radio-inline"><input type="radio"  name="distance" ng-model="search.distance" value=5000>5 Km</label>
+          <label class="radio-inline"><input type="radio"  name="distance" ng-model="search.distance" value=50000>50 km</label>
+          <label class="radio-inline"><input type="radio"  name="distance" ng-model="search.distance" value=100000>100 km</label>
+        </div>
+        <div class="form-group">
+          <label>min rabat </label>
+          <label class="radio-inline"><input type="radio"  name="rabat" ng-model="search.rabat" value = 10>10%</label>
+          <label class="radio-inline"><input type="radio"  name="rabat" ng-model="search.rabat" value = 20>20%</label>
+          <label class="radio-inline"><input type="radio"  name="rabat" ng-model="search.rabat" value = 40>40%</label>
+          <label class="radio-inline"><input type="radio"  name="rabat" ng-model="search.rabat" value = 60>60%</label>
+          <label class="radio-inline"><input type="radio"  name="rabat" ng-model="search.rabat" value = 80>80%</label>
+
+        </div>
+
+      </div>
+
+      <div class="form col-sm-6">
+        <div class="form-group">
+          <input type="text" class="form-control form-group" ng-model="search.email" placeholder="send søgning til denne email"/>
+          <input type="text" class="form-control form-group" ng-model="search.sms" placeholder="send søgning til denne telefon (sms)"/>
+          <div class="checkbox form-control form-group">
+            <label><input type="checkbox" value="">Notificer mig ved nye tilbud som matcher (app)</label>
+          </div>
+
         </div>
       </div>
     </div>
-  </section>
+
+
+  </div> <!--section-->
 
 
 
@@ -153,7 +182,7 @@
 <!--Scroll To Top Button-->
 <div id="scroll-top" class="scroll-up"><i class="icon-arrow-up"></i></div>
 
-<script src="http://maps.google.com/maps/api/js"></script>
+<script src="https://maps.google.com/maps/api/js"></script>
 
 <!--Javascript (jQuery) Libraries and Plugins from Ultima theme-->
 <script src="js/libs/jquery-1.10.2.min.js"></script>

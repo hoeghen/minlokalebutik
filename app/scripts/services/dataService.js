@@ -3,10 +3,11 @@
  */
 
 
-angular.module('testappApp').factory('dataService', ['$firebase', '$rootScope',  function ($firebase, $rootScope) {
+angular.module('testappApp').factory('dataService', ['$firebase', '$rootScope','$filter',  function ($firebase, $rootScope,$filter ) {
   var ref = new Firebase($rootScope.firebaseref);
   var alleTilbud = [];
   var currentPosition;
+  var search;
 
   if (typeof(Number.prototype.toRad) === "undefined") {
     Number.prototype.toRad = function() {
@@ -23,7 +24,7 @@ angular.module('testappApp').factory('dataService', ['$firebase', '$rootScope', 
       )
       getLocation(updateAllDistances);
     });
-    return alleTilbud;
+    return $filter('filter')(alleTilbud, search.text);;
   }
 
   var calculateDistance = function(p1, p2) { // Points are Geolocation.coords objects
@@ -71,6 +72,11 @@ angular.module('testappApp').factory('dataService', ['$firebase', '$rootScope', 
     return [ "Hus","Have","Tøj","Mad","Baby","Bil","Rejse","Elektronik" ];
   }
 
+  var setSearch = function(search){
+    this.search = search;
+  }
+
+
 
   return {
     getButikForAuthUser: function () {
@@ -80,7 +86,8 @@ angular.module('testappApp').factory('dataService', ['$firebase', '$rootScope', 
     calculateDistance : calculateDistance,
     getLocation : getLocation,
     updateDistance : updateDistance,
-    getTilbudTypes:getTilbudTypes
+    getTilbudTypes:getTilbudTypes,
+    setSearch : setSearch
   };
 
 
