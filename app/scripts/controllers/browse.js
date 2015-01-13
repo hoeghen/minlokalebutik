@@ -7,4 +7,9 @@ angular.module('testappApp')
   .controller('BrowseCtrl', function ($scope, dataService) {
     $scope.alleTilbud = dataService.getTilbud();
 
+    $scope.$watch('search',function(){
+      alert("browser")
+    },true)
+
+
  });

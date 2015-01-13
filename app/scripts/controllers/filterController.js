@@ -9,7 +9,7 @@ angular.module('testappApp').controller('filterController', function($scope, dat
   $scope.types = dataService.getTilbudTypes();
   $scope.search = {};
   $scope.$watch('search',function(newValue, oldValue){
-      dataService.setSearch(search);
+      dataService.setSearch($scope.search);
   },true)
 
 
