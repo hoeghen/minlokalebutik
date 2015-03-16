@@ -10,6 +10,7 @@ angular.module('testappApp').controller('filterController', function($scope, dat
   $scope.search = {};
   $scope.$watch('search',function(newValue, oldValue){
       dataService.setSearch(search);
+
   },true)
 
 

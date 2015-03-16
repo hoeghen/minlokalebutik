@@ -7,7 +7,7 @@ angular.module('testappApp').factory('dataService', ['$firebase', '$rootScope','
   var ref = new Firebase($rootScope.firebaseref);
   var alleTilbud = [];
   var currentPosition;
-  var search;
+  var search = {};
 
   if (typeof(Number.prototype.toRad) === "undefined") {
     Number.prototype.toRad = function() {
@@ -24,7 +24,13 @@ angular.module('testappApp').factory('dataService', ['$firebase', '$rootScope','
       )
       getLocation(updateAllDistances);
     });
-    return $filter('filter')(alleTilbud, search.text);;
+    var filtered;
+    if(search.text){
+      filtered = $filter('filter')(alleTilbud, search.text);
+    }else{
+      filtered = alleTilbud;
+    }
+    return filtered;
   }
 
   var calculateDistance = function(p1, p2) { // Points are Geolocation.coords objects
