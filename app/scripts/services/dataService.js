@@ -7,7 +7,8 @@ angular.module('testappApp').factory('dataService', ['$firebase', '$rootScope','
   var ref = new Firebase($rootScope.firebaseref);
   var alleTilbud = [];
   var currentPosition;
-  var search;
+  var search = {};
+  var filteredResult;
 
   if (typeof(Number.prototype.toRad) === "undefined") {
     Number.prototype.toRad = function() {
@@ -23,9 +24,18 @@ angular.module('testappApp').factory('dataService', ['$firebase', '$rootScope','
         }
       )
       getLocation(updateAllDistances);
+      filteredResult = alleTilbud;
+      filterResult(filteredResult,search);
     });
-    return $filter('filter')(alleTilbud, search.text);;
+    return filteredResult;
   }
+
+   var filterResult = function(filteredResults,search){
+    if(search.text){
+      filteredResult = $filter('filter')(filteredResults, search.text);
+    }
+  }
+
 
   var calculateDistance = function(p1, p2) { // Points are Geolocation.coords objects
     var R = 6371; // earth's mean radius in km
@@ -65,15 +75,12 @@ angular.module('testappApp').factory('dataService', ['$firebase', '$rootScope','
     console.log("Position Error:" + error);
   }
 
-  if (navigator.geolocation) {
-  }
-
   var getTilbudTypes = function(){
     return [ "Hus","Have","Tøj","Mad","Baby","Bil","Rejse","Elektronik" ];
   }
 
   var setSearch = function(search){
-    this.search = search;
+    filterResult(filteredResult,search);
   }
 
 
