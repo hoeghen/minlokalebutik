@@ -11,7 +11,7 @@ angular.module('testappApp').controller('filterController', function($scope, dat
   $scope.$watch('search',function(newValue, oldValue){
       dataService.setSearch($scope.search);
   },true)
-
+  $scope.test = dataService.getFilteredResults();
 
 })
 

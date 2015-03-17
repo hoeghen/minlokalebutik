@@ -5,10 +5,10 @@
 
 angular.module('testappApp').factory('dataService', ['$firebase', '$rootScope','$filter',  function ($firebase, $rootScope,$filter ) {
   var ref = new Firebase($rootScope.firebaseref);
-  var alleTilbud = [];
   var currentPosition;
   var search = {};
-  var filteredResult;
+  var filteredResult = {view:[]};
+  var firebaseArray;
 
   if (typeof(Number.prototype.toRad) === "undefined") {
     Number.prototype.toRad = function() {
@@ -16,23 +16,27 @@ angular.module('testappApp').factory('dataService', ['$firebase', '$rootScope','
     }
   }
 
-  var getAlleTilbud = function(){
-    alleTilbud = $firebase(ref.child('alletilbud')).$asArray();
-    alleTilbud.$loaded().then(function () {
-      alleTilbud.forEach(function (tilbud) {
+  var initResult = function(){
+    firebaseArray = $firebase(ref.child('alletilbud')).$asArray();
+    firebaseArray.$loaded().then(function () {
+      firebaseArray.forEach(function (tilbud) {
               tilbud.distance = "ukendt";
         }
       )
       getLocation(updateAllDistances);
-      filteredResult = alleTilbud;
-      filterResult(filteredResult,search);
+      filteredResult.view = filterResult(firebaseArray,search);
     });
-    return $filter('filter')(alleTilbud, search.text);;
   }
 
-   var filterResult = function(filteredResults,search){
+  initResult();
+
+
+  var filterResult = function(result,search){
+    var filter;
     if(search.text){
-      filteredResult = $filter('filter')(filteredResults, search.text);
+      return  $filter('filter')(result, search.text);
+    }else{
+      return result;
     }
   }
 
@@ -59,6 +63,9 @@ angular.module('testappApp').factory('dataService', ['$firebase', '$rootScope','
     }
   }
 
+  var getResults = function(){
+    return filteredResult;
+  }
 
   var updateDistance = function (tilbud) {
     tilbud.distance = calculateDistance(currentPosition, tilbud.butik.position) + "m" ;
@@ -66,7 +73,7 @@ angular.module('testappApp').factory('dataService', ['$firebase', '$rootScope','
 
   var updateAllDistances = function () {
     $rootScope.$apply(function(){
-      alleTilbud.forEach(updateDistance);
+      firebaseArray.forEach(updateDistance);
     })
 
   }
@@ -80,7 +87,7 @@ angular.module('testappApp').factory('dataService', ['$firebase', '$rootScope','
   }
 
   var setSearch = function(search){
-    filterResult(filteredResult,search);
+    filteredResult.view  = filterResult(firebaseArray,search);
   }
 
 
@@ -89,7 +96,7 @@ angular.module('testappApp').factory('dataService', ['$firebase', '$rootScope','
     getButikForAuthUser: function () {
       return $firebase(ref).$child('users').$child($rootScope.auth.uid).$child("butik");
     },
-    getTilbud: getAlleTilbud,
+    getFilteredResults: getResults,
     calculateDistance : calculateDistance,
     getLocation : getLocation,
     updateDistance : updateDistance,

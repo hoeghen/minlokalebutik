@@ -1,13 +1,6 @@
 <section id="list">
-<!--<section class="page-block" id="list">-->
-
-    <!--<div class="row page-header">-->
-      <!--<h2>Liste</h2>-->
-    <!--</div>-->
-
     <div class="row" ng-controller="BrowseCtrl">
-      {{alleTilbud}}
-      <div ng-repeat="tilbud in alleTilbud">
+      <div ng-repeat="tilbud in list.view">
         <div class="col-lg-4 col-md-4 col-sm-4">
           <div class="pricing-plan">
             <div class="header">
