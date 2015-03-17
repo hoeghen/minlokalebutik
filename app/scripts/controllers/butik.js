@@ -49,14 +49,18 @@ angular.module('testappApp')
                 success(function (data, status, headers, config) {
                     if (data.status == "OK") {
                         console.log("RESULT =" + data);
-                        if (data.results.length > 1) {
+                        if(data.results.length == 0) {
+                          AlertService.alert("kan ikke genkende adressen", "danger");
+                        }
+                        else if (data.results.length > 1) {
                             AlertService.alert("der er flere adresser der passer, vær mere specifik", "danger");
 
-                        } else {
-                            if (data.results[0].partial_match) {
-                                AlertService.alert("butikkens adresse kan ikke findes på google maps, prøv en adresse tæt på", "danger");
+                        }else{
 
-                            } else {
+                         if (data.results[0].partial_match) {
+                            AlertService.alert("butikkens adresse er ikke nøjagtig nok, vær mere specifik", "danger");
+
+                          } else {
                                 var butiklocation = data.results[0].geometry.location;
                                 $scope.butik.position = butiklocation;
                                 $scope.butik.$save();
@@ -64,7 +68,11 @@ angular.module('testappApp')
                             }
                         }
                     } else {
-                        AlertService.alert("et eksternt system fungerer ikke, prøv igen senere", "danger");
+                        if(data.status == "ZERO_RESULTS"){
+                          AlertService.alert("Adressen kan ikke findes", "danger");
+                        }else{
+                          AlertService.alert("et eksternt system fungerer ikke, prøv igen senere", "danger");
+                        }
                         console.log(data.status + ":" + data.error_message);
                     }
                 }).
