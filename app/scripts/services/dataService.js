@@ -33,13 +33,30 @@ angular.module('testappApp').factory('dataService', ['$firebase', '$rootScope','
 
   var filterResult = function(result,search){
     var filter;
+    var filteredResult = result;
     if(search.text){
-      return  $filter('filter')(result, search.text);
-    }else{
-      return result;
+      filteredResult = $filter('filter')(filteredResult, search.text);
     }
+    if(search.type && search.type != "Alle"){
+      filteredResult =  $filter('filter')(filteredResult, {type:search.type});
+    }
+    if(search.rabat){
+      filteredResult =  $filter('filter')(filteredResult, {rabat:search.rabat},biggerThan);
+    }
+    if(search.distance){
+      filteredResult =  $filter('filter')(filteredResult, {distance:search.distance},lessThan);
+    }
+    return filteredResult;
   }
 
+  var biggerThan = function(actual,expected){
+    var result =  Number(actual) >= Number(expected);
+    return result;
+  };
+  var lessThan = function(actual,expected){
+    var result =  Number(actual) <= Number(expected);
+    return result;
+  };
 
   var calculateDistance = function(p1, p2) { // Points are Geolocation.coords objects
     var R = 6371; // earth's mean radius in km
@@ -68,7 +85,7 @@ angular.module('testappApp').factory('dataService', ['$firebase', '$rootScope','
   }
 
   var updateDistance = function (tilbud) {
-    tilbud.distance = calculateDistance(currentPosition, tilbud.butik.position) + "m" ;
+    tilbud.distance = calculateDistance(currentPosition, tilbud.butik.position) ;
   }
 
   var updateAllDistances = function () {
