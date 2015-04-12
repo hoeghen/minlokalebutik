@@ -90,7 +90,25 @@
     <div ng-include="'views/loginModal.html'"></div>
 
     <!--Hero Slider-->
-    <div ng-include="'views/topIntroPart.html'"></div>
+    <div class="row">
+      <div class="hero-slider">
+        <div class="slide first-slide">
+          <div class="col-lg-5 col-md-5 col-sm-5 animated">
+            <h1>MinLokaleButik.dk</h1>
+
+            <p>Her kan du finde gode tilbud fra små lokale butikker i nærheden af dig.</p>
+
+            <p></p>
+            <a class="btn btn-primary scroll" href="#list">Find tilbud nu</a>
+          </div>
+          <div class="col-lg-7 col-md-7 col-sm-7 animated fadeInRight">
+            <img class="pull-right" src="img/hero-slider/imac.png" width="689" height="659" alt="Components and Styles">
+          </div>
+        </div>
+      </div>
+    </div>
+
+
     <!--Close Hero Slider-->
   </div>
 </header>
@@ -111,8 +129,19 @@
 
 <div class="container" ng-controller="filterController">
   <section class="page-block">
-    <div id="kortnav" class="row panel" ng-controller="mapController">
-      <map></map>
+    <div id="kortnav" class="row" ng-controller="mapController">
+      <div class="col-sm-8 col-sm-offset-2">
+        <map style="height: 70%;">
+          <shape id="circle" name="circle" stroke-color='#FF0000'
+                 stroke-opacity="0.1"stroke-weight="1" fill-opacity="0.1"
+                 editable="false" >
+          </shape>
+
+          <div ng-repeat="tilbud in list.view">
+            <marker position="{{tilbud.position}}"/>
+          </div>
+        </map>
+      </div>
     </div>
   </section>
 
@@ -156,7 +185,6 @@
 <script src="js/landing1.js"></script>
 
 <script src='bower_components/firebase/firebase.js'></script>
-<script src="bower_components/firebase-simple-login/firebase-simple-login.js"></script>
 <script src="bower_components/angular/angular.js"></script>
 <script src="bower_components/angularfire/dist/angularfire.js"></script>
 

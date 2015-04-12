@@ -5,7 +5,7 @@
 
 angular.module('testappApp').factory('dataService', ['$firebase', '$rootScope','$filter',  function ($firebase, $rootScope,$filter ) {
   var ref = new Firebase($rootScope.firebaseref);
-  var currentPosition;
+  var location = {};
   var search = {};
   var filteredResult = {view:[]};
   var firebaseArray;
@@ -21,6 +21,7 @@ angular.module('testappApp').factory('dataService', ['$firebase', '$rootScope','
     firebaseArray.$loaded().then(function () {
       firebaseArray.forEach(function (tilbud) {
               tilbud.distance = "ukendt";
+              tilbud.position = [1,1];
         }
       )
       getLocation(updateAllDistances);
@@ -74,7 +75,7 @@ angular.module('testappApp').factory('dataService', ['$firebase', '$rootScope','
   var getLocation = function(updateFunction) {
     if (navigator.geolocation) {
       navigator.geolocation.watchPosition(function (position) {
-        currentPosition = position;
+        location.currentPosition = position;
         updateFunction();
       }, handlePositionError);
     }
@@ -85,8 +86,10 @@ angular.module('testappApp').factory('dataService', ['$firebase', '$rootScope','
   }
 
   var updateDistance = function (tilbud) {
-    tilbud.distance = calculateDistance(currentPosition, tilbud.butik.position) ;
+    tilbud.distance = calculateDistance(location.currentPosition, tilbud.butik.position) ;
+    tilbud.position = [tilbud.butik.position.lat,tilbud.butik.position.lng];
   }
+
 
   var updateAllDistances = function () {
     $rootScope.$apply(function(){
@@ -107,7 +110,9 @@ angular.module('testappApp').factory('dataService', ['$firebase', '$rootScope','
     filteredResult.view  = filterResult(firebaseArray,search);
   }
 
-
+  var getCurrentPosition = function(){
+    return location;
+  }
 
   return {
     getButikForAuthUser: function () {
@@ -118,7 +123,8 @@ angular.module('testappApp').factory('dataService', ['$firebase', '$rootScope','
     getLocation : getLocation,
     updateDistance : updateDistance,
     getTilbudTypes:getTilbudTypes,
-    setSearch : setSearch
+    setSearch : setSearch,
+    getCurrentPosition:getCurrentPosition
   };
 
 
