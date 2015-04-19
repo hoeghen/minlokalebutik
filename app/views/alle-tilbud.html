@@ -1,5 +1,5 @@
 <p>
-  <input ng-model="search.text" placeholder="filter"/>
+  <input ng-model="butikfilter.text" placeholder="filter"/>
 </p>
 
 <table class="table-hover">
@@ -12,7 +12,7 @@
     <th>Rabat</th>
     <th>Ret/Slet</th>
   </tr>
-    <tr ng-repeat="tilbud in getTilbud() | filter:search.text">
+    <tr ng-repeat="tilbud in getTilbud() | filter:butikfilter.text">
       <td>{{tilbud.slut | date}}</td>
       <td>{{tilbud.type}}</td>
       <td>{{tilbud.kort}}</td>

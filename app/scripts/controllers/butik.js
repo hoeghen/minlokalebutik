@@ -7,6 +7,8 @@ angular.module('testappApp')
         var butikRef;
         var alleTilbud = $firebase(ref.child("alletilbud")).$asArray();
 
+        $scope.butikfilter = {text:""};
+
         $scope.alleTilbud = alleTilbud;
 
         Number.prototype.roundTo = function (n) {
