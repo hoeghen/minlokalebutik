@@ -44,7 +44,7 @@ angular.module('testappApp').factory('dataService', ['$firebase', '$rootScope','
     if(search.rabat){
       filteredResult =  $filter('filter')(filteredResult, {rabat:search.rabat},biggerThan);
     }
-    if(search.distance){
+    if(search.distance && location.currentPosition){
       filteredResult =  $filter('filter')(filteredResult, {distance:search.distance},lessThan);
     }
     return filteredResult;

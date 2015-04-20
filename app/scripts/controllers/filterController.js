@@ -11,6 +11,7 @@ angular.module('testappApp').controller('filterController', function($scope, dat
       dataService.setSearch($scope.search);
   },true)
   $scope.search = {distance:1000};
+  $scope.location = dataService.getCurrentPosition();
 
 })
 

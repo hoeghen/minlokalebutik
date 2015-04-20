@@ -49,7 +49,7 @@ angular.module('testappApp')
 
             $http({method: 'GET', url: url}).
                 success(function (data, status, headers, config) {
-                    if (data.status == "OK") {
+                if (data.status == "OK") {
                         console.log("RESULT =" + data);
                         if(data.results.length == 0) {
                           AlertService.alert("kan ikke genkende adressen", "danger");

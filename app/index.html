@@ -129,7 +129,7 @@
 
 <div class="container" ng-controller="filterController">
   <section class="page-block">
-    <div id="kortnav" class="row" ng-controller="mapController">
+    <div id="kortnav"  class="row" ng-controller="mapController">
       <div class="col-sm-8 col-sm-offset-2">
         <map style="height: 70%;">
           <shape id="circle" name="circle" stroke-color='#FF0000'
@@ -143,6 +143,7 @@
         </map>
       </div>
     </div>
+    <div id="nolocation" class="alert" ng-hide="location.currentPosition"> Vi kan ikke finde din nuværende position, du skal huske at tillade positionering i din browser</div>
   </section>
 
 
