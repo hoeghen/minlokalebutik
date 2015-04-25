@@ -1,8 +1,7 @@
 @import url("preloader.css");
 
 
-map {
-    height: 600px;
+.map {
 }
 
 #preloader {
@@ -39,3 +38,15 @@ map {
   left: 50%;
   margin: -40px 0 0 -40px;
 }
+
+.headline {
+  font-size: large;
+  margin: 5px;
+  color:#ffffff;
+}
+
+.headline-img {
+  display: inline;
+  margin-left: 10px;
+}
+

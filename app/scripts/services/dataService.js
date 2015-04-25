@@ -117,7 +117,7 @@ angular.module('testappApp').factory('dataService', ['$firebase', '$rootScope','
   }
 
   var getTilbudTypes = function(){
-    return [ "Hus","Have","Tøj","Mad","Baby","Bil","Rejse","Elektronik" ];
+    return [ "Hus","Have","Tøj","Mad","Baby","Bil","Rejse","Elektronik","Service" ];
   }
 
   var setSearch = function(search){

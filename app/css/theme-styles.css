@@ -5,7 +5,8 @@
 
 /* Apply a natural box layout model to all elements */
 *, *:before, *:after {
-  -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
+  -moz-box-sizing: border-box; -webkit-box-sizing: border-box;
+  box-sizing: border-box;
  }
 
 /*Clearfix*/
@@ -780,7 +781,7 @@ button {
 }
 .btn-primary {
   color: #ffffff;
-  background-color: #313447;
+  background-color: #6E4343;
 }
 .btn-primary:hover,
 .btn-primary:focus,
@@ -1763,11 +1764,12 @@ img {
 	-webkit-border-radius: 5px;
 	-moz-border-radius: 5px;
   border-radius: 5px;
+	margin-bottom: 10px;
 }
 .pricing-plan .header {
-	padding: 25px 20px 18px 20px;
-	text-align: center;
-	background-color: #313447;
+	padding: 5px 0px 5px 0px;
+	/* text-align: center; */
+	background-color: #C56565;
 	-webkit-border-radius: 5px 5px 0 0;
 	-moz-border-radius: 5px 5px 0 0;
   border-radius: 5px 5px 0 0;
@@ -1807,7 +1809,7 @@ img {
 	color: #ffffff;
 }
 .pricing-plan .body ul li {
-	padding: 18px px;
+	/* padding: 18px ; */
 	border-bottom: 1px solid #313447;
 }
 .pricing-plan.highlited .body ul li {
@@ -2890,5 +2892,5 @@ div.line {
 		width: 270px !important;
 		height: 120px !important;
 	}
-	.chart h3 { text-align: center; };
+	.chart h3 { text-align: center; }
 }

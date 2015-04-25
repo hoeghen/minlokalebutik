@@ -153,17 +153,18 @@
 <div class="container" ng-controller="filterController">
   <section class="page-block">
     <div id="kortnav"  class="row" ng-controller="mapController">
-      <div class="col-sm-8 col-sm-offset-2">
-        <map style="height: 70%;">
-          <shape id="circle" name="circle" stroke-color='#FF0000'
-                 stroke-opacity="0.1"stroke-weight="1" fill-opacity="0.1"
-                 editable="false" >
-          </shape>
+      <map class="map">
+        <shape id="circle" name="circle" stroke-color='#FF0000'
+               stroke-opacity="0.1"stroke-weight="1" fill-opacity="0.1"
+               editable="false" >
+        </shape>
 
-          <div ng-repeat="tilbud in list.view">
-            <marker position="{{tilbud.position}}"/>
-          </div>
-        </map>
+        <div ng-repeat="tilbud in list.view">
+          <marker position="{{tilbud.position}}"/>
+        </div>
+      </map>
+      <div class="col-sm-8 col-sm-offset-2">
+
       </div>
     </div>
     <div id="nolocation" class="alert" ng-hide="location.currentPosition"> Vi kan ikke finde din nuværende position, du skal huske at tillade positionering i din browser</div>
