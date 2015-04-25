@@ -1,3 +1,41 @@
+@import url("preloader.css");
+
+
 map {
     height: 600px;
+}
+
+#preloader {
+  background-color: white;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1000;
+}
+
+.spinnertext{
+  position: relative;
+  margin:-50px;
+  font-size: 120%;
+  text-align: center;
+;
+}
+#busy {
+    display:block;
+    background-color: rgba(150, 150, 150, 0.9);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1050;
+}
+
+#circularG {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: -40px 0 0 -40px;
 }

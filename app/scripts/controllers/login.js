@@ -8,6 +8,7 @@ angular.module('testappApp')
     $scope.login = function () {
       var token = {email: $scope.user.email, password: $scope.user.password};
       $rootScope.loginObj = $firebaseAuth(ref);
+      $rootScope.busy = true;
       $rootScope.loginObj.$authWithPassword(token).then(handleLogin).catch(handleLoginError)
     };
 
@@ -29,10 +30,12 @@ angular.module('testappApp')
             $location.hash('butik');
             $anchorScroll();
         }
+      $rootScope.busy = false;
     }
 
     var handleLoginError = function(error) {
       log('Login failed: ', error);
+      $rootScope.busy = false;
     }
 
     $scope.create = function () {

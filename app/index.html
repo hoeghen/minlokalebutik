@@ -17,6 +17,8 @@
   <meta name="keywords" content="tilbud billig lokal butik"/>
   <meta name="author" content="Bitwork"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+  <script src="bower_components/angular/angular.js"></script>
+
   <!--Favicon-->
   <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
   <link rel="icon" href="favicon.ico" type="image/x-icon">
@@ -47,6 +49,7 @@
 <!--Body-->
 <body ng-app="testappApp">
 
+
 <!--Old Browser handling-->
 <!--[if lt IE 7]>
 <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade
@@ -56,10 +59,30 @@
 <script src="bower_components/es5-shim/es5-shim.js"></script>
 <script src="bower_components/json3/lib/json3.min.js"></script>
 <![endif]-->
-<!--Page Preloading-->
+
+
 <div id="preloader">
-  <div id="spinner"></div>
-</div>
+  <div id="circularG">
+    <div class="spinnertext">MinLokaleButik.dk starter</div>
+     <div id="circularG_1" class="circularG">
+    </div>
+    <div id="circularG_2" class="circularG">
+    </div>
+    <div id="circularG_3" class="circularG">
+    </div>
+    <div id="circularG_4" class="circularG">
+    </div>
+    <div id="circularG_5" class="circularG">
+    </div>
+    <div id="circularG_6" class="circularG">
+    </div>
+    <div id="circularG_7" class="circularG">
+    </div>
+    <div id="circularG_8" class="circularG">
+    </div>
+  </div></div>
+
+
 <!--Navigation-->
 <nav class="side-navi animated">
   <ul>
@@ -99,7 +122,7 @@
             <p>Her kan du finde gode tilbud fra små lokale butikker i nærheden af dig.</p>
 
             <p></p>
-            <a class="btn btn-primary scroll" href="#list">Find tilbud nu</a>
+            <a class="btn btn-primary scroll" href="#list">Find tilbud nu!</a>
           </div>
           <div class="col-lg-7 col-md-7 col-sm-7 animated fadeInRight">
             <img class="pull-right" src="img/hero-slider/imac.png" width="689" height="659" alt="Components and Styles">
@@ -167,6 +190,29 @@
 <!--Scroll To Top Button-->
 <div id="scroll-top" class="scroll-up"><i class="icon-arrow-up"></i></div>
 
+<div id="busy" ng-show="busy" ng-cloak>
+
+  <div id="circularG">
+    <div class="spinnertext">MinLokaleButik.dk arbejder</div>
+    <div id="circularG_1" class="circularG">
+    </div>
+    <div id="circularG_2" class="circularG">
+    </div>
+    <div id="circularG_3" class="circularG">
+    </div>
+    <div id="circularG_4" class="circularG">
+    </div>
+    <div id="circularG_5" class="circularG">
+    </div>
+    <div id="circularG_6" class="circularG">
+    </div>
+    <div id="circularG_7" class="circularG">
+    </div>
+    <div id="circularG_8" class="circularG">
+    </div>
+  </div></div>
+
+
 <script src="https://maps.google.com/maps/api/js"></script>
 
 <!--Javascript (jQuery) Libraries and Plugins from Ultima theme-->
@@ -186,7 +232,6 @@
 <script src="js/landing1.js"></script>
 
 <script src='bower_components/firebase/firebase.js'></script>
-<script src="bower_components/angular/angular.js"></script>
 <script src="bower_components/angularfire/dist/angularfire.js"></script>
 
 

@@ -8,7 +8,6 @@ angular.module('testappApp')
         var alleTilbud = $firebase(ref.child("alletilbud")).$asArray();
 
         $scope.butikfilter = {text:""};
-
         $scope.alleTilbud = alleTilbud;
 
         Number.prototype.roundTo = function (n) {
@@ -43,45 +42,17 @@ angular.module('testappApp')
 
         $scope.saveShop = function () {
             console.log("butik = " + $scope.butik);
-            var url = 'http://maps.googleapis.com/maps/api/geocode/json?address=';
+            var url = 'https://maps.googleapis.com/maps/api/geocode/json?address=';
             url = url + $scope.butik.adresse + "&sensor=false";
             console.log("URL =" + url);
-
+            $rootScope.busy = true;
             $http({method: 'GET', url: url}).
                 success(function (data, status, headers, config) {
-                if (data.status == "OK") {
-                        console.log("RESULT =" + data);
-                        if(data.results.length == 0) {
-                          AlertService.alert("kan ikke genkende adressen", "danger");
-                        }
-                        else if (data.results.length > 1) {
-                            AlertService.alert("der er flere adresser der passer, vær mere specifik", "danger");
-
-                        }else{
-
-                         if (data.results[0].partial_match) {
-                            AlertService.alert("butikkens adresse er ikke nøjagtig nok, vær mere specifik", "danger");
-
-                          } else {
-                                var butiklocation = data.results[0].geometry.location;
-                                $scope.butik.position = butiklocation;
-                                $scope.butik.$save();
-                                AlertService.alert("butikken er gemt", "success", true);
-                            }
-                        }
-                    } else {
-                        if(data.status == "ZERO_RESULTS"){
-                          AlertService.alert("Adressen kan ikke findes", "danger");
-                        }else{
-                          AlertService.alert("et eksternt system fungerer ikke, prøv igen senere", "danger");
-                        }
-                        console.log(data.status + ":" + data.error_message);
-                    }
-                }).
+                handleSuccessfullSave(data);
+              }).
                 error(function (data, status, headers, config) {
-                    AlertService.alert("butikkens adresse kan ikke findes på googlemaps", "danger");
-                    console.log(data.status + ":" + data.error_message);
-                });
+                handleFailedSave(status);
+              });
         };
 
 
@@ -107,13 +78,13 @@ angular.module('testappApp')
                   $scope.butik.tilbud = [];
                 }
                 $scope.butik.tilbud.push(tilbudRef.key());
-                saveButik();
+                saveTilbud();
               },function(reason){log.console("save tilbud failed:"+reason)});
             }
 
        }
 
-    function saveButik() {
+    function saveTilbud() {
       $scope.butik.$save().then(
         function (data) {
           AlertService.alert("Dit tilbud er gemt", "success", true);
@@ -176,6 +147,41 @@ angular.module('testappApp')
 
     $scope.clearTilbud();
     $scope.types = dataService.getTilbudTypes();
+
+    function handleSuccessfullSave(data) {
+      if (data.status == "OK") {
+        console.log("RESULT =" + data);
+        if (data.results.length == 0) {
+          AlertService.alert("kan ikke genkende adressen", "danger");
+        }
+        else if (data.results.length > 1) {
+          AlertService.alert("der er flere adresser der passer, vær mere specifik", "danger");
+        } else {
+          if (data.results[0].partial_match) {
+            AlertService.alert("butikkens adresse er ikke nøjagtig nok, vær mere specifik", "danger");
+          } else {
+            var butiklocation = data.results[0].geometry.location;
+            $scope.butik.position = butiklocation;
+            $scope.butik.$save();
+            AlertService.alert("butikken er gemt", "success", true);
+          }
+        }
+        $rootScope.busy = false;
+      } else {
+        if (data.status == "ZERO_RESULTS") {
+          AlertService.alert("Adressen kan ikke findes", "danger");
+        } else {
+          AlertService.alert("et eksternt system fungerer ikke, prøv igen senere", "danger");
+        }
+        console.log(data.status + ":" + data.error_message);
+        $rootScope.busy = false;
+      }
+    }
+
+    function handleFailedSave(status) {
+      AlertService.alert("butikkens adresse kan ikke findes på googlemaps", "danger");
+      console.log(data.status + ":" + data.error_message);
+    }
 
   }); // end of controller def
 

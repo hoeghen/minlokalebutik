@@ -4,7 +4,7 @@
 
 /*Page Preloading*/
 $(window).load(function() {
-	$('#spinner').fadeOut();
+
 	$('#preloader').delay(300).fadeOut('slow');
 	setTimeout(function(){$('.mac-left img').addClass('fadeInLeft');},100);
 	setTimeout(function(){$('.mac-right img').addClass('fadeInRight');},100);
@@ -13,6 +13,6 @@ $(window).load(function() {
 });
 
 /*Checking if it's touch device we disable some functionality due to inconsistency*/
-if (Modernizr.touch) { 
+if (Modernizr.touch) {
 	$('*').removeClass('animated');
 }
