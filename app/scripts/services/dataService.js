@@ -5,10 +5,16 @@
 
 angular.module('testappApp').factory('dataService', ['$firebase', '$rootScope','$filter',  function ($firebase, $rootScope,$filter ) {
   var ref = new Firebase($rootScope.firebaseref);
-  var location = {};
+  var geoLocation = {};
   var search = {distance:1000};
   var filteredResult = {view:[]};
   var firebaseArray;
+
+  // INIT
+  initResult()
+
+
+
 
   if (typeof(Number.prototype.toRad) === "undefined") {
     Number.prototype.toRad = function() {
@@ -16,7 +22,9 @@ angular.module('testappApp').factory('dataService', ['$firebase', '$rootScope','
     }
   }
 
-  var initResult = function(){
+
+
+  function initResult(){
     firebaseArray = $firebase(ref.child('alletilbud')).$asArray();
     firebaseArray.$loaded().then(function () {
       firebaseArray.forEach(function (tilbud) {
@@ -24,31 +32,95 @@ angular.module('testappApp').factory('dataService', ['$firebase', '$rootScope','
               tilbud.position = [1,1];
         }
       )
-      getLocation(updateAllDistances);
-      filteredResult.view = filterResult(firebaseArray,search);
+      initGeoLocation();
+    });
+  }
+
+  function onNewPosition(){
+    updateAllDistances();
+    $rootScope.$apply(function(){
+      filteredResult.view = filterResult(firebaseArray);
     });
   }
 
 
-  initResult();
 
-
-  var filterResult = function(result,search){
+   function filterResult(fbArray){
     var filter;
-    var filteredResult = result;
+    var list = fbArray;
     if(search.text){
-      filteredResult = $filter('filter')(filteredResult, search.text);
+      list = $filter('filter')(list, search.text);
     }
     if(search.type && search.type != "Alle"){
-      filteredResult =  $filter('filter')(filteredResult, {type:search.type});
+      list =  $filter('filter')(list, {type:search.type});
     }
     if(search.rabat){
-      filteredResult =  $filter('filter')(filteredResult, {rabat:search.rabat},biggerThan);
+      list =  $filter('filter')(list, {rabat:search.rabat},biggerThan);
     }
-    if(search.distance && location.currentPosition){
-      filteredResult =  $filter('filter')(filteredResult, {distance:search.distance},lessThan);
+    if(search.distance && geoLocation.currentPosition){
+      list =  $filter('filter')(list, {distance:search.distance},lessThan);
     }
+    return list;
+  }
+
+
+
+  function initGeoLocation() {
+    if (navigator.geolocation) {
+      navigator.geolocation.watchPosition(function (position) {
+        geoLocation.currentPosition = position;
+        onNewPosition()
+      }, handlePositionError);
+    }
+  }
+
+  var getResults = function(){
     return filteredResult;
+  }
+
+  var updateDistance = function (tilbud) {
+    if(geoLocation.currentPosition && tilbud){
+      tilbud.distance = calculateDistance(geoLocation.currentPosition, tilbud.butik.position) ;
+      tilbud.position = [tilbud.butik.position.lat,tilbud.butik.position.lng];
+    }
+  }
+
+
+  var updateAllDistances = function () {
+      if(firebaseArray.length > 0){
+        firebaseArray.forEach(updateDistance);
+      }
+  }
+
+  function handlePositionError(error) {
+    switch(error.code) {
+      case error.PERMISSION_DENIED:
+        console.log("User denied the request for Geolocation.")
+        break;
+      case error.POSITION_UNAVAILABLE:
+        console.log("Location information is unavailable.")
+        break;
+      case error.TIMEOUT:
+        console.log("The request to get user location timed out.")
+        break;
+      case error.UNKNOWN_ERROR:
+        console.log("An unknown error occurred.")
+        break;
+      console.log(error.message)
+    }
+  }
+
+  var getTilbudTypes = function(){
+    return [ "Hus","Have","Tøj","Mad","Baby","Bil","Rejse","Elektronik","Service" ];
+  }
+
+  var setSearch = function(newSearch){
+    search = newSearch;
+    filteredResult.view = filterResult(firebaseArray);
+  }
+
+  var getCurrentPosition = function(){
+    return geoLocation;
   }
 
   var biggerThan = function(actual,expected){
@@ -73,70 +145,8 @@ angular.module('testappApp').factory('dataService', ['$firebase', '$rootScope','
   }
 
 
-  var getLocation = function(updateFunction) {
-    if (navigator.geolocation) {
-      navigator.geolocation.watchPosition(function (position) {
-        location.currentPosition = position;
-        updateFunction();
-        filteredResult.view = filterResult(firebaseArray,search);
-      }, handlePositionError);
-    }
-  }
-
-  var getResults = function(){
-    return filteredResult;
-  }
-
-  var updateDistance = function (tilbud) {
-    tilbud.distance = calculateDistance(location.currentPosition, tilbud.butik.position) ;
-    tilbud.position = [tilbud.butik.position.lat,tilbud.butik.position.lng];
-  }
-
-
-  var updateAllDistances = function () {
-    $rootScope.$apply(function(){
-      firebaseArray.forEach(updateDistance);
-    })
-
-  }
-
-  var handlePositionError = function (error) {
-    switch(error.code) {
-      case error.PERMISSION_DENIED:
-        console.log("User denied the request for Geolocation.")
-        break;
-      case error.POSITION_UNAVAILABLE:
-        console.log("Location information is unavailable.")
-        break;
-      case error.TIMEOUT:
-        console.log("The request to get user location timed out.")
-        break;
-      case error.UNKNOWN_ERROR:
-        console.log("An unknown error occurred.")
-        break;
-      console.log(error.message)
-    }
-  }
-
-  var getTilbudTypes = function(){
-    return [ "Hus","Have","Tøj","Mad","Baby","Bil","Rejse","Elektronik","Service" ];
-  }
-
-  var setSearch = function(search){
-    filteredResult.view  = filterResult(firebaseArray,search);
-  }
-
-  var getCurrentPosition = function(){
-    return location;
-  }
-
   return {
-    getButikForAuthUser: function () {
-      return $firebase(ref).$child('users').$child($rootScope.auth.uid).$child("butik");
-    },
     getFilteredResults: getResults,
-    calculateDistance : calculateDistance,
-    getLocation : getLocation,
     updateDistance : updateDistance,
     getTilbudTypes:getTilbudTypes,
     setSearch : setSearch,
