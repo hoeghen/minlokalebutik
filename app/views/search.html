@@ -1,35 +1,48 @@
-<div id="filter" class="row">
-  <div class="form col-sm-4">
+
+  <div class="form">
+    <div class="form-group" ng-show="location.currentPosition">
+      <label class="btn-group-header">maximum afstand</label>
+
+      <div class="btn-group btn-group-sm" data-toggle="buttons">
+        <label class="btn btn-primary"><input type="radio" name="distance" ng-model="search.distance" value=200000>Alle</label>
+        <label class="btn btn-primary"><input type="radio" name="distance" ng-model="search.distance" value=50>50
+          m</label>
+        <label class="btn btn-primary"><input type="radio" name="distance" ng-model="search.distance" value=500>500
+          m</label>
+        <label class="btn btn-primary"><input type="radio" name="distance" ng-model="search.distance" value=1000>1
+          Km</label>
+        <label class="btn btn-primary"><input type="radio" name="distance" ng-model="search.distance" value=5000>5
+          Km</label>
+        <label class="btn btn-primary"><input type="radio" name="distance" ng-model="search.distance" value=50000>50 km</label>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="btn-group-header">mindste rabat</label>
+
+      <div class="btn-group btn-group-sm" data-toggle="buttons">
+        <label class="btn btn-primary"><input type="radio" name="rabat" ng-model="search.rabat" value=0>Alle</label>
+        <label class="btn btn-primary"><input type="radio" name="rabat" ng-model="search.rabat" value=10>10%</label>
+        <label class="btn btn-primary"><input type="radio" name="rabat" ng-model="search.rabat" value=20>20%</label>
+        <label class="btn btn-primary"><input type="radio" name="rabat" ng-model="search.rabat" value=40>40%</label>
+        <label class="btn btn-primary"><input type="radio" name="rabat" ng-model="search.rabat" value=60>60%</label>
+        <label class="btn btn-primary"><input type="radio" name="rabat" ng-model="search.rabat" value=80>80%</label>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="btn-group-header">varetype</label>
+
+      <div class="btn-group btn-group-sm" data-toggle="buttons">
+        <label class="btn btn-primary"><input type="radio" name="type" ng-model="search.type"
+                                                                        value="Alle">Alle</label>
+        <label class="btn btn-primary" ng-repeat="type in types"><input type="radio" name="type"
+                                                                        ng-model="search.type"
+                                                                        value={{type}}>{{type}}</label>
+      </div>
+    </div>
     <div class="form-group">
       <input class="form-control" ng-model="search.text" placeholder="text søgning"/>
     </div>
-    <div class="form-group">
-      <select id="type" ng-model="search.type" name="type" class="form-control" placeholder="varetype">
-        <option value="" disabled selected>varetype</option>
-        <option value="Alle">Alle</option>
-        <option ng-repeat="type in types">{{type}}</option>
-      </select>
-    </div>
+
   </div>
-    <div class="form col-sm-8" >
-    <div class="form-group" ng-show="location.currentPosition">
-      <label>maximum afstand</label>
-      <label class="radio-inline"><input type="radio"  name="distance" ng-model="search.distance" value=200000>Alle</label>
-      <label class="radio-inline"><input type="radio"  name="distance" ng-model="search.distance" value=50>50 m</label>
-      <label class="radio-inline"><input type="radio"  name="distance" ng-model="search.distance" value=500>500 m</label>
-      <label class="radio-inline"><input type="radio"  name="distance" ng-model="search.distance" value=1000>1 Km</label>
-      <label class="radio-inline"><input type="radio"  name="distance" ng-model="search.distance" value=5000>5 Km</label>
-      <label class="radio-inline"><input type="radio"  name="distance" ng-model="search.distance" value=50000>50 km</label>
-      <label class="radio-inline"><input type="radio"  name="distance" ng-model="search.distance" value=100000>100 km</label>
-    </div>
-    <div class="form-group">
-      <label>mindste rabat</label>
-      <label class="radio-inline"><input type="radio"  name="rabat" ng-model="search.rabat" value = 0>Alle</label>
-      <label class="radio-inline"><input type="radio"  name="rabat" ng-model="search.rabat" value = 10>10%</label>
-      <label class="radio-inline"><input type="radio"  name="rabat" ng-model="search.rabat" value = 20>20%</label>
-      <label class="radio-inline"><input type="radio"  name="rabat" ng-model="search.rabat" value = 40>40%</label>
-      <label class="radio-inline"><input type="radio"  name="rabat" ng-model="search.rabat" value = 60>60%</label>
-      <label class="radio-inline"><input type="radio"  name="rabat" ng-model="search.rabat" value = 80>80%</label>
-    </div>
-  </div>
-</div>
+

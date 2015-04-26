@@ -149,37 +149,35 @@
 </section>
 
 
-
 <div class="container" ng-controller="filterController">
-  <section class="page-block">
-    <div id="kortnav"   ng-controller="mapController">
+  <div class="row page-block">
+    {{search}}
+    <div class="col-sm-5">
+      <div ng-include="'views/search.html'"></div>
+    </div>
+
+    <div id="kortnav" class="col-sm-7" ng-controller="mapController">
       <map class="map">
         <shape id="circle" name="circle" stroke-color='#FF0000'
-               stroke-opacity="0.1"stroke-weight="1" fill-opacity="0.1"
-               editable="false" >
+               stroke-opacity="0.1" stroke-weight="1" fill-opacity="0.1"
+               editable="false">
         </shape>
 
         <div ng-repeat="tilbud in list.view">
           <marker position="{{tilbud.position}}"/>
         </div>
       </map>
-      <div class="col-sm-8 col-sm-offset-2">
-
+      <div id="nolocation" class="alert" ng-hide="location.currentPosition"> Vi kan ikke finde din nuværende position,
+        du
+        skal huske at tillade positionering i din browser
       </div>
     </div>
-    <div id="nolocation" class="alert" ng-hide="location.currentPosition"> Vi kan ikke finde din nuværende position, du skal huske at tillade positionering i din browser</div>
-  </section>
+  </div>
 
-
-  <div class=""><!--section-->
-      <!--<div class="page-block" id="search">-->
-        <!--<h2>Søg tilbud</h2>-->
-      <!--</div>-->
-      <div ng-include="'views/search.html'"></div>
-  </div> <!--section-->
-
-  <div id="list" ng-include="'views/list.html'"></div>
-
+  <!--section-->
+  <div class="row page-block">
+    <div id="list" ng-include="'views/list.html'"></div>
+  </div>
 </div>
 
 

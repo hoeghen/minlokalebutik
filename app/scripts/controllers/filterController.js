@@ -7,10 +7,11 @@
 angular.module('testappApp').controller('filterController', function($scope, dataService) {
 
   $scope.types = dataService.getTilbudTypes();
+  $scope.search = {distance:1000};
+
   $scope.$watch('search',function(newValue, oldValue){
       dataService.setSearch($scope.search);
   },true)
-  $scope.search = {distance:1000};
   $scope.location = dataService.getCurrentPosition();
 
 })

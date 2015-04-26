@@ -6,7 +6,7 @@
 angular.module('testappApp').factory('dataService', ['$firebase', '$rootScope','$filter',  function ($firebase, $rootScope,$filter ) {
   var ref = new Firebase($rootScope.firebaseref);
   var location = {};
-  var search = {};
+  var search = {distance:1000};
   var filteredResult = {view:[]};
   var firebaseArray;
 
@@ -28,6 +28,7 @@ angular.module('testappApp').factory('dataService', ['$firebase', '$rootScope','
       filteredResult.view = filterResult(firebaseArray,search);
     });
   }
+
 
   initResult();
 
@@ -77,6 +78,7 @@ angular.module('testappApp').factory('dataService', ['$firebase', '$rootScope','
       navigator.geolocation.watchPosition(function (position) {
         location.currentPosition = position;
         updateFunction();
+        filteredResult.view = filterResult(firebaseArray,search);
       }, handlePositionError);
     }
   }
