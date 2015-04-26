@@ -2,18 +2,13 @@
   <div class="form">
     <div class="form-group" ng-show="location.currentPosition">
       <label class="btn-group-header">maximum afstand</label>
-
       <div class="btn-group btn-group-sm" data-toggle="buttons">
-        <label class="btn btn-primary"><input type="radio" name="distance" ng-model="search.distance" value=200000>Alle</label>
-        <label class="btn btn-primary"><input type="radio" name="distance" ng-model="search.distance" value=50>50
-          m</label>
-        <label class="btn btn-primary"><input type="radio" name="distance" ng-model="search.distance" value=500>500
-          m</label>
-        <label class="btn btn-primary"><input type="radio" name="distance" ng-model="search.distance" value=1000>1
-          Km</label>
-        <label class="btn btn-primary"><input type="radio" name="distance" ng-model="search.distance" value=5000>5
-          Km</label>
-        <label class="btn btn-primary"><input type="radio" name="distance" ng-model="search.distance" value=50000>50 km</label>
+        <label class="btn btn-primary" ng-model="search.distance" btn-radio="200000">Alle</label>
+        <label class="btn btn-primary" ng-model="search.distance" btn-radio="50">50 m</label>
+        <label class="btn btn-primary" ng-model="search.distance" btn-radio="500">500 m</label>
+        <label class="btn btn-primary" ng-model="search.distance" btn-radio="1000">1 Km</label>
+        <label class="btn btn-primary" ng-model="search.distance" btn-radio="5000">5 Km</label>
+        <label class="btn btn-primary" ng-model="search.distance" btn-radio="50000">50 km</label>
       </div>
     </div>
 
@@ -21,23 +16,20 @@
       <label class="btn-group-header">mindste rabat</label>
 
       <div class="btn-group btn-group-sm" data-toggle="buttons">
-        <label class="btn btn-primary"><input type="radio" name="rabat" ng-model="search.rabat" value=0>Alle</label>
-        <label class="btn btn-primary"><input type="radio" name="rabat" ng-model="search.rabat" value=10>10%</label>
-        <label class="btn btn-primary"><input type="radio" name="rabat" ng-model="search.rabat" value=20>20%</label>
-        <label class="btn btn-primary"><input type="radio" name="rabat" ng-model="search.rabat" value=40>40%</label>
-        <label class="btn btn-primary"><input type="radio" name="rabat" ng-model="search.rabat" value=60>60%</label>
-        <label class="btn btn-primary"><input type="radio" name="rabat" ng-model="search.rabat" value=80>80%</label>
+        <label class="btn btn-primary" ng-model="search.rabat" btn-radio="0">Alle</label>
+        <label class="btn btn-primary" ng-model="search.rabat" btn-radio="10">10%</label>
+        <label class="btn btn-primary" ng-model="search.rabat" btn-radio="20">20%</label>
+        <label class="btn btn-primary" ng-model="search.rabat" btn-radio="40">40%</label>
+        <label class="btn btn-primary" ng-model="search.rabat" btn-radio="60">60%</label>
+        <label class="btn btn-primary" ng-model="search.rabat" btn-radio="80">80%</label>
       </div>
     </div>
     <div class="form-group">
       <label class="btn-group-header">varetype</label>
 
       <div class="btn-group btn-group-sm" data-toggle="buttons">
-        <label class="btn btn-primary"><input type="radio" name="type" ng-model="search.type"
-                                                                        value="Alle">Alle</label>
-        <label class="btn btn-primary" ng-repeat="type in types"><input type="radio" name="type"
-                                                                        ng-model="search.type"
-                                                                        value={{type}}>{{type}}</label>
+        <label class="btn btn-primary" ng-model="search.type" btn-radio="Alle">Alle</label>
+        <label class="btn btn-primary" ng-model="search.type" btn-radio="type" ng-repeat="type in types">{{type}}</label>
       </div>
     </div>
     <div class="form-group">

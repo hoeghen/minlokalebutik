@@ -58,3 +58,16 @@
 }
 
 
+.btn-primary {
+  color: #fff;
+  background-color: #7e4646;
+  border-color: #7e4646;
+
+}
+
+
+.btn-primary:hover, .btn-primary:focus, .btn-primary.focus, .btn-primary:active, .btn-primary.active, .open>.dropdown-toggle.btn-primary {
+  color: #fff;
+  background-color: #314657;
+  border-color: #204d74;
+}

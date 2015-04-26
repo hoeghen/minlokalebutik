@@ -113,8 +113,8 @@ $(document).ready(function(e) {
 	/*Gallery Plugin Initializing*/
 	Grid.init();
 
-	/*Tooltips*/
-	$('.tooltipped').tooltip();
+	///*Tooltips*/
+	//$('.tooltipped').tooltip();
 
 	/*Login Form Validation*/
 	$('.login-form').validate();
