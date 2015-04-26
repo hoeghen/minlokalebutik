@@ -4,7 +4,7 @@
         <div class="col-lg-4 col-md-4 col-sm-4">
           <div class="pricing-plan">
             <div class="header">
-              <image class="headline-img" ng-attr-src="{{'images/typer/'+tilbud.type+'.png'}}"</image>
+              <image class="headline-img" ng-src="img/typer/{{urlEncode(tilbud.type)}}.png"></image>
               <span class="headline">{{tilbud.kort}}</span>
               <span class="price">{{tilbud.rabat}}%</span>
             </div>
