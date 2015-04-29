@@ -1,9 +1,19 @@
 'use strict';
 
 angular.module('testappApp')
-  .controller('LoginCtrl', function ($timeout,$rootScope, $scope, $firebaseAuth, $location,AlertService,$anchorScroll) {
+  .controller('LoginCtrl', function ($modal,$timeout,$rootScope, $scope, $firebaseAuth, $location,AlertService,$anchorScroll) {
     var ref = new Firebase($rootScope.firebaseref);
     $scope.getAlert = AlertService.getAlert;
+
+    var modalInstance;
+    $scope.open = function (size) {
+      modalInstance = $modal.open({
+        templateUrl: 'views/loginModal.html'
+      });
+    };
+
+
+
 
     $scope.login = function () {
       var token = {email: $scope.user.email, password: $scope.user.password};
@@ -20,7 +30,7 @@ angular.module('testappApp')
 
     var handleLogin = function(user) {
         $rootScope.auth = $scope.loginObj.$getAuth();
-        $('#loginModal').modal('hide')
+        $scope.$close();
 
 
       if ($rootScope.lastUrl) {

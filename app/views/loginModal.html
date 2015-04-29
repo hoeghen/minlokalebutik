@@ -1,9 +1,7 @@
-<div ng-controller="LoginCtrl" class="light-skin modal fade" id="loginModal" tabindex="-1" role="form"
+<div ng-controller="LoginCtrl"  tabindex="-1" role="form"
      aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
       <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <button type="button" class="close" ng-click="$close()" aria-hidden="true">&times;</button>
         <h4 class="modal-title">Login her hvis du har en butik</h4>
       </div>
       <div class="modal-body">
@@ -25,8 +23,6 @@
           <alert ng-show="getAlert()" type="getAlert().type" close="getAlert().close()">{{getAlert().msg}}</alert>
         </form>
       </div>
-    </div>
-    <!-- /.modal-content -->
-  </div>
-  <!-- /.modal-dialog -->
 </div>
+
+
