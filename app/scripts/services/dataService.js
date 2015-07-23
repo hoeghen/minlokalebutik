@@ -6,7 +6,7 @@
 angular.module('testappApp').factory('dataService', ['$firebase', '$rootScope','$filter',  function ($firebase, $rootScope,$filter ) {
   var ref = new Firebase($rootScope.firebaseref);
   var geoLocation = {};
-  var search = {distance:1000};
+  var search = {distance:1000,dirty:false};
   var filteredResult = {view:[]};
   var firebaseArray;
 
@@ -36,14 +36,16 @@ angular.module('testappApp').factory('dataService', ['$firebase', '$rootScope','
     });
   }
 
-  function onNewPosition(){
+  var onNewPosition = function(position){
+    geoLocation.currentPosition = position;
     updateAllDistances();
-    $rootScope.$apply(function(){
-      filteredResult.view = filterResult(firebaseArray);
-    });
+    $rootScope.$apply(updateView());
   }
 
 
+  var updateView = function(){
+    filteredResult.view = filterResult(firebaseArray);
+  }
 
    function filterResult(fbArray){
     var filter;
@@ -67,10 +69,7 @@ angular.module('testappApp').factory('dataService', ['$firebase', '$rootScope','
 
   function initGeoLocation() {
     if (navigator.geolocation) {
-      navigator.geolocation.watchPosition(function (position) {
-        geoLocation.currentPosition = position;
-        onNewPosition()
-      }, handlePositionError);
+      navigator.geolocation.watchPosition(onNewPosition, handlePositionError);
     }
   }
 
@@ -82,6 +81,7 @@ angular.module('testappApp').factory('dataService', ['$firebase', '$rootScope','
     if(geoLocation.currentPosition && tilbud){
       tilbud.distance = calculateDistance(geoLocation.currentPosition, tilbud.butik.position) ;
       tilbud.position = [tilbud.butik.position.lat,tilbud.butik.position.lng];
+      tilbud.butik.distance = tilbud.distance;
     }
   }
 
@@ -92,7 +92,7 @@ angular.module('testappApp').factory('dataService', ['$firebase', '$rootScope','
       }
   }
 
-  function handlePositionError(error) {
+  var handlePositionError = function (error) {
     switch(error.code) {
       case error.PERMISSION_DENIED:
         console.log("User denied the request for Geolocation.")
@@ -116,6 +116,7 @@ angular.module('testappApp').factory('dataService', ['$firebase', '$rootScope','
 
   var setSearch = function(newSearch){
     search = newSearch;
+    search.dirty = true;
     filteredResult.view = filterResult(firebaseArray);
   }
 
