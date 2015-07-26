@@ -7,12 +7,19 @@
 angular.module('testappApp').controller('filterController', function($scope, dataService) {
 
   $scope.types = dataService.getTilbudTypes();
-  $scope.search = {distance:1000,rabat:0,dirty:false};
+  $scope.search = {distance:5000,rabat:0,dirty:false};
 
   $scope.$watch('search',function(newValue, oldValue){
       dataService.setSearch($scope.search);
   },true)
   $scope.location = dataService.getCurrentPosition();
+
+  $scope.onButton= function(){
+    $scope.search.butik = undefined;
+    $scope.search.dirty = !$scope.search.dirty;
+    dataService.setSearch($scope.search);
+  }
+
 
 })
 

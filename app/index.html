@@ -160,14 +160,19 @@
         </shape>
       </map>
       <div id="nolocation" class="alert" ng-hide="location.currentPosition"> Vi kan ikke finde din nuværende position,
-        du
-        skal huske at tillade positionering i din browser
+        du skal huske at tillade positionering i din browser
       </div>
     </div>
+    </div>
+  <div class="row page-block" >
+    <div class="col-lg-12 " ng-show="search.butik">
+      <h1>{{search.butik.navn}}</h1>
+    </div>
+
   </div>
 
   <!--section-->
-  <div class="row page-block">
+  <div class="row">
     <div id="list" ng-include="'views/list.html'"></div>
   </div>
 </div>

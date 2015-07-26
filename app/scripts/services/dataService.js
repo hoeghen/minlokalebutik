@@ -5,8 +5,10 @@
 
 angular.module('testappApp').factory('dataService', ['$firebase', '$rootScope','$filter',  function ($firebase, $rootScope,$filter ) {
   var ref = new Firebase($rootScope.firebaseref);
-  var geoLocation = {};
-  var search = {distance:1000,dirty:false};
+  var geoLocation = {dirty:false};
+  $rootScope.location = geoLocation;
+
+  var search = {distance:5000,dirty:false};
   var filteredResult = {view:[]};
   var firebaseArray;
 
@@ -38,6 +40,8 @@ angular.module('testappApp').factory('dataService', ['$firebase', '$rootScope','
 
   var onNewPosition = function(position){
     geoLocation.currentPosition = position;
+    geoLocation.dirty = true;
+
     updateAllDistances();
     $rootScope.$apply(updateView());
   }
@@ -47,11 +51,17 @@ angular.module('testappApp').factory('dataService', ['$firebase', '$rootScope','
     filteredResult.view = filterResult(firebaseArray);
   }
 
-   function filterResult(fbArray){
+  var stringContains = function (navn, text) {
+    return navn.toLowerCase().indexOf(text.toLowerCase()) > -1;
+  };
+
+  function filterResult(fbArray){
     var filter;
     var list = fbArray;
     if(search.text){
-      list = $filter('filter')(list, search.text);
+      list = $filter('filter')(list, function(value,index){
+        return stringContains(value.butik.navn,search.text) || stringContains(value.kort,search.text) || stringContains(value.lang,search.text)  || stringContains(value.pris.toString(),search.text);
+      });
     }
     if(search.type && search.type != "Alle"){
       list =  $filter('filter')(list, {type:search.type});
@@ -62,6 +72,11 @@ angular.module('testappApp').factory('dataService', ['$firebase', '$rootScope','
     if(search.distance && geoLocation.currentPosition){
       list =  $filter('filter')(list, {distance:search.distance},lessThan);
     }
+     if(search.butik){
+       list =  $filter('filter')(list,function(value,index){
+         return value.butik.navn == search.butik.navn;
+       });
+     }
     return list;
   }
 
@@ -132,6 +147,17 @@ angular.module('testappApp').factory('dataService', ['$firebase', '$rootScope','
     var result =  Number(actual) <= Number(expected);
     return result;
   };
+
+  var sameObject = function(actual,expected){
+    var result =  actual.name == expected.name;
+    return result;
+  };
+
+  function tilbudTextSearch(actual,expected){
+    var result =  actual.name == expected.name;
+    return result;
+  };
+
 
   var calculateDistance = function(p1, p2) { // Points are Geolocation.coords objects
     var R = 6371; // earth's mean radius in km
