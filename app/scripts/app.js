@@ -6,7 +6,8 @@ angular.module('testappApp', [
     'ngSanitize',
     'ngRoute', 'firebase',
     'ui.bootstrap',
-    'ngMap'
+    'ngMap',
+    'ngStorage'
   ])
   .run(function($rootScope){
         $rootScope.alert = function(text){alert(text);};

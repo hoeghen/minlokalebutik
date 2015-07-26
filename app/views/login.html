@@ -20,6 +20,12 @@
                                    placeholder="Password" data-cip-id="inputPassword">
                         </div>
                     </div>
+                  <div class="form-group">
+                    <label for="remember" class="col-lg-2 control-label">Remember login</label>
+                    <div class="col-lg-10">
+                      <input type="checkbox" ng-model="user.remember" class="form-control" id="remember">
+                    </div>
+                  </div>
                     <div class="form-group">
                         <div class="col-lg-10 col-lg-offset-2">
                             <button ng-click="create()" class="btn btn-default">Registrer ny bruger</button>

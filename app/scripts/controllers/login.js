@@ -1,14 +1,23 @@
 'use strict';
 
 angular.module('testappApp')
-  .controller('LoginCtrl', function ($modal,$timeout,$rootScope, $scope, $firebaseAuth, $location,AlertService,$anchorScroll) {
+  .controller('LoginCtrl', function ($modal,$timeout,$rootScope, $scope, $firebaseAuth, $location,AlertService,$anchorScroll,$localStorage) {
     var ref = new Firebase($rootScope.firebaseref);
     $scope.getAlert = AlertService.getAlert;
 
     var modalInstance;
     $scope.open = function (size) {
+      $scope.user = {};
+
+      if($localStorage.remember){
+        $scope.user.email = $localStorage.email;
+        $scope.user.password = $localStorage.password;
+        $scope.user.remember = true;
+      }
+
       modalInstance = $modal.open({
-        templateUrl: 'views/loginModal.html'
+        templateUrl: 'views/loginModal.html',
+        scope: $scope
       });
     };
 
@@ -20,6 +29,7 @@ angular.module('testappApp')
       $rootScope.loginObj = $firebaseAuth(ref);
       $rootScope.busy = true;
       $rootScope.loginObj.$authWithPassword(token).then(handleLogin).catch(handleLoginError)
+
     };
 
     $scope.logout = function(){
@@ -29,11 +39,20 @@ angular.module('testappApp')
 
 
     var handleLogin = function(user) {
-        $rootScope.auth = $scope.loginObj.$getAuth();
-        $scope.$close();
+      $rootScope.auth = $scope.loginObj.$getAuth();
 
+      if($scope.user.remember){
+        $localStorage.email = $scope.user.email;
+        $localStorage.password = $scope.user.password;
+        $localStorage.remember = $scope.user.remember;
+      }else{
+        $localStorage.email = undefined;
+        $localStorage.password = undefined;
+        $localStorage.remember = false;
+      }
+      $scope.$close();
 
-      if ($rootScope.lastUrl) {
+    if ($rootScope.lastUrl) {
           $location.path($rootScope.lastUrl);
         } else {
             $location.path("home");
