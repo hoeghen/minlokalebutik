@@ -9,7 +9,7 @@ angular.module('testappApp').controller('myMapController', function($scope,$root
   var circle;
 //  $scope.map = { center: { latitude: 45, longitude: -73 }, zoom: 8 };
   $scope.$on('mapInitialized', function(event, map) {
-    map.setOptions({disableDefaultUI:true,scrollwheel: true})
+    map.setOptions({disableDefaultUI:true,scrollwheel: false})
     mapRef = map;
     addMapClickEvent()
   });

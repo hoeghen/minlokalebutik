@@ -42,10 +42,14 @@ angular.module('testappApp')
 
     });
 
-angular.module('testappApp').
-  run(function($rootScope) {
-    $rootScope.firebaseref = 'https://jobspot.firebaseio.com';
-});
+  angular.module('testappApp').config(function($locationProvider) {
+    $locationProvider.html5Mode(true);
+  })
+  angular.module('testappApp').
+    run(function($rootScope) {
+      $rootScope.firebaseref = 'https://jobspot.firebaseio.com';
+  }
+);
 
 
 
