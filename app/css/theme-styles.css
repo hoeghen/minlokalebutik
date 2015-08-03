@@ -2772,7 +2772,7 @@ div.line {
 		height: 10px;
 	}
 	.features div { margin-bottom: 50px; }
-	.pricing-plan { margin-bottom: 30px; }
+	.pricing-plan { margin-bottom: 30px; padding: 10px;}
 	.faq img { margin-bottom: 25px; }
 	.team .social-networks a { margin: 0 20px 40px 20px; }
 	.coming-soon header { padding-top: 40px; }

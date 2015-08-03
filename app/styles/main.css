@@ -71,3 +71,8 @@
   background-color: #314657;
   border-color: #204d74;
 }
+
+header#resetpasswordheader {
+  background-color: #C56565;
+  padding: 20px;
+}
