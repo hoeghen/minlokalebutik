@@ -1,14 +1,14 @@
 'use strict';
-
 angular.module('testappApp')
   .controller('LoginCtrl', function ($modal,$timeout,$rootScope, $scope, $firebaseAuth, $location,AlertService,$anchorScroll,$localStorage) {
     var ref = new Firebase($rootScope.firebaseref);
     $scope.getAlert = AlertService.getAlert;
+    $scope.showReset = false;
 
     var modalInstance;
     $scope.open = function (size) {
       $scope.user = {};
-
+      $scope.showReset = false;
       if($localStorage.remember){
         $scope.user.email = $localStorage.email;
         $scope.user.password = $localStorage.password;
@@ -21,14 +21,47 @@ angular.module('testappApp')
       });
     };
 
+    $scope.showResetPassword= function(){
+      $scope.showReset = true;
+    }
 
+    $scope.resetPassword= function(){
+      $scope.showReset = false;
+      $scope.$close();
+      $firebaseAuth(ref).$sendPasswordResetEmail($scope.user.email);
+    }
 
+    $scope.newPassword = function(){
+      var email = $location.search().email;
+      var tempToken = $location.search().token;
+
+      var token = {email: email, password: tempToken};
+      $rootScope.loginObj = $firebaseAuth(ref);
+      $rootScope.busy = true;
+      $rootScope.loginObj.$authWithPassword(token)
+        .then(function (user) {
+          $rootScope.auth = $scope.loginObj.$getAuth();
+          $scope.loginObj.$changePassword(email,tempToken, $scope.user.newpassword)
+            .then(function () {
+              AlertService.alert("Dit password er ændret",'success',true);
+              $rootScope.busy = false;
+            })
+            .catch(function (error) {
+              log("ændringen af dit password er fejlet, send en ny reset password email:" + error);
+              $rootScope.busy = false;
+            })
+        })
+        .catch( handleLoginError);
+    }
 
     $scope.login = function () {
       var token = {email: $scope.user.email, password: $scope.user.password};
       $rootScope.loginObj = $firebaseAuth(ref);
       $rootScope.busy = true;
-      $rootScope.loginObj.$authWithPassword(token).then(handleLogin).catch(handleLoginError)
+      $rootScope.loginObj.$authWithPassword(token).then(handleLogin).catch(function(error){
+        log('Login failed: ', error);
+        $rootScope.busy = false;
+      })
 
     };
 
