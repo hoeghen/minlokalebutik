@@ -94,6 +94,10 @@ angular.module('testappApp').factory('dataService', ['$firebase', '$rootScope','
          return value.butik.navn == search.butik.navn;
        });
      }
+    list = $filter('filter')(list,function(value,index){
+      return new Date(value.slut) >= new Date();
+    })
+
     return list;
   }
 
