@@ -3,7 +3,7 @@
  */
 
 
-angular.module('testappApp').factory('dataService', ['$firebase', '$rootScope','$filter',  function ($firebase, $rootScope,$filter ) {
+angular.module('testappApp').factory('dataService', ['$firebase', '$rootScope','$filter','$http',function ($firebase, $rootScope,$filter,$http ) {
   var ref = new Firebase($rootScope.firebaseref);
   var geoLocation = {dirty:false};
   $rootScope.location = geoLocation;
@@ -24,7 +24,24 @@ angular.module('testappApp').factory('dataService', ['$firebase', '$rootScope','
     }
   }
 
+  function getAddress(location){
+    var lat = location.currentPosition.coords.latitude;
+    var lon = location.currentPosition.coords.longitude;
+    var url = "https://maps.googleapis.com/maps/api/geocode/json?latlng="+ lat + "," + lon;
 
+    $http({method: 'GET', url: url}).
+      success(function (data) {
+        var results = data.results;
+        results.forEach(function(element){
+          if(element.types.indexOf("postal_code") != -1){
+            $rootScope.aktueltByNavn = element.address_components[1].short_name;
+          }
+        })
+      }).
+      error(function (data, status, headers, config) {
+        console.log(data)
+      });
+  }
 
   function initResult(){
     firebaseArray = $firebase(ref.child('alletilbud')).$asArray();
@@ -43,6 +60,8 @@ angular.module('testappApp').factory('dataService', ['$firebase', '$rootScope','
     geoLocation.dirty = true;
 
     updateAllDistances();
+
+    getAddress(geoLocation);
     $rootScope.$apply(updateView());
   }
 

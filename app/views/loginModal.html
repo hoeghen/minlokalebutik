@@ -16,7 +16,7 @@
             <label for="password">Password</label>
             <input ng-model="user.password" type="password" class="form-control" id="password"
                    placeholder="Enter Password" required>
-            <a href="" ng-click="showResetPassword()">i forgot my password</a>
+            <a class="pull-right" href="" ng-click="showResetPassword()">jeg har glemt mit password</a>
           </div>
           <div class="checkbox" ng-hide="showReset">
             <label>
@@ -24,10 +24,9 @@
             </label>
           </div>
 
-          <button ng-click="resetPassword()"  ng-show="showReset" type="submit" class="btn btn-primary">Send Reset password email</button>
+          <button ng-click="resetPassword()"  ng-show="showReset" type="submit" class="btn btn-primary">Send nullstill password email</button>
           <button ng-click="login()"  ng-hide="showReset" type="submit" class="btn btn-primary">Login</button>
-          <button ng-click="create()" ng-hide="showReset" type="submit" class="btn btn-primary">Ny bruger (opret en butik)
-          </button>
+          <button ng-click="create()" ng-hide="showReset" type="submit" class="btn btn-primary">Ny Butik</button>
           <alert ng-show="getAlert()" type="getAlert().type" close="getAlert().close()">{{getAlert().msg}}</alert>
         </form>
       </div>
