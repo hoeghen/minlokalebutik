@@ -94,8 +94,13 @@ angular.module('testappApp').controller('myMapController', function($scope,$root
 
   function addMapClickEvent() {
     google.maps.event.addListener(mapRef, 'click', function(){
+      $rootScope.$apply(function() {
+        $scope.search.butik = null;
+        $scope.search.dirty = !$scope.search.dirty;
+      })
       fitToCircle($scope.search.distance,$rootScope.location);
       $scope.GenerateMapMarkers();
+
     });
   }
 

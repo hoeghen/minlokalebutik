@@ -56,22 +56,20 @@ angular.module('testappApp').factory('dataService', ['$firebase', '$rootScope','
   }
 
   var onNewPosition = function(position){
-    geoLocation.currentPosition = position;
-    geoLocation.dirty = true;
-
-    updateAllDistances();
-
-    getAddress(geoLocation);
-    $rootScope.$apply(updateView());
+    $rootScope.$apply(updateView(position));
   }
 
 
-  var updateView = function(){
+  var updateView = function(position){
+    geoLocation.currentPosition = position;
+    geoLocation.dirty = !geoLocation.dirty;
+    updateAllDistances();
+    getAddress(geoLocation);
     filteredResult.view = filterResult(firebaseArray);
   }
 
   var stringContains = function (navn, text) {
-    return navn.toLowerCase().indexOf(text.toLowerCase()) > -1;
+    return navn.toLowerCase().indexOf(text.toLowerCase()) != -1;
   };
 
   function filterResult(fbArray){
@@ -145,7 +143,7 @@ angular.module('testappApp').factory('dataService', ['$firebase', '$rootScope','
   }
 
   var getTilbudTypes = function(){
-    return [ "Hus","Have","Tøj","Mad","Baby","Bil","Rejse","Elektronik","Service" ];
+    return [ "Hus","Have","Tøj","Sko","Mad","Børn","Bil","Rejse","Elektronik","Service","Smykker","Kunst"];
   }
 
   var setSearch = function(newSearch){
