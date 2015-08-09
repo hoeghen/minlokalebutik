@@ -98,12 +98,22 @@
 </nav>
 
 
+
 <!--Header (Hero Unit with Slider)-->
 <header class="hero">
   <div class="container">
+
+
+
     <!--Top Navi-->
     <div id="top-navi" class="row animated" ng-controller="LoginCtrl">
-      <div class="col-lg-12">
+
+      <div class="col-sm-7" >
+        <img class="pull-left" src="img/logo-white.png"  alt="MinLokaleButik.dk">
+      </div>
+
+
+      <div class="col-sm-5">
         <nav class="top-navi pull-right">
           <a ng-hide="auth" href="#" ng-click="open()"><i class="icon-user"></i>Login</a>
           <a ng-show="auth" ng-click="logout()" href="#"><i class="icon-user"></i>Logout {{auth.password.email}}</a>
@@ -111,19 +121,15 @@
       </div>
     </div>
 
-
     <!--Hero Slider-->
     <div class="row">
       <div class="hero-slider">
         <div class="slide first-slide">
           <div class="col-lg-5 col-md-5 col-sm-5 animated">
-            <h1>MinLokaleButik.dk</h1>
-
-            <p>Her kan du finde gode tilbud fra små butikker i nærheden af dig.</p>
-
-            <p></p>
-            <a class="btn btn-primary scroll" href="#list">Find tilbud nu!</a>
+            <div class="hidden-xs" style="height:100px">  </div>
             <h1 class="">{{aktueltByNavn}}</h1>
+            <h3>Her kan du finde gode tilbud fra små butikker i nærheden af dig.</h3>
+            <a class="btn btn-primary btn-lg scroll" href="#list">Find tilbud nu!</a>
           </div>
 
 

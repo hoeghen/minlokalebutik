@@ -789,7 +789,7 @@ button {
 .btn-primary.active,
 .open .dropdown-toggle.btn-primary {
   color: #ffffff;
-  background-color: #464962;
+  background-color: #49667C;
 }
 .btn-success {
   color: #ffffff;
@@ -1769,7 +1769,7 @@ img {
 .pricing-plan .header {
 	padding: 5px 0px 5px 0px;
 	/* text-align: center; */
-	background-color: #C56565;
+	background-color: #9AC1C9;
 	-webkit-border-radius: 5px 5px 0 0;
 	-moz-border-radius: 5px 5px 0 0;
   border-radius: 5px 5px 0 0;
@@ -1833,7 +1833,7 @@ img {
 ---------------------------------------------------------*/
 .hero {
 	width: 100%;
-	background: #ff6f69 url(../img/bg-art.png) no-repeat center top;
+	background: #5698A4 url(../img/bg-art.png) no-repeat center top;
 	padding: 35px 0 0 0;
 }
 .top-navi a {
