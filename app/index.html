@@ -12,13 +12,13 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>MinLokaleButik.dk - tilbud nær dig</title>
+  <title>MinLokaleButik.dk - lokale tilbud</title>
   <meta name="description" content="MinLokaleButik.dk tilbud tæt på"/>
   <meta name="keywords" content="tilbud billig lokal butik"/>
   <meta name="author" content="Bitwork"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
-
-  <script src="bower_components/angular/angular.js"></script>
+  <!--<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>-->
+  <meta name=viewport content="width=device-width, initial-scale=1">
+  <script src="bower_components/angular/angular.min.js"></script>
   <!--Favicon-->
   <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
   <link rel="icon" href="favicon.ico" type="image/x-icon">
@@ -37,12 +37,12 @@
   <!--Color Schemes-->
   <link href="css/colors/color-default.css" rel="stylesheet" media="screen">
   <link href="styles/main.css" rel="stylesheet" media="screen">
-  <!--Modernizr-->
-  <script src="js/libs/modernizr.custom.js"></script>
+  <!--&lt;!&ndash;Modernizr&ndash;&gt;-->
+  <!--<script src="js/libs/modernizr.custom.js"></script>-->
   <!--Adding Media Queries Support for IE8-->
   <!--[if lt IE 9]>
-  <script src="js/plugins/respond.min.js"></script>
-  <script src="js/plugins/excanvas.js"></script>
+  <!--<script src="js/plugins/respond.min.js"></script>-->
+  <!--<script src="js/plugins/excanvas.js"></script>-->
   <![endif]-->
   <!--<base href="/">-->
   <base href="/minlokalebutik/app/">
@@ -109,7 +109,7 @@
     <div id="top-navi" class="row animated" ng-controller="LoginCtrl">
 
       <div class="col-sm-7" >
-        <img class="pull-left" src="img/logo-white.png"  alt="MinLokaleButik.dk">
+        <img class="pull-left" src="img/logo-white-small.png"  alt="MinLokaleButik.dk">
       </div>
 
 
@@ -128,7 +128,7 @@
           <div class="col-lg-5 col-md-5 col-sm-5 animated">
             <div class="hidden-xs" style="height:100px">  </div>
             <h1 class="">{{aktueltByNavn}}</h1>
-            <h3>Her kan du finde gode tilbud fra små butikker i nærheden af dig.</h3>
+            <h3>Her kan du finde gode lokale tilbud fra små butikker i nærheden af dig.</h3>
             <a class="btn btn-primary btn-lg scroll" href="#list">Find tilbud nu!</a>
           </div>
 
@@ -157,7 +157,7 @@
   <div class="container">
     <div class="row page-header">
       <h2>Butik</h2>
-      <span>Administrer din butik og tilbud</span>
+      <span>Administrer din butik og lokale tilbud</span>
     </div>
     <ng-include src="'views/butik.html'"></ng-include>
   </div>
@@ -228,21 +228,21 @@
 
 <script src="https://maps.google.com/maps/api/js"></script>
 
-<!--Javascript (jQuery) Libraries and Plugins from Ultima theme-->
+<!--&lt;!&ndash;Javascript (jQuery) Libraries and Plugins from Ultima theme&ndash;&gt;-->
 <script src="js/libs/jquery-1.10.2.min.js"></script>
 <script src="js/libs/jquery.easing.1.3.js"></script>
-<!--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>-->
+<!--&lt;!&ndash;<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>&ndash;&gt;-->
 <script src="js/plugins/jquery.touchSwipe.min.js"></script>
 <script src="js/plugins/jquery.placeholder.js"></script>
 <script src="js/plugins/icheck.min.js"></script>
 <script src="js/plugins/jquery.validate.min.js"></script>
-<script src="js/plugins/gallery.js"></script>
 <script src="js/plugins/jquery.fitvids.js"></script>
 <script src="js/plugins/jquery.bxslider.min.js"></script>
+<script src="js/plugins/smoothscroll.js"></script>
 <script src="js/plugins/chart.js"></script>
 <script src="js/plugins/waypoints.min.js"></script>
-<script src="js/plugins/smoothscroll.js"></script>
 <script src="js/landing1.js"></script>
+<script src="js/plugins/gallery.js"></script>
 
 <script src='bower_components/firebase/firebase.js'></script>
 <script src="bower_components/angularfire/dist/angularfire.js"></script>
