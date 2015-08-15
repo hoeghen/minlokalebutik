@@ -56,8 +56,7 @@ angular.module('testappApp')
     };
 
 
-    $scope.addTilbud = function () {
-      var tilbud = $scope.tilbud;
+    function addOrEditTilbud(tilbud) {
       if (tilbud.$id) {
         var item = alleTilbud.$getRecord(tilbud.$id);
         item.slut = angular.fromJson(angular.toJson(item.slut));
@@ -69,9 +68,9 @@ angular.module('testappApp')
           AlertService.alert("Kunne ikke gemme dit tilbud", "error", true);
         });
       } else {
-        tilbud.butik = $scope.butik;
         $scope.clearTilbud();
         tilbud.slut = angular.fromJson(angular.toJson(tilbud.slut));
+        tilbud.butik = $scope.butik;
         dataService.updateDistance(tilbud);
         alleTilbud.$add(tilbud).then(function (tilbudRef) {
           if (!$scope.butik.tilbud) {
@@ -83,7 +82,13 @@ angular.module('testappApp')
           log.console("save tilbud failed:" + reason)
         });
       }
+    }
 
+
+
+
+    $scope.addTilbud = function () {
+      addOrEditTilbud($scope.tilbud);
     }
 
     function saveTilbud() {
@@ -128,6 +133,8 @@ angular.module('testappApp')
       $scope.tilbud = alleTilbud.$getRecord($scope.butik.tilbud[index])
       $scope.tilbud.slut = new Date($scope.tilbud.slut);
     }
+
+
     $scope.remove = function (index) {
       var id = $scope.butik.tilbud[index].$id;
       var item = alleTilbud.$getRecord(id);
@@ -150,6 +157,15 @@ angular.module('testappApp')
     $scope.clearTilbud();
     $scope.types = dataService.getTilbudTypes();
 
+    function updateTilbud(butik) {
+      butik.tilbud.forEach(function(item){
+        var tilbud = alleTilbud.$getRecord(item);
+        tilbud.butik = butik;
+        dataService.updateDistance(tilbud);
+        alleTilbud.$save(tilbud);
+      });
+    }
+
     function handleSuccessfullSave(data) {
       if (data.status == "OK") {
         console.log("RESULT =" + data);
@@ -165,6 +181,7 @@ angular.module('testappApp')
             var butiklocation = data.results[0].geometry.location;
             $scope.butik.position = butiklocation;
             $scope.butik.$save();
+            updateTilbud($scope.butik);
             AlertService.alert("butikken er gemt", "success", true);
           }
         }
