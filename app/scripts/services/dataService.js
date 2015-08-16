@@ -5,18 +5,24 @@
 
 angular.module('testappApp').factory('dataService', ['$firebase', '$rootScope','$filter','$http',function ($firebase, $rootScope,$filter,$http ) {
   var ref = new Firebase($rootScope.firebaseref);
-  var geoLocation = {dirty:false};
-  $rootScope.location = geoLocation;
+  var position = {dirty:false,init:true};
+  var manualPosition;
+  var geoPosition;
 
   var search = {distance:5000,dirty:false};
   var filteredResult = {view:[]};
   var firebaseArray;
 
+  // Define a Position object
+  function Position(lat,lng){
+    this.coords = {};
+    this.coords.latitude = lat;
+    this.coords.longitude = lng;
+  }
+
+
   // INIT
   initResult()
-
-
-
 
   if (typeof(Number.prototype.toRad) === "undefined") {
     Number.prototype.toRad = function() {
@@ -25,22 +31,24 @@ angular.module('testappApp').factory('dataService', ['$firebase', '$rootScope','
   }
 
   function getAddress(location){
-    var lat = location.currentPosition.coords.latitude;
-    var lon = location.currentPosition.coords.longitude;
-    var url = "https://maps.googleapis.com/maps/api/geocode/json?latlng="+ lat + "," + lon;
+    if(location.currentPosition){
+      var lat = location.currentPosition.coords.latitude;
+      var lon = location.currentPosition.coords.longitude;
+      var url = "https://maps.googleapis.com/maps/api/geocode/json?latlng="+ lat + "," + lon;
 
-    $http({method: 'GET', url: url}).
-      success(function (data) {
-        var results = data.results;
-        results.forEach(function(element){
-          if(element.types.indexOf("postal_code") != -1){
-            $rootScope.aktueltByNavn = element.address_components[1].short_name;
-          }
-        })
-      }).
-      error(function (data, status, headers, config) {
-        console.log(data)
-      });
+      $http({method: 'GET', url: url}).
+        success(function (data) {
+          var results = data.results;
+          results.forEach(function(element){
+            if(element.types.indexOf("postal_code") != -1){
+              $rootScope.aktueltByNavn = element.address_components[1].short_name;
+            }
+          })
+        }).
+        error(function (data, status, headers, config) {
+          console.log(data)
+        });
+    }
   }
 
   function initResult(){
@@ -55,16 +63,17 @@ angular.module('testappApp').factory('dataService', ['$firebase', '$rootScope','
     });
   }
 
-  var onNewPosition = function(position){
+  var onNewGeoLocation = function(position){
+    geoPosition = position;
     $rootScope.$apply(updateView(position));
   }
 
 
-  var updateView = function(position){
-    geoLocation.currentPosition = position;
-    geoLocation.dirty = !geoLocation.dirty;
+  var updateView = function(newPosition){
+    position.currentPosition = newPosition;
+    position.dirty = !position.dirty;
     updateAllDistances();
-    getAddress(geoLocation);
+    getAddress(position);
     filteredResult.view = filterResult(firebaseArray);
   }
 
@@ -86,7 +95,7 @@ angular.module('testappApp').factory('dataService', ['$firebase', '$rootScope','
     if(search.rabat){
       list =  $filter('filter')(list, {rabat:search.rabat},biggerThan);
     }
-    if(search.distance && geoLocation.currentPosition){
+    if(search.distance && position.currentPosition){
       list =  $filter('filter')(list, {distance:search.distance},lessThan);
     }
      if(search.butik){
@@ -105,7 +114,7 @@ angular.module('testappApp').factory('dataService', ['$firebase', '$rootScope','
 
   function initGeoLocation() {
     if (navigator.geolocation) {
-      navigator.geolocation.watchPosition(onNewPosition, handlePositionError);
+      navigator.geolocation.watchPosition(onNewGeoLocation, handlePositionError);
     }
   }
 
@@ -114,8 +123,8 @@ angular.module('testappApp').factory('dataService', ['$firebase', '$rootScope','
   }
 
   var updateDistance = function (tilbud) {
-    if(geoLocation.currentPosition && tilbud){
-      tilbud.distance = calculateDistance(geoLocation.currentPosition, tilbud.butik.position) ;
+    if(position.currentPosition && tilbud){
+      tilbud.distance = calculateDistance(position.currentPosition, tilbud.butik.position) ;
       tilbud.position = [tilbud.butik.position.lat,tilbud.butik.position.lng];
       tilbud.butik.distance = tilbud.distance;
     }
@@ -144,6 +153,7 @@ angular.module('testappApp').factory('dataService', ['$firebase', '$rootScope','
         break;
       console.log(error.message)
     }
+    console.log("fallback to manual address")
   }
 
   var getTilbudTypes = function(){
@@ -157,7 +167,7 @@ angular.module('testappApp').factory('dataService', ['$firebase', '$rootScope','
   }
 
   var getCurrentPosition = function(){
-    return geoLocation;
+    return position;
   }
 
   var biggerThan = function(actual,expected){
@@ -193,12 +203,66 @@ angular.module('testappApp').factory('dataService', ['$firebase', '$rootScope','
   }
 
 
+  // Any function returning a promise object can be used to load values asynchronously
+  function getAdressMatches(matches,val, postcode) {
+
+    var promise = getGeoCodeData(val,postcode);
+    promise.then(function(result){
+      matches =  result.data.results.map(function (item) {
+        return item.formatted_address;
+      });
+    })
+  }
+
+  function getGeoCodeData(address,postcode){
+    return $http.get('https://maps.googleapis.com/maps/api/geocode/json', {
+      params: {
+        address: address,
+        sensor: false,
+        components: getPostalCodeComponent(postcode) + "|country:DK"
+      }
+    })
+  }
+
+  function setManualLocation(address){
+    if(address && address.length > 0){
+      getGeoCodeData(address,null).
+        then(function(result) {
+          if(result.data.results.length > 0){
+            var location = result.data.results[0].geometry.location;
+            manualPosition = new Position(location.lat,location.lng);
+            updateView(manualPosition);
+          }else{
+            updateView(geoPosition);
+          }
+        })
+    }else{
+        updateView(geoPosition);
+    }
+  }
+
+  var getPostalCodeComponent = function (postcode) {
+    if(postcode){
+      return "postal_code:" + postcode;
+    }else{
+      return "";
+    }
+  };
+
+
+  function setManualAdress(adresse){
+    setManualLocation(adresse,null);
+  }
+
+
   return {
     getFilteredResults: getResults,
     updateDistance : updateDistance,
     getTilbudTypes:getTilbudTypes,
     setSearch : setSearch,
-    getCurrentPosition:getCurrentPosition
+    getCurrentPosition:getCurrentPosition,
+    setManualAdress:setManualAdress,
+    getAdressMatches:getAdressMatches
   };
 
 

@@ -7,7 +7,8 @@ angular.module('testappApp', [
     'ngRoute', 'firebase',
     'ui.bootstrap',
     'ngMap',
-    'ngStorage'
+    'ngStorage',
+    'ngAutocomplete'
   ])
   .run(function($rootScope){
         $rootScope.alert = function(text){alert(text);};

@@ -1,12 +1,13 @@
-angular.module('testappApp').controller('AdresseCtrl', function($scope, $http) {
+angular.module('testappApp').controller('AdresseCtrl', function($scope, $http,dataService) {
 
   $scope.selected = undefined;
   $scope.asyncloading = function(){
     return true;
   }
 
+
   // Any function returning a promise object can be used to load values asynchronously
-  $scope.getLocation = function(val,postcode) {
+  $scope.getMatches = function(val,postcode) {
     return $http.get('https://maps.googleapis.com/maps/api/geocode/json', {
       params: {
         address: val,

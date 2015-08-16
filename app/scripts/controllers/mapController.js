@@ -6,7 +6,16 @@ angular.module('testappApp').controller('myMapController', function($scope,$root
   var mapRef;
   $scope.list = dataService.getFilteredResults();
   $scope.$parent.selectMarker = selectMarker;
+  $scope.location = dataService.getCurrentPosition();
+
+
   var circle;
+
+  $scope.$watch('manueladresse', function () {
+    dataService.setManualAdress($scope.manueladresse);
+  });
+
+
 //  $scope.map = { center: { latitude: 45, longitude: -73 }, zoom: 8 };
   $scope.$on('mapInitialized', function(event, map) {
     map.setOptions({disableDefaultUI:true,scrollwheel: false})
@@ -15,7 +24,7 @@ angular.module('testappApp').controller('myMapController', function($scope,$root
   });
 
   $scope.$watch('search',function(newValue, oldValue){
-    fitToCircle(newValue.distance,$rootScope.location);
+    fitToCircle(newValue.distance,$scope.location);
     $scope.GenerateMapMarkers();
   },true)
 
@@ -26,8 +35,10 @@ angular.module('testappApp').controller('myMapController', function($scope,$root
   //},true)
   //
   $scope.$watch('location.dirty',function(newValue, oldValue){
-    fitToCircle($scope.search.distance,$rootScope.location);
-    $scope.GenerateMapMarkers();
+    if(!$scope.search.butik){ // Dont update map if butik has been chosen
+      fitToCircle($scope.search.distance,$scope.location);
+      $scope.GenerateMapMarkers();
+    }
   },false)
 
   var fitToCircle = function(radius,location) {
@@ -40,9 +51,8 @@ angular.module('testappApp').controller('myMapController', function($scope,$root
 
       }
 
-      var position = location.currentPosition;
-      if(circle && radius && position){
-        var center = new google.maps.LatLng(position.coords.latitude,position.coords.longitude);
+      if(circle && radius && location.currentPosition){
+        var center = new google.maps.LatLng(location.currentPosition.coords.latitude,location.currentPosition.coords.longitude);
         circle.setCenter(center);
         circle.setRadius(Number(radius));
         mapRef.fitBounds(circle.getBounds());
@@ -98,7 +108,7 @@ angular.module('testappApp').controller('myMapController', function($scope,$root
         $scope.search.butik = null;
         $scope.search.dirty = !$scope.search.dirty;
       })
-      fitToCircle($scope.search.distance,$rootScope.location);
+      fitToCircle($scope.search.distance,$scope.location);
       $scope.GenerateMapMarkers();
 
     });
