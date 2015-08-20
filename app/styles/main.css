@@ -44,11 +44,14 @@
   font-size: large;
   margin: 5px;
   color:#ffffff;
+  align-content: center;
 }
 
 .headline-img {
   display: inline;
   margin-left: 10px;
+  float: left;
+  padding-right: 10px;
 }
 
 .btn-group-header {
@@ -65,6 +68,9 @@
 
 }
 
+.buy-btn{
+  margin-bottom: 10px;
+}
 
 .btn-primary:hover, .btn-primary:focus, .btn-primary.focus, .btn-primary:active, .btn-primary.active, .open>.dropdown-toggle.btn-primary {
   color: #fff;

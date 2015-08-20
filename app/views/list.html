@@ -2,7 +2,7 @@
     <div class="row" ng-controller="BrowseCtrl">
       <div ng-repeat="tilbud in list.view | orderBy:'distance'">
         <div class="col-lg-4 col-md-6 col-sm-6">
-          <div class="pricing-plan" ng-click="tilbudClick(tilbud)">
+          <div class="pricing-plan" >
             <div class="header">
               <image class="headline-img" ng-src="img/typer/{{urlEncode(tilbud.type)}}.png"></image>
                 <span class="headline">{{tilbud.kort}}</span>
@@ -19,6 +19,7 @@
                 <li ng-show="showdetails">Udløber: {{tilbud.slut | date}}</li>
               </uL>
               <div class="buy-btn"><a class="btn btn-primary" ng-click="showdetails = !showdetails;$event.stopPropagation();">Detaljer</a></div>
+              <div class="buy-btn"><a class="btn btn-primary" ng-click="tilbudClick(tilbud)">Se på kort</a></div>
             </div>
           </div>
         </div>

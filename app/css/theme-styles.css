@@ -1773,6 +1773,8 @@ img {
 	-webkit-border-radius: 5px 5px 0 0;
 	-moz-border-radius: 5px 5px 0 0;
   border-radius: 5px 5px 0 0;
+	height: 58px;
+	display: flex;      align-items: center;
 }
 .pricing-plan .header h3 {
 	font-size: 1.0em;
@@ -1874,7 +1876,7 @@ img {
 	text-align: center;
 }
 .bx-pager-item {
-	display: inline-block;
+	display: none;
 	margin: 0 8px;
 }
 .bx-pager-link {

@@ -7,7 +7,7 @@ angular.module('testappApp').controller('myMapController', function($scope,$root
   $scope.list = dataService.getFilteredResults();
   $scope.$parent.selectMarker = selectMarker;
   $scope.location = dataService.getCurrentPosition();
-
+  var lockMap = false;
 
   var circle;
 
@@ -18,14 +18,14 @@ angular.module('testappApp').controller('myMapController', function($scope,$root
 
 //  $scope.map = { center: { latitude: 45, longitude: -73 }, zoom: 8 };
   $scope.$on('mapInitialized', function(event, map) {
-    map.setOptions({disableDefaultUI:true,scrollwheel: false})
+    map.setOptions({disableDefaultUI:true,scrollwheel: false,zoomControl: true})
     mapRef = map;
     addMapClickEvent()
   });
 
   $scope.$watch('search',function(newValue, oldValue){
+    lockMap = false;
     fitToCircle(newValue.distance,$scope.location);
-    $scope.GenerateMapMarkers();
   },true)
 
   //$scope.$watch('search.dirty',function(newValue, oldValue){
@@ -35,14 +35,18 @@ angular.module('testappApp').controller('myMapController', function($scope,$root
   //},true)
   //
   $scope.$watch('location.dirty',function(newValue, oldValue){
-    if(!$scope.search.butik){ // Dont update map if butik has been chosen
+    if(!$scope.search.butik ){ // Dont update map if butik has been chosen or map is locked
       fitToCircle($scope.search.distance,$scope.location);
-      $scope.GenerateMapMarkers();
     }
   },false)
 
+
+  $scope.clearMap = function(){
+    alert("clearmap");
+  }
+
   var fitToCircle = function(radius,location) {
-    if (mapRef) {
+    if (mapRef && !lockMap) {
       if(!circle){
         circle = mapRef.shapes.circle;
         google.maps.event.addListener(circle, 'click', function(){
@@ -58,6 +62,7 @@ angular.module('testappApp').controller('myMapController', function($scope,$root
         mapRef.fitBounds(circle.getBounds());
         mapRef.setZoom(mapRef.getZoom()+1);
       }
+      $scope.GenerateMapMarkers();
     }
 
   }
@@ -109,8 +114,6 @@ angular.module('testappApp').controller('myMapController', function($scope,$root
         $scope.search.dirty = !$scope.search.dirty;
       })
       fitToCircle($scope.search.distance,$scope.location);
-      $scope.GenerateMapMarkers();
-
     });
   }
 
@@ -120,6 +123,7 @@ angular.module('testappApp').controller('myMapController', function($scope,$root
       infoWindow.close();
       infoWindow = createInfoWindow(tilbud.marker);
       infoWindow.open(mapRef,tilbud.marker);
+      lockMap = true;
   }
 
 
