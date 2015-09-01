@@ -136,7 +136,7 @@ angular.module('testappApp')
 
 
     $scope.remove = function (index) {
-      var id = $scope.butik.tilbud[index].$id;
+      var id = $scope.butik.tilbud[index];
       var item = alleTilbud.$getRecord(id);
       alleTilbud.$remove(item)
       $scope.butik.tilbud.splice(index, 1);
@@ -158,12 +158,14 @@ angular.module('testappApp')
     $scope.types = dataService.getTilbudTypes();
 
     function updateTilbud(butik) {
-      butik.tilbud.forEach(function(item){
-        var tilbud = alleTilbud.$getRecord(item);
-        tilbud.butik = butik;
-        dataService.updateDistance(tilbud);
-        alleTilbud.$save(tilbud);
-      });
+      if(butik.tilbud){
+        butik.tilbud.forEach(function(item){
+          var tilbud = alleTilbud.$getRecord(item);
+          tilbud.butik = butik;
+          dataService.updateDistance(tilbud);
+          alleTilbud.$save(tilbud);
+        });
+      }
     }
 
     function handleSuccessfullSave(data) {
