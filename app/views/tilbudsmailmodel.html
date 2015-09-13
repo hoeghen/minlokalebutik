@@ -1,0 +1,19 @@
+<div ng-controller="MainCtrl" tabindex="-1" role="form" aria-hidden="true">
+  <div class="modal-header">
+    <button type="button" class="close" ng-click="$close()" aria-hidden="true">&times;</button>
+    <h4 class="modal-title">Indtast din email og modtag ugentlige tilbud</h4>
+  </div>
+  <div class="modal-body">
+    <form name="emailform" class="email-form">
+      <div class="form-group">
+        <div class="input-group">
+          <input ng-model="tilbudEmail" type="email" class="form-control" placeholder="din email" aria-describedby="basic-addon2" required>
+          <span ng-click="gemEmail()" class="input-group-addon btn-primary" id="basic-addon2">gem</span>
+        </div>
+
+      </div>
+    </form>
+  </div>
+</div>
+
+

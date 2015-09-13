@@ -1,6 +1,6 @@
 <section id="list">
     <div class="row" ng-controller="BrowseCtrl">
-      <div ng-repeat="tilbud in list.view | orderBy:'distance'">
+      <div ng-show="list.view.length > 0" ng-repeat="tilbud in list.view | orderBy:'distance'">
         <div class="col-lg-4 col-md-6 col-sm-6">
           <div class="pricing-plan" >
             <div class="header">
@@ -12,15 +12,29 @@
                 <li><b>{{tilbud.butik.navn}}</b></li>
                 <li>Pris: {{tilbud.pris}} kr</li>
                 <li>Rabat: {{tilbud.rabat}}%</li>
-                <li>Afstand: {{tilbud.distance}} m</li>
+                <li>Afstand: {{tilbud.distance|afstand}}</li>
+                <li ng-show="tilbud.showdetails">Adresse: {{tilbud.butik.adresse}}</li>
+                <li><div ng-if="tilbud.showdetails" >
+                  <img src="https://maps.googleapis.com/maps/api/staticmap?markers=|{{tilbud.position[0]}},{{tilbud.position[1]}}&center={{tilbud.position[0]}},{{tilbud.position[1]}}&zoom=16&scale=2&maptype=roadmap&format=png&visual_refresh=true&size=300x200"  alt="{{tilbud.butik.navn}}"></div>
+                </li>
 
-                <li ng-show="showdetails">Type: {{tilbud.type}}</li>
-                <li ng-show="showdetails">{{tilbud.lang}}</li>
-                <li ng-show="showdetails">Udløber: {{tilbud.slut | date}}</li>
+                <li ng-show="tilbud.showdetails">Type: {{tilbud.type}}</li>
+                <li ng-show="tilbud.showdetails"><b>{{tilbud.lang}}</b></li>
+                <li ng-show="tilbud.showdetails">Udløber: {{tilbud.slut | date}}</li>
               </uL>
-              <div class="buy-btn"><a class="btn btn-primary" ng-click="showdetails = !showdetails;$event.stopPropagation();">Detaljer</a></div>
-              <div class="buy-btn"><a class="btn btn-primary" ng-click="tilbudClick(tilbud)">Se på kort</a></div>
+              <div class="buy-btn"><a class="btn btn-primary" ng-click="$event.stopPropagation();showDetails(tilbud)">Detaljer</a></div>
             </div>
+          </div>
+        </div>
+      </div>
+      <div ng-hide="list.view.length > 0">
+        <div class="container" ng-cloak>
+          <div class="col-sm-3">
+            <img src="img/sad.png">
+          </div>
+          <div class="col-sm-5">
+            <h3>Hvaaad - der ser ikke ud til at være nogle tilbud i dit lokal område.</h3>
+            <h4>Prøv at ændre på filteret eller endnu bedre snak med dine lokale butikker og fortæl dem om minlokalebutik.dk</h4>
           </div>
         </div>
       </div>

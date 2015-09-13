@@ -1,15 +1,13 @@
 /**
  * Created by cha on 12/27/2014.
  */
-angular.module('testappApp').controller('myMapController', function($scope,$rootScope,dataService) {
+angular.module('testappApp').controller('myMapController', function($scope,$rootScope,dataService,$timeout) {
 
   var mapRef;
   $scope.list = dataService.getFilteredResults();
-  $scope.$parent.selectMarker = selectMarker;
   $scope.location = dataService.getCurrentPosition();
   var lockMap = false;
   var circle;
-  var isFitting = false;
 
   $scope.$watch('manueladresse', function () {
     dataService.setManualAdress($scope.manueladresse);
@@ -17,56 +15,66 @@ angular.module('testappApp').controller('myMapController', function($scope,$root
 
 
 
-  function addMapEvents() {
-    mapRef.addListener('zoom_changed', function() {
-      if (!isFitting) {
-        lockMap = true; // dont change map on location change when zooming
-      }
-    });
-  }
 
   $scope.$on('mapInitialized', function(event, map) {
+    lockMap = false;
     map.setOptions({disableDefaultUI:true,scrollwheel: false,zoomControl: true})
     mapRef = map;
     addMapClickEvent();
-    addMapEvents();
   });
 
   // Triggeren when a distance button is hit
+
   $scope.$watch('search',function(newValue, oldValue){
-    lockMap = false;
-    fitToCircle(newValue.distance,$scope.location);
+    lockMap = false
+    if($scope.location.currentPosition){
+      fitToCircle(newValue.distance,getCenter());
+    }
+
   },true)
 
   $scope.$watch('location.dirty',function(newValue, oldValue){
-    if(!$scope.search.butik ){ // Dont update map if butik has been chosen or map is locked
-      fitToCircle($scope.search.distance,$scope.location);
+    if(!$scope.search.butik && !lockMap){ // Dont update map if butik has been chosen or map is locked
+      fitToCircle($scope.search.distance,getCenter());
     }
   },false)
 
+  var lastRadius,lastCenter;
 
-  $scope.clearMap = function(){
-    alert("clearmap");
-  }
-
-  var fitToCircle = function(radius,location) {
-    if (mapRef && !lockMap) {
-      if(!circle){
+  var fitToCircle = function(radius,center) {
+    isFitting = true;
+    if (mapRef) {
+      if(!circle) {
         circle = mapRef.shapes.circle;
-        google.maps.event.addListener(circle, 'click', function(){
+        google.maps.event.addListener(circle, 'click', function () {
           google.maps.event.trigger(mapRef, 'click', null);
         });
-
       }
+      var somethingHasChanged = false;
 
-      if(circle && radius && location.currentPosition){
-        isFitting = true;
-        var center = new google.maps.LatLng(location.currentPosition.coords.latitude,location.currentPosition.coords.longitude);
-        circle.setCenter(center);
+
+      if(lastRadius==null || lastRadius != radius) {
         circle.setRadius(Number(radius));
+        lastRadius = radius;
+        somethingHasChanged = true;
+      }
+      if(lastCenter == null || !lastCenter.equals(center)) {
+        circle.setCenter(center);
+        somethingHasChanged = true;
+        lastCenter = center;
+      }
+      if(somethingHasChanged){
+        // Fit bounds is async
+        var zoom_level = mapRef.getZoom();
+        google.maps.event.addListenerOnce(mapRef, 'bounds_changed', function(event) {
+          zoom_level =  mapRef.getZoom();
+          google.maps.event.addListenerOnce(mapRef,"zoom_changed",function(event){
+            zoom_level =  mapRef.getZoom();
+          })
+          mapRef.setZoom(zoom_level+1);
+        });
         mapRef.fitBounds(circle.getBounds());
-        mapRef.setZoom(mapRef.getZoom()+1);
-        isFitting = false;
+
       }
       $scope.GenerateMapMarkers();
     }
@@ -103,45 +111,50 @@ angular.module('testappApp').controller('myMapController', function($scope,$root
 
   function addClickEvent(marker) {
     google.maps.event.addListener(marker, 'click', function(){
-      isFitting = true;
-      mapRef.setCenter(marker.position);
-      mapRef.setZoom(17);
+      fitToCircle(100,marker.position);
       infoWindow.open(mapRef,marker);
       $rootScope.$apply(function(){
         $scope.search.butik = marker.tilbud.butik;
         dataService.setSearch($scope.search);
       });
-      isFitting = false;
     });
   }
 
   function addMapClickEvent() {
-    google.maps.event.addListener(mapRef, 'click', function(){
-      $rootScope.$apply(function() {
-        lockMap = false;
-        $scope.search.butik = null;
-        $scope.search.dirty = !$scope.search.dirty;
-        fitToCircle($scope.search.distance,$scope.location);
-      })
+    if(mapRef){
+      google.maps.event.clearListeners(mapRef,'click');
 
-    });
+      google.maps.event.addListener(mapRef, 'click', function(){
+        $rootScope.$apply(function() {
+          $scope.search.butik = null;
+          $scope.search.dirty = !$scope.search.dirty;
+          fitToCircle($scope.search.distance,getCenter());
+        })
+
+      });
+    }
   }
 
-  function selectMarker (tilbud) {
-      isFitting = true;
-      mapRef.setCenter(tilbud.marker.position);
-      mapRef.setZoom(17);
-      infoWindow.close();
-      infoWindow = createInfoWindow(tilbud.marker);
-      infoWindow.open(mapRef,tilbud.marker);
-      lockMap = true;
-      isFitting = false;
-  }
+  $rootScope.$on("onMarkerSelected", function (event,tilbud) {
+    fitToCircle(100,tilbud.marker.position)
+    infoWindow.close();
+    infoWindow = createInfoWindow(tilbud.marker);
+    infoWindow.open(mapRef,tilbud.marker);
+    lockMap = true;
+  })
+
+  $rootScope.$on("onMarkerDeSelected", function (event,tilbud) {
+    fitToCircle($scope.search.distance,getCenter());
+    infoWindow.close();
+    lockMap = false;
+  })
 
 
   function clearMarkers(markers) {
     while(markers.length){
-      markers.pop().setMap(null);
+      var marker = markers.pop();
+      marker.setMap(null);
+      google.maps.event.clearListeners(marker,'click');
     }
   }
 
@@ -166,6 +179,11 @@ angular.module('testappApp').controller('myMapController', function($scope,$root
       content: contentString
     });
     return infowindow;
+  }
+
+  function getCenter() {
+    var center = new google.maps.LatLng($scope.location.currentPosition.coords.latitude, $scope.location.currentPosition.coords.longitude);
+    return center;
   }
 
 

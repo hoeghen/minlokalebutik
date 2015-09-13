@@ -6,8 +6,9 @@
  */
 angular.module('testappApp').controller('filterController', function($scope, dataService) {
 
+
   $scope.types = dataService.getTilbudTypes();
-  $scope.search = {distance:5000,rabat:0,dirty:false};
+  $scope.search = dataService.defaultFilter;
 
   $scope.$watch('search',function(newValue, oldValue){
       dataService.setSearch($scope.search);
@@ -19,7 +20,6 @@ angular.module('testappApp').controller('filterController', function($scope, dat
     $scope.search.dirty = !$scope.search.dirty;
     dataService.setSearch($scope.search);
   }
-
 
 })
 

@@ -8,8 +8,8 @@ angular.module('testappApp').factory('dataService', ['$firebase', '$rootScope','
   var position = {dirty:false,init:true};
   var manualPosition;
   var geoPosition;
-
-  var search = {distance:5000,dirty:false};
+  var defaultFilter = {distance:5000,rabat:0,dirty:false};
+  var search = defaultFilter;
   var filteredResult = {view:[]};
   var firebaseArray;
 
@@ -42,6 +42,7 @@ angular.module('testappApp').factory('dataService', ['$firebase', '$rootScope','
           results.forEach(function(element){
             if(element.types.indexOf("postal_code") != -1){
               $rootScope.aktueltByNavn = element.address_components[1].short_name;
+              $rootScope.aktueltPostnummer = element.address_components[0].short_name;
             }
           })
         }).
@@ -105,6 +106,9 @@ angular.module('testappApp').factory('dataService', ['$firebase', '$rootScope','
      }
     list = $filter('filter')(list,function(value,index){
       return new Date(value.slut) >= new Date();
+    })
+    list = $filter('filter')(list,function(value,index){
+      return value.start == null || new Date(value.start) < new Date();
     })
 
     return list;
@@ -262,7 +266,8 @@ angular.module('testappApp').factory('dataService', ['$firebase', '$rootScope','
     setSearch : setSearch,
     getCurrentPosition:getCurrentPosition,
     setManualAdress:setManualAdress,
-    getAdressMatches:getAdressMatches
+    getAdressMatches:getAdressMatches,
+    defaultFilter:defaultFilter
   };
 
 

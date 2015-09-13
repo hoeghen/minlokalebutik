@@ -27,7 +27,8 @@ angular.module('testappApp')
     $scope.clearTilbud = function () {
       var weekFromNow = new Date();
       weekFromNow.setDate(weekFromNow.getDate() + 7);
-      $scope.tilbud = {slut: weekFromNow}
+      $scope.tilbud = {slut: weekFromNow,start:new Date()}
+
 
     }
 
@@ -60,6 +61,7 @@ angular.module('testappApp')
       if (tilbud.$id) {
         var item = alleTilbud.$getRecord(tilbud.$id);
         item.slut = angular.fromJson(angular.toJson(item.slut));
+        item.start = angular.fromJson(angular.toJson(item.start));
         $scope.clearTilbud();
         dataService.updateDistance(tilbud);
         alleTilbud.$save(item).then(function (ref) {
@@ -70,6 +72,7 @@ angular.module('testappApp')
       } else {
         $scope.clearTilbud();
         tilbud.slut = angular.fromJson(angular.toJson(tilbud.slut));
+        tilbud.start = angular.fromJson(angular.toJson(tilbud.start));
         tilbud.butik = $scope.butik;
         dataService.updateDistance(tilbud);
         alleTilbud.$add(tilbud).then(function (tilbudRef) {
@@ -132,6 +135,7 @@ angular.module('testappApp')
       $scope.tabs[1].active = true;
       $scope.tilbud = alleTilbud.$getRecord($scope.butik.tilbud[index])
       $scope.tilbud.slut = new Date($scope.tilbud.slut);
+      $scope.tilbud.start = new Date($scope.tilbud.start);
     }
 
 

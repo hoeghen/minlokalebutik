@@ -46,16 +46,20 @@
 
         <!-- Text input-->
         <div class="form-group">
+          <label class="control-label col-sm-2" for="start">Startdato</label>
+          <div class="col-sm-4">
+            <input id="start" name="start" type="date" placeholder="startdato"  ng-model="tilbud.start" required="" class="form-control">
+          </div>
             <label class="control-label col-sm-2" for="slut">Udløbsdato</label>
             <div class="col-sm-4">
             <input id="slut" name="slut" type="date" placeholder="udløbsdato"  ng-model="tilbud.slut" required="" class="form-control">
             </div>
-            <div class="col-sm-3">
-                <button id="gem" type="submit" name="gem" class="form-control btn btn-primary">gem</button>
-            </div>
-
-
         </div>
+      <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-3">
+          <button id="gem" type="submit" name="gem" class="form-control btn btn-primary">gem</button>
+        </div>
+      </div>
         <div >
             <alert ng-show="getAlert()" type="getAlert().type" close="getAlert().close()">{{getAlert().msg}}</alert>
         </div>

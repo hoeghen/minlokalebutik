@@ -6,6 +6,7 @@
   <tbody>
   <tr>
     <th>Slut Dato</th>
+    <th>Start Dato</th>
     <th>Type</th>
     <th>Kort Beskrivelse</th>
     <th>Pris</th>
@@ -14,6 +15,7 @@
   </tr>
     <tr ng-repeat="tilbud in getTilbud() | filter:butikfilter.text">
       <td>{{tilbud.slut | date}}</td>
+      <td>{{tilbud.start | date}}</td>
       <td>{{tilbud.type}}</td>
       <td>{{tilbud.kort}}</td>
       <td>{{tilbud.pris}}</td>

@@ -8,7 +8,7 @@
       <div class="modal-body">
         <form class="login-form" role="form">
           <div class="form-group">
-            <label for="username">Username</label>
+            <label for="username">Email (username)</label>
             <input ng-model="user.email" type="text" class="form-control" id="username" placeholder="Email"
                    required>
           </div>
@@ -26,7 +26,7 @@
 
           <button ng-click="resetPassword()"  ng-show="showReset" type="submit" class="btn btn-primary">Send nullstill password email</button>
           <button ng-click="login()"  ng-hide="showReset" type="submit" class="btn btn-primary">Login</button>
-          <button ng-click="create()" ng-hide="showReset" type="submit" class="btn btn-primary">Ny Butik</button>
+          <button ng-click="create()" ng-hide="showReset" type="submit" class="btn ">Opret en Butik</button>
           <alert ng-show="getAlert()" type="getAlert().type" close="getAlert().close()">{{getAlert().msg}}</alert>
         </form>
       </div>

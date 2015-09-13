@@ -87,3 +87,15 @@ header#resetpasswordheader {
 .padonlarge {
   padding:50px;
 }
+
+.form-control:focus{
+  border-color: #cccccc;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+
+.btn-weak{
+  background-color: #D68513;
+  color: #ffffff;
+}
