@@ -48,7 +48,7 @@ angular.module('testappApp')
   })
   angular.module('testappApp').
     run(function($rootScope) {
-      $rootScope.firebaseref = 'https://jobspot.firebaseio.com';
+      $rootScope.firebaseref = 'https://minlokalebutik.firebaseio.com';
   }
 );
 

@@ -56,37 +56,55 @@ angular.module('testappApp')
         });
     };
 
-
-    function addOrEditTilbud(tilbud) {
-      if (tilbud.$id) {
-        var item = alleTilbud.$getRecord(tilbud.$id);
-        item.slut = angular.fromJson(angular.toJson(item.slut));
-        item.start = angular.fromJson(angular.toJson(item.start));
-        $scope.clearTilbud();
-        dataService.updateDistance(tilbud);
-        alleTilbud.$save(item).then(function (ref) {
-          AlertService.alert("Dit tilbud er updateret", "success", true);
-        }, function (cause) {
-          AlertService.alert("Kunne ikke gemme dit tilbud", "error", true);
-        });
-      } else {
-        $scope.clearTilbud();
+    function prepareTilbud(tilbud) {
+      if(verifyDates(tilbud)){
         tilbud.slut = angular.fromJson(angular.toJson(tilbud.slut));
         tilbud.start = angular.fromJson(angular.toJson(tilbud.start));
-        tilbud.butik = $scope.butik;
+        $scope.clearTilbud();
         dataService.updateDistance(tilbud);
-        alleTilbud.$add(tilbud).then(function (tilbudRef) {
-          if (!$scope.butik.tilbud) {
-            $scope.butik.tilbud = [];
-          }
-          $scope.butik.tilbud.push(tilbudRef.key());
-          saveTilbud();
-        }, function (reason) {
-          log.console("save tilbud failed:" + reason)
-        });
+        return true;
+      }else{
+        return false;
       }
     }
 
+    function addOrEditTilbud(tilbud) {
+
+      var nytTilbud;
+      if (tilbud.$id) {
+        nytTilbud = alleTilbud.$getRecord(tilbud.$id);
+        if(prepareTilbud(nytTilbud)){
+          alleTilbud.$save(nytTilbud).then(function (ref) {
+            AlertService.alert("Dit tilbud er updateret", "success", true);
+          }, function (cause) {
+            AlertService.alert("Kunne ikke gemme dit tilbud", "danger", true);
+          });
+        }
+      } else {
+        nytTilbud = tilbud;
+        nytTilbud.butik = $scope.butik;
+        if(prepareTilbud(nytTilbud)){
+          alleTilbud.$add(nytTilbud).then(function (tilbudRef) {
+            if (!$scope.butik.tilbud) {
+              $scope.butik.tilbud = [];
+            }
+            $scope.butik.tilbud.push(tilbudRef.key());
+            saveTilbud();
+          }, function (reason) {
+            log.console("save tilbud failed:" + reason)
+          });
+        }
+      }
+    }
+
+    function verifyDates(tilbud) {
+      if(tilbud.slut < tilbud.start){
+        AlertService.alert("Din udløbsdato skal være efter din startdato", "danger", true);
+        return false;
+      }else{
+        return true;
+      }
+    }
 
 
 
@@ -101,7 +119,7 @@ angular.module('testappApp')
           $scope.clearTilbud();
         },
         function (err) {
-          AlertService.alert("Dit tilbud kunne ikke gemmes, prøv igen", "error", true);
+          AlertService.alert("Dit tilbud kunne ikke gemmes, prøv igen", "danger", true);
         }
       );
     }
