@@ -41,8 +41,14 @@ angular.module('testappApp')
       {active: false},
     ];
 
+    var prepareAddresse = function (butik) {
+      if(butik.adresse.indexOf(butik.postnummer) == -1){
+        butik.adresse = butik.adresse + "," +butik.postnummer
+      }
+    };
     $scope.saveShop = function () {
       console.log("butik = " + $scope.butik);
+      prepareAddresse($scope.butik);
       var url = 'https://maps.googleapis.com/maps/api/geocode/json?address=';
       url = url + $scope.butik.adresse + "&sensor=false";
       console.log("URL =" + url);
