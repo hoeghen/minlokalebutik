@@ -10,8 +10,30 @@ angular.module('testappApp').factory('firebaseService', ['$firebase', '$rootScop
     });
   }
 
+  function removeTilbudsEmail(email){
+    var found = false;
+    notificationsArray.forEach(function(item){
+      if(item.email == email){
+        found = true;
+        var notification = notificationsArray.$getRecord(item.$id);
+        notificationsArray.$remove(notification).then(function (emailRef) {
+          log("email removed "+emailRef);
+          alert("din email blev fjernet og du modtager ikke længer emails fra MinLokaleButik.dk");
+        },function(error){
+          alert("din email kunne ikke fjernes, har du skrevet rigtigt?");
+          log("email was not removed "+error);
+          return false
+        });
+      }
+    })
+    if(!found){
+      alert("din email blev fjernet og du modtager ikke længer emails fra MinLokaleButik.dk");
+    }
+  }
+
   return {
-    saveTilbudsEmail:saveTilbudsEmail
+    saveTilbudsEmail:saveTilbudsEmail,
+    removeTilbudsEmail:removeTilbudsEmail
   };
 
   function log(message){

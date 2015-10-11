@@ -23,6 +23,13 @@ angular.module('testappApp').controller('MainCtrl', function($modal,$rootScope,$
     }
   }
 
+  $scope.removeEmail = function(){
+    if($scope.stopEmail.$valid){
+      firebaseService.removeTilbudsEmail($scope.email)
+    }else{
+      alert("ugyldig email");
+    }
+  }
 
 });
 

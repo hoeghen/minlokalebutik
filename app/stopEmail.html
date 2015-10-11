@@ -90,14 +90,14 @@
     <a href="." tartet="_self"><img src="img/logo-white-small.png" width="400"  alt="DinLokaleButik.dk"></a>
 </header>
 
-<div class="container" ng-controller="LoginCtrl">
+<div class="container" ng-controller="MainCtrl">
   <div class="page-block row">
-    <form class="login-form col-sm-5" role="form">
+    <form name="stopEmail" class="login-form col-sm-5" role="form">
       <div class="form-group">
-        <label for="password">Indtast dit nye password</label>
-        <input ng-model="user.newpassword" type="text" class="form-control" id="password" placeholder="Nyt Password" required>
+        <label for="email">Indtast dit din email</label>
+        <input ng-model="email" type="email" class="form-control" id="email" placeholder="Indtast din email" required>
       </div>
-      <button ng-click="newPassword()" type="submit" class="btn btn-primary">Gem password</button>
+      <button ng-click="removeEmail()" type="submit" class="btn btn-primary">Stop med at sende emails</button>
 
       <a href="." target="_self" >Gå til minlokalebutik.dk</a>
 
