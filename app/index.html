@@ -113,7 +113,7 @@
     </div>
 
     <!--Splash-->
-    <div class="row" ng-controller="MainCtrl">
+    <div class="row" ng-hide="auth" ng-controller="MainCtrl">
       <div class="hero-slider">
         <div class="slide first-slide">
           <div class="col-lg-5 col-md-5 col-sm-5 animated">
@@ -149,7 +149,7 @@
   </div>
 </section>
 
-<div class="container" ng-controller="filterController">
+<div class="container" ng-hide="auth" ng-controller="filterController">
   <div class="row page-block">
     <div class="col-sm-12 text-center">
       <a ng-hide="filter" ng-click="filter=!filter" class="btn btn-primary btn-lg" >Vis filter</a>
@@ -160,7 +160,7 @@
   </div>
 
 
-  <div  class="row page-block">
+  <div  ng-hide="auth" class="row page-block">
     <div ng-if="filter" class="col-sm-12">
       <div ng-include="'views/search.html'"></div>
     </div>
@@ -180,7 +180,7 @@
   </div>
 
 
-  <div ng-show="filter" class="row page-block" >
+  <div ng-hide="auth" ng-show="filter" class="row page-block" >
     <div class="col-lg-12 " ng-show="search.butik">
       <h1>{{search.butik.navn}}</h1>
     </div>
@@ -188,7 +188,7 @@
   </div>
 
   <!--section-->
-  <div class="row">
+  <div ng-hide="auth" class="row">
     <div id="list" ng-cloak ng-include="'views/list.html'"></div>
   </div>
 </div>

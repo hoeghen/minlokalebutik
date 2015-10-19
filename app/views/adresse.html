@@ -15,17 +15,15 @@
     </div>
 
     <div class="form-group">
-      <label for="gade" class="control-label">Adresse</label>
-      <div class="typeahead" ng-controller="AdresseCtrl">
-        <input type="text" ng-model="butik.adresse" placeholder="Adresse"
-               typeahead="address for address in getMatches($viewValue,butik.postnummer)"
-               typeahead-loading="asyncloading" class="form-control" ng-required="true">
-        <br/>
-        <br/>
-                <span ng-show="loadingLocations" class="glyphicon glyphicon-refresh">
-                    <input ng-model="butik.adresse" type="text" size="30" class="form-control" id="gade"
-                           placeholder="Adresse"></span>
-      </div>
+      <label for="vejnavn" class="control-label">Vejnavn</label>
+      <input ng-model="butik.vejnavn" type="text" class="form-control"
+             id="vejnavn" placeholder="Vejnavn" ng-required="true" size="40" maxlength="40">
+    </div>
+
+    <div class="form-group">
+      <label for="husnummer" class="control-label">husnummer</label>
+      <input ng-model="butik.husnummer" type="text" class="form-control"
+             id="husnummer" placeholder="Husnummer" ng-required="true" size="4" maxlength="4">
     </div>
 
     <div class="form-group">

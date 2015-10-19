@@ -42,9 +42,7 @@ angular.module('testappApp')
     ];
 
     var prepareAddresse = function (butik) {
-      if(butik.adresse.indexOf(butik.postnummer) == -1){
-        butik.adresse = butik.adresse + "," +butik.postnummer
-      }
+      butik.adresse = butik.vejnavn +" " + butik.husnummer + " , " +butik.postnummer
     };
     $scope.saveShop = function () {
       console.log("butik = " + $scope.butik);
@@ -205,15 +203,11 @@ angular.module('testappApp')
         else if (data.results.length > 1) {
           AlertService.alert("der er flere adresser der passer, vær mere specifik", "danger");
         } else {
-          if (data.results[0].partial_match) {
-            AlertService.alert("butikkens adresse er ikke nøjagtig nok, vær mere specifik", "danger");
-          } else {
-            var butiklocation = data.results[0].geometry.location;
-            $scope.butik.position = butiklocation;
-            $scope.butik.$save();
-            updateTilbud($scope.butik);
-            AlertService.alert("butikken er gemt", "success", true);
-          }
+          var butiklocation = data.results[0].geometry.location;
+          $scope.butik.position = butiklocation;
+          $scope.butik.$save();
+          updateTilbud($scope.butik);
+          AlertService.alert("butikken er gemt", "success", true);
         }
         $rootScope.busy = false;
       } else {

@@ -7,9 +7,14 @@ angular.module('testappApp')
   .controller('BrowseCtrl', function ($rootScope,$scope, dataService,$location,$anchorScroll) {
     $scope.list = dataService.getFilteredResults();
     $scope.urlEncode =  function(target){
-      var replaced = target.toLowerCase().replace("ø","oe").replace("æ","ae").replace("å","aa");
+      var replaced = target.toLowerCase().replace(/ø/g,"oe").replace(/æ/g,"ae").replace(/å/g,"aa").replace(/\s/g,"_");
       return encodeURIComponent(replaced);
     };
+
+
+    $scope.imageName = function(tilbud){
+      return $scope.urlEncode(tilbud.type)
+    }
 
 
     $scope.showDetails = function(tilbud){

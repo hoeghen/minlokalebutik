@@ -88,7 +88,7 @@ angular.module('testappApp')
     if ($rootScope.lastUrl) {
           $location.path($rootScope.lastUrl);
         } else {
-            $location.path("home");
+            $location.path("/home");
             $location.hash('butik');
             $anchorScroll();
         }

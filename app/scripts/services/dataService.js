@@ -8,7 +8,7 @@ angular.module('testappApp').factory('dataService', ['$firebase', '$rootScope','
   var position = {dirty:false,init:true};
   var manualPosition;
   var geoPosition;
-  var defaultFilter = {distance:5000,rabat:0,dirty:false};
+  var defaultFilter = {distance:300000,rabat:0,dirty:false};
   var search = defaultFilter;
   var filteredResult = {view:[]};
   var firebaseArray;
@@ -161,7 +161,7 @@ angular.module('testappApp').factory('dataService', ['$firebase', '$rootScope','
   }
 
   var getTilbudTypes = function(){
-    return [ "Hus","Have","Tøj","Sko","Mad","Børn","Bil","Rejse","Elektronik","Service","Smykker","Kunst"];
+    return [ "Hus","Have","Tøj","Sko","Mad og Drikke","Børn","Bil","Rejse","Elektronik","Service","Smykker","Kunst"];
   }
 
   var setSearch = function(newSearch){

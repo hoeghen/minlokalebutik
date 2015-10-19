@@ -32,7 +32,7 @@ angular.module('testappApp')
             if(timeout){
                 $timeout(function () {
                     _self.alertText = null
-                }, 3000);
+                }, 5000);
             }
             console.log(text);
         }
@@ -49,8 +49,8 @@ angular.module('testappApp')
   angular.module('testappApp').
     run(function($rootScope) {
       $rootScope.firebaseref = 'https://minlokalebutik.firebaseio.com';
-      $rootScope.baseUrl = "/";
-      //$rootScope.baseUrl = "/minlokalebutik/app/";
+      //$rootScope.baseUrl = "/";
+      $rootScope.baseUrl = "/minlokalebutik/app/";
   }
 );
 
