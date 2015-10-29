@@ -8,7 +8,8 @@ angular.module('testappApp').factory('dataService', ['$firebase', '$rootScope','
   var position = {dirty:false,init:true};
   var manualPosition;
   var geoPosition;
-  var defaultFilter = {distance:300000,rabat:0,dirty:false};
+  var ALLE_DISTANCER = 300000;
+  var defaultFilter = {distance:ALLE_DISTANCER,rabat:0,dirty:false};
   var search = defaultFilter;
   var filteredResult = {view:[]};
   var firebaseArray;
@@ -96,7 +97,7 @@ angular.module('testappApp').factory('dataService', ['$firebase', '$rootScope','
     if(search.rabat){
       list =  $filter('filter')(list, {rabat:search.rabat},biggerThan);
     }
-    if(search.distance && position.currentPosition){
+    if((search.distance && position.currentPosition) || search.distance != ALLE_DISTANCER){
       list =  $filter('filter')(list, {distance:search.distance},lessThan);
     }
      if(search.butik){
