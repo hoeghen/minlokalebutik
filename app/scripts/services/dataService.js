@@ -61,6 +61,7 @@ angular.module('testappApp').factory('dataService', ['$firebase', '$rootScope','
               tilbud.position = [1,1];
         }
       )
+      filteredResult.view = filterResult(firebaseArray);
       initGeoLocation();
     });
   }
