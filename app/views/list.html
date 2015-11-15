@@ -14,8 +14,22 @@
                 <li>Rabat: {{tilbud.rabat}}%</li>
                 <li>Afstand: {{tilbud.distance|afstand}}</li>
                 <li ng-show="tilbud.showdetails">Adresse: {{tilbud.butik.adresse}}</li>
-                <li><div ng-if="tilbud.showdetails" >
-                  <img src="https://maps.googleapis.com/maps/api/staticmap?markers=|{{tilbud.position[0]}},{{tilbud.position[1]}}&center={{tilbud.position[0]}},{{tilbud.position[1]}}&zoom=16&scale=2&maptype=roadmap&format=png&visual_refresh=true&size=300x200"  alt="{{tilbud.butik.navn}}"></div>
+                <li>
+                  <div ng-if="tilbud.showdetails" >
+                    <div ng-controller="CarouselCtrl">
+                      <div>count: {{cnt}}</div>
+
+                      <div>
+                        <uib-carousel interval="myInterval" no-wrap="noWrapSlides">
+                          <uib-slide ng-repeat="slide in slides" active="slide.active">
+                            <div ng-bind-html="slide.content"/>
+                          </uib-slide>
+                        </uib-carousel>
+                      </div>
+                    </div>
+
+                    <!--<ng-include src="'views/gallery.html'"></ng-include>-->
+                  </div>
                 </li>
 
                 <li ng-show="tilbud.showdetails">Type: {{tilbud.type}}</li>
@@ -40,4 +54,5 @@
       </div>
     </div>
 </section>
+
 

@@ -12,6 +12,15 @@ angular.module('testappApp', [
   ])
   .run(function($rootScope){
         $rootScope.alert = function(text){alert(text);};
+
+    String.prototype.templater = function (o) {
+      return this.replace(/{([^{}]*)}/g,
+        function (a, b) {
+          var r = o[b];
+          return typeof r === 'string' || typeof r === 'number' ? r : a;
+        }
+      );
+    };
   })
 
 
@@ -52,6 +61,8 @@ angular.module('testappApp')
       $rootScope.baseUrl = "/";
       $rootScope.version = "1";
   }
+
+
 );
 
 
