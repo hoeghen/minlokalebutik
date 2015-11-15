@@ -1,5 +1,5 @@
 angular.module('testappApp').controller('CarouselCtrl', function ($scope,$rootScope,$sce) {
-  $scope.myInterval = 5000;
+  $scope.myInterval = 3000;
   $scope.noWrapSlides = false;
   $scope.slides = [];
   $scope.cnt = 0;
@@ -15,14 +15,22 @@ angular.module('testappApp').controller('CarouselCtrl', function ($scope,$rootSc
   var createMapUrl = function (tilbud) {
     var long = tilbud.position[0];
     var short = tilbud.position[1];
-    var urlTemplate = '<img src="https://maps.googleapis.com/maps/api/staticmap?markers=|{long},{short}&center={long},{short}&zoom=16&scale=2&maptype=roadmap&format=png&visual_refresh=true&size=300x200"  alt="{navn}"></div>'
+    var urlTemplate = '<img src="https://maps.googleapis.com/maps/api/staticmap?markers=|{long},{short}&center={long},{short}&zoom=16&scale=2&maptype=roadmap&format=png&visual_refresh=true&size=320x320"  alt="{navn}"></div>'
     var finalUrl = urlTemplate.templater({long:long,short:short,navn:tilbud.butik.navn});
     return finalUrl;
   };
 
-  var createInstagramCode = function (instagramUrl) {
-    var template =   "<style>.embed-container {position: relative; padding-bottom: 120%; height: 0; overflow: hidden;} .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style><div class='embed-container'><iframe src='{src}' frameborder='0' scrolling='no' allowtransparency='true'></iframe></div>";
-    var finalCode = template.templater({src:instagramUrl});
+  var prepareImageLink = function (imageUrl) {
+    // handle instagram urls and others
+    var imageUrl = URI(imageUrl);
+    var cleanUrl;
+    if(imageUrl.domain() == "instagram.com"){
+      cleanUrl = imageUrl.segment(2,"media").query("size=l").toString();
+    }else{
+      cleanUrl = imageUrl.toString();
+    }
+    var template =   '<img src="{shorturl}">';
+    var finalCode = template.templater({shorturl:cleanUrl});
     return finalCode;
   };
 
@@ -31,21 +39,22 @@ angular.module('testappApp').controller('CarouselCtrl', function ($scope,$rootSc
 
   addTilbud = function(tilbud) {
     if (!$scope.slides.length > 0) {
-      $scope.slides.push({
-        content: $sce.trustAsHtml(createMapUrl(tilbud))
-      })
-      if (tilbud.billede1) {
-        $scope.slides.push({
-          content: $sce.trustAsHtml(createInstagramCode(tilbud.billede1))
-        })
-        if (tilbud.billede2) {
+        if (tilbud.billede1 && tilbud.billede1.trim().length > 0) {
           $scope.slides.push({
-            content: $sce.trustAsHtml(createInstagramCode(tilbud.billede2))
+            content: $sce.trustAsHtml(prepareImageLink(tilbud.billede1))
           })
         }
+        if (tilbud.billede2 && tilbud.billede1.trim().length > 0) {
+          $scope.slides.push({
+            content: $sce.trustAsHtml(prepareImageLink(tilbud.billede2))
+          })
+        }
+        $scope.slides.push({
+          content: $sce.trustAsHtml(createMapUrl(tilbud))
+        })
+
       }
 
-    }
   }
 
 })
