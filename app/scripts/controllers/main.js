@@ -5,6 +5,16 @@ angular.module('testappApp');
 angular.module('testappApp').controller('MainCtrl', function($modal,$rootScope,$scope,firebaseService) {
 
   var modalInstance;
+
+  String.prototype.templater = function (o) {
+    return this.replace(/{([^{}]*)}/g,
+      function (a, b) {
+        var r = o[b];
+        return typeof r === 'string' || typeof r === 'number' ? r : a;
+      }
+    );
+  };
+
   $scope.openEmail = function (size) {
     $scope.tilbudEmail;
 
