@@ -52,7 +52,7 @@ angular.module('testappApp')
     run(function($rootScope) {
       $rootScope.firebaseref = 'https://minlokalebutik.firebaseio.com';
       $rootScope.baseUrl = "/";
-      $rootScope.version = "2";
+      $rootScope.version = "3";
   }
 
 

@@ -29,7 +29,7 @@ angular.module('testappApp').controller('CarouselCtrl', function ($scope,$rootSc
     }else{
       cleanUrl = imageUrl.toString();
     }
-    var template =   '<img src="{shorturl}">';
+    var template =   '<img class="ratio-image" src="{shorturl}">';
     var finalCode = template.templater({shorturl:cleanUrl});
     return finalCode;
   };

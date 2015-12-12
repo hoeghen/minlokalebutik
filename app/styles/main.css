@@ -99,3 +99,22 @@ header#resetpasswordheader {
   background-color: #D68513;
   color: #ffffff;
 }
+
+.ratio-image-wrapper {
+  /*height: 0;*/
+  /*padding-bottom: 95%;*/
+  /*position: relative;*/
+  /*background-color: #0087bb;*/
+}
+.ratio-image {
+  /*top: 0;*/
+  /*left:0;*/
+  /*max-width: 100%;*/
+  /*max-height: 100%;*/
+  /*height: auto;*/
+  /*width:auto;*/
+  /*position: absolute;*/
+  max-height: 500px;
+  display:block;
+  margin:auto;
+}
