@@ -11,12 +11,12 @@
           <div class="form-group">
             <label for="username">Email (username)</label>
             <input ng-model="user.email" type="text" class="form-control" id="username" placeholder="Email"
-                   required>
+                   ng-required="true">
           </div>
           <div class="form-group" ng-hide="showReset">
             <label for="password">Password</label>
             <input ng-model="user.password" type="password" class="form-control" id="password"
-                   placeholder="Enter Password" required>
+                   placeholder="Enter Password" ng-required="true">
             <a class="pull-right" href="" ng-click="showResetPassword()">jeg har glemt mit password</a>
           </div>
           <div class="checkbox" ng-hide="showReset">

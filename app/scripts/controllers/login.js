@@ -58,11 +58,15 @@ angular.module('testappApp')
       var token = {email: $scope.user.email, password: $scope.user.password};
       $rootScope.loginObj = $firebaseAuth(ref);
       $rootScope.busy = true;
-      $rootScope.loginObj.$authWithPassword(token).then(handleLogin).catch(function(error){
+      try{
+        $rootScope.loginObj.$authWithPassword(token).then(handleLogin).catch(function(error){
+          log('Login failed: ', error);
+          $rootScope.busy = false;
+        })
+      }catch(error){
         log('Login failed: ', error);
         $rootScope.busy = false;
-      })
-
+      }
     };
 
     $scope.logout = function(){
